@@ -1,0 +1,77 @@
+{
+  "section_validation": {
+    "errors": [],
+    "warnings": [
+      "Sampled meridional checks only; CAD interference, fits and contact stress require review.",
+      "No embedded rays for rechecking edited profiles. Existing ray reports apply only to the supplied baseline."
+    ]
+  },
+  "insertion_checks": 8989,
+  "insertion_method": "101 axial translations per component pair, 81 section samples per overlapping interval; conservative demo check, not CAD swept-volume proof",
+  "pilot_radial_clearance_mm": 0.019999999999999574,
+  "minimum_cell_radial_wall_mm": 1.4100000000000001,
+  "minimum_shoulder_axial_base_mm": 0.7149073025307189,
+  "optical_geometry_changed": false,
+  "step_alignment": [
+    {
+      "name": "surfaces 1,2",
+      "step_vertex_z_mm": 0.0,
+      "zemax_vertex_z_mm": 0.0,
+      "delta_mm": 0.0
+    },
+    {
+      "name": "surfaces 2,3",
+      "step_vertex_z_mm": 4.828,
+      "zemax_vertex_z_mm": 4.828,
+      "delta_mm": 0.0
+    },
+    {
+      "name": "surfaces 4,5",
+      "step_vertex_z_mm": 12.564,
+      "zemax_vertex_z_mm": 12.564000000000002,
+      "delta_mm": -1.7763568394002505e-15
+    },
+    {
+      "name": "surfaces 5,6",
+      "step_vertex_z_mm": 13.264,
+      "zemax_vertex_z_mm": 13.264000000000001,
+      "delta_mm": -1.7763568394002505e-15
+    },
+    {
+      "name": "surfaces 7,8",
+      "step_vertex_z_mm": 18.043,
+      "zemax_vertex_z_mm": 18.043,
+      "delta_mm": 0.0
+    },
+    {
+      "name": "surfaces 8,9",
+      "step_vertex_z_mm": 21.623,
+      "zemax_vertex_z_mm": 21.622999999999998,
+      "delta_mm": 3.552713678800501e-15
+    },
+    {
+      "name": "surfaces 9,10",
+      "step_vertex_z_mm": 22.323,
+      "zemax_vertex_z_mm": 22.322999999999997,
+      "delta_mm": 3.552713678800501e-15
+    },
+    {
+      "name": "surfaces 11,12",
+      "step_vertex_z_mm": 24.582,
+      "zemax_vertex_z_mm": 24.581999999999997,
+      "delta_mm": 3.552713678800501e-15
+    },
+    {
+      "name": "surfaces 12,13",
+      "step_vertex_z_mm": 29.532,
+      "zemax_vertex_z_mm": 29.531999999999996,
+      "delta_mm": 3.552713678800501e-15
+    },
+    {
+      "name": "surfaces 14,15",
+      "step_vertex_z_mm": 30.502,
+      "zemax_vertex_z_mm": 30.501999999999995,
+      "delta_mm": 3.552713678800501e-15
+    }
+  ]
+}

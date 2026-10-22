@@ -1,0 +1,23 @@
+{
+  "title": "显微物镜 · 63X",
+  "summary": "五个短镜框预装 + 共同外筒",
+  "intro": "避免在深筒内直接操作多个紧邻镜组：先在台面完成五个短镜框的沉靠、心定与点胶，再整体入筒。",
+  "full_macro": "OptomechMicroCells_v10.bas",
+  "mechanics_macro": "OptomechMicroMechanics_v10.bas",
+  "stages": [
+    [
+      "台面预装",
+      "五组玻璃各自从镜框 −Z 口装入，沉靠后在工装中定心，局部点胶并固化。"
+    ],
+    [
+      "整框入筒",
+      "从 +Z 样品侧开口依次装 G1、G2、G3、G4、G5 框，最后装总压圈。"
+    ]
+  ],
+  "fixing": "统一 Φ18 镜框外圆负责入筒定位；玻璃由各自镜框的内肩与胶点保持。压圈压金属端面，玻璃不承担整串堆栈预紧。",
+  "load_path": "鼻端总压圈 → G5 框 → G4 框 → G3 框 → G2 框 → G1 框 → 外筒端肩。",
+  "note": "本文件 −Z 为筒镜侧、+Z 为样品侧。STOP 位于 G3 曲面，未另造平面金属光阑；保留原玻璃外形。",
+  "status": "用户已在 SolidWorks 2023 运行检查通过",
+  "section": "section.png",
+  "design": "DESIGN.md"
+}

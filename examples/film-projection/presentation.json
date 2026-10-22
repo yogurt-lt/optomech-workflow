@@ -1,0 +1,23 @@
+{
+  "title": "胶片投影 · Film",
+  "summary": "单端装入 + 首片定位套",
+  "intro": "镜片口径在 L2 处最大，采用单端装入；L1 较小，先在定位套中预装，再整体放入镜筒。",
+  "full_macro": "OptomechFilm.bas",
+  "mechanics_macro": "OptomechFilm.bas",
+  "stages": [
+    [
+      "预装 L1",
+      "将 L1 放入定位套，使用小压圈压向套内后肩。"
+    ],
+    [
+      "从入口依次装入",
+      "L5 → 隔圈 → L4 → 隔圈 → L3 → 隔圈 → L2 → L1 定位套组件 → 主压圈。"
+    ]
+  ],
+  "fixing": "镜片由定位孔定心，平边或曲面接触处由肩面与隔圈确定轴向位置。L1 的局部压紧独立于外部镜片堆栈。",
+  "load_path": "主压圈 → L1 定位套 → L2 → 隔圈 → L3 → 隔圈 → L4 → 隔圈 → L5 → 镜筒后肩。",
+  "note": "已有导出光线与部分接触带相交；该案例保留此问题供比较。下载宏为机械版，镜片使用原 STEP 对照。",
+  "status": "用户已在 SolidWorks 2023 运行检查通过",
+  "section": "section.png",
+  "design": "DESIGN.md"
+}

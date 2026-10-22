@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+generated/
+dist/
+Optomech_*/
+*.SLDPRT
+*.SLDASM
+*.swp
+*.ZDA
+*.log
+.DS_Store

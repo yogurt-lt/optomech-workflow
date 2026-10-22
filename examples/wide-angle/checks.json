@@ -1,0 +1,348 @@
+{
+  "section_validation": {
+    "errors": [],
+    "warnings": [
+      "Sampled meridional checks only; CAD interference, fits and contact stress require review.",
+      "No embedded rays for rechecking edited profiles. Existing ray reports apply only to the supplied baseline."
+    ]
+  },
+  "adjacent_glass_checks": [
+    {
+      "groups": [
+        1,
+        2
+      ],
+      "minimum_axial_gap_mm": 0.0
+    },
+    {
+      "groups": [
+        2,
+        3
+      ],
+      "minimum_axial_gap_mm": 2.3652199542845445
+    },
+    {
+      "groups": [
+        3,
+        4
+      ],
+      "minimum_axial_gap_mm": 17.6615897934275
+    },
+    {
+      "groups": [
+        4,
+        5
+      ],
+      "minimum_axial_gap_mm": 1.2332869550419971
+    },
+    {
+      "groups": [
+        5,
+        6
+      ],
+      "minimum_axial_gap_mm": 7.980027003005787
+    },
+    {
+      "groups": [
+        6,
+        7
+      ],
+      "minimum_axial_gap_mm": 0.2031495327453996
+    }
+  ],
+  "uncut_barrel_wall": [
+    {
+      "part": "01_FrontBarrel",
+      "minimum_uncut_meridional_wall_mm": 4.0
+    },
+    {
+      "part": "02_RearBarrel",
+      "minimum_uncut_meridional_wall_mm": 4.454247411179582
+    }
+  ],
+  "empty_housing_swept_radius_checks": 7538,
+  "all_previous_stack_samples": 2723,
+  "spacer_dimensions_mm": [
+    {
+      "name": "03_G2G3_Spacer",
+      "axial_length": 2.3652199542845445,
+      "radial_width": 4.5
+    },
+    {
+      "name": "04_G4G5_Spacer",
+      "axial_length": 3.2713213064799973,
+      "radial_width": 3.0
+    },
+    {
+      "name": "05_G6G7_Spacer",
+      "axial_length": 2.340157223833856,
+      "radial_width": 2.4000000000000004
+    }
+  ],
+  "direct_glass_contact": {
+    "groups": [
+      1,
+      2
+    ],
+    "annulus_r_mm": [
+      14.0,
+      15.0
+    ],
+    "z_mm": 10.68252970937275
+  },
+  "pilot_overlap_mm": 10.0,
+  "pilot_radial_clearance_mm": 0.02,
+  "retainer_axial_thickness_mm": 3.0,
+  "stop_land_length_mm": 1.0,
+  "native_radial_holes": 6,
+  "native_wrench_slots": 6,
+  "source_step_alignment": [
+    {
+      "name": "surfaces 1,2",
+      "step_vertex_z_mm": 0.0,
+      "zemax_vertex_z_mm": 0.0,
+      "delta_mm": 0.0
+    },
+    {
+      "name": "surfaces 3,4",
+      "step_vertex_z_mm": 10.160862463,
+      "zemax_vertex_z_mm": 10.160862462816,
+      "delta_mm": 1.8400037049559614e-10
+    },
+    {
+      "name": "surfaces 5,6",
+      "step_vertex_z_mm": 14.974659932,
+      "zemax_vertex_z_mm": 14.974659932496,
+      "delta_mm": -4.959996857678561e-10
+    },
+    {
+      "name": "surfaces 6,7",
+      "step_vertex_z_mm": 19.544677963,
+      "zemax_vertex_z_mm": 19.544677962881,
+      "delta_mm": 1.1900169738510158e-10
+    },
+    {
+      "name": "surfaces 8,9",
+      "step_vertex_z_mm": 41.557622749,
+      "zemax_vertex_z_mm": 41.557622748621,
+      "delta_mm": 3.7899638982707984e-10
+    },
+    {
+      "name": "surfaces 10,11",
+      "step_vertex_z_mm": 46.496695763,
+      "zemax_vertex_z_mm": 46.496695763493996,
+      "delta_mm": -4.939977316098521e-10
+    },
+    {
+      "name": "surfaces 11,12",
+      "step_vertex_z_mm": 52.263603124,
+      "zemax_vertex_z_mm": 52.263603124304,
+      "delta_mm": -3.0399860406760126e-10
+    },
+    {
+      "name": "surfaces 14,15",
+      "step_vertex_z_mm": 61.484898998,
+      "zemax_vertex_z_mm": 61.484898998172596,
+      "delta_mm": -1.7259793594348594e-10
+    },
+    {
+      "name": "surfaces 15,16",
+      "step_vertex_z_mm": 62.669937939,
+      "zemax_vertex_z_mm": 62.6699379391876,
+      "delta_mm": -1.8759749309538165e-10
+    },
+    {
+      "name": "surfaces 17,18",
+      "step_vertex_z_mm": 68.531648415,
+      "zemax_vertex_z_mm": 68.531648415279,
+      "delta_mm": -2.7898749976884574e-10
+    }
+  ],
+  "source_step_surface_check": [
+    {
+      "surface": 1,
+      "analytic_STEP_radius_mm": 134.544242625,
+      "radius_error_mm": 4.920082119497238e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 5.517364343177178e-12
+    },
+    {
+      "surface": 2,
+      "analytic_STEP_radius_mm": 13.19032987,
+      "radius_error_mm": 1.1930012533412082e-10,
+      "vertex_error_mm": 1.429989460177694e-10,
+      "max_sag_error_mm": 2.906634932742236e-10
+    },
+    {
+      "surface": 3,
+      "analytic_STEP_radius_mm": 112.737833197,
+      "radius_error_mm": 6.338041202980094e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 4.121147867408581e-13
+    },
+    {
+      "surface": 4,
+      "analytic_STEP_radius_mm": 16.518596381,
+      "radius_error_mm": 3.6049385698788683e-10,
+      "vertex_error_mm": 1.950013484020019e-10,
+      "max_sag_error_mm": 3.0669511374981084e-10
+    },
+    {
+      "surface": 5,
+      "analytic_STEP_radius_mm": 21.283299381,
+      "radius_error_mm": 3.74381414758318e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 5.168843131286849e-11
+    },
+    {
+      "surface": 6,
+      "analytic_STEP_radius_mm": 59.76743899,
+      "radius_error_mm": 9.843148518484668e-11,
+      "vertex_error_mm": 3.850004759442527e-10,
+      "max_sag_error_mm": 3.864606412662397e-10
+    },
+    {
+      "surface": 6,
+      "analytic_STEP_radius_mm": 59.76743899,
+      "radius_error_mm": 9.843148518484668e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.4601653219870059e-12
+    },
+    {
+      "surface": 7,
+      "analytic_STEP_radius_mm": 10.293756115,
+      "radius_error_mm": 4.862723557153004e-10,
+      "vertex_error_mm": 9.000000744663339e-10,
+      "max_sag_error_mm": 1.1185399273472285e-09
+    },
+    {
+      "surface": 8,
+      "analytic_STEP_radius_mm": 717.343854447,
+      "radius_error_mm": 3.589093466871418e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.2079226507921703e-13
+    },
+    {
+      "surface": 9,
+      "analytic_STEP_radius_mm": 17.127198523,
+      "radius_error_mm": 2.092797046771011e-10,
+      "vertex_error_mm": 1.6900258970053983e-10,
+      "max_sag_error_mm": 1.6900258970053983e-10
+    },
+    {
+      "surface": 10,
+      "analytic_STEP_radius_mm": 19.370307947,
+      "radius_error_mm": 2.7559465820559126e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.5423219085496385e-11
+    },
+    {
+      "surface": 11,
+      "analytic_STEP_radius_mm": 11.574444628,
+      "radius_error_mm": 1.6979839756459114e-10,
+      "vertex_error_mm": 1.899982393638311e-10,
+      "max_sag_error_mm": 1.899991275422508e-10
+    },
+    {
+      "surface": 11,
+      "analytic_STEP_radius_mm": 11.574444628,
+      "radius_error_mm": 1.6979839756459114e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 5.977796035949723e-11
+    },
+    {
+      "surface": 12,
+      "analytic_STEP_radius_mm": 155.96466794,
+      "radius_error_mm": 2.7060309548687655e-10,
+      "vertex_error_mm": 1.5013768006610917e-11,
+      "max_sag_error_mm": 1.5141665699047735e-11
+    },
+    {
+      "surface": 14,
+      "analytic_STEP_radius_mm": 8376.67968361,
+      "radius_error_mm": 3.055902197957039e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.9966250874858815e-12
+    },
+    {
+      "surface": 15,
+      "analytic_STEP_radius_mm": 10.30899233,
+      "radius_error_mm": 4.430980027336773e-10,
+      "vertex_error_mm": 1.5001333508735115e-11,
+      "max_sag_error_mm": 9.140421752817929e-11
+    },
+    {
+      "surface": 15,
+      "analytic_STEP_radius_mm": 10.30899233,
+      "radius_error_mm": 4.430980027336773e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.064108801074326e-10
+    },
+    {
+      "surface": 16,
+      "analytic_STEP_radius_mm": 27.477667217,
+      "radius_error_mm": 4.154756538810034e-10,
+      "vertex_error_mm": 6.54004850275669e-10,
+      "max_sag_error_mm": 6.646274641752825e-10
+    },
+    {
+      "surface": 17,
+      "analytic_STEP_radius_mm": 13.539069901,
+      "radius_error_mm": 9.511502696568641e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.475086719437968e-11
+    },
+    {
+      "surface": 18,
+      "analytic_STEP_radius_mm": 44.36362567,
+      "radius_error_mm": 3.432276685089164e-10,
+      "vertex_error_mm": 6.630003213103919e-10,
+      "max_sag_error_mm": 6.663896101599676e-10
+    }
+  ],
+  "solidworks_runtime": "pending",
+  "stress_analysis": "not performed",
+  "macro_static_checks": "passed",
+  "original_optical_surface_samples_preserved": 10961,
+  "glass_cylindrical_guidance": [
+    {
+      "group": 1,
+      "cylindrical_guidance_sample_span_mm": 9.164756789099437,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 2,
+      "cylindrical_guidance_sample_span_mm": 4.497715120502301,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 3,
+      "cylindrical_guidance_sample_span_mm": 4.281958198319792,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 4,
+      "cylindrical_guidance_sample_span_mm": 1.6678688446218999,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 5,
+      "cylindrical_guidance_sample_span_mm": 4.997640824600602,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 6,
+      "cylindrical_guidance_sample_span_mm": 4.6476954522771905,
+      "radial_clearance_mm": 0.15
+    },
+    {
+      "group": 7,
+      "cylindrical_guidance_sample_span_mm": 1.0083011451974784,
+      "radial_clearance_mm": 0.15
+    }
+  ],
+  "source_hashes": {
+    "wide-angle/wide-angle.zmx": "474def15473de1866d4646e77834abd23d27498a06b2bfc4a2b6e0e28ab7d0a3",
+    "wide-angle/wide-angle.STP": "d4c9556112b1871ecfcbf00d041267bf24873c01d40b90c10544309e775a9bd5"
+  }
+}

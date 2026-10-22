@@ -1,0 +1,148 @@
+{
+  "fixed-projection": {
+    "title": "定焦投影 · PF-2",
+    "summary": "独立沉靠点胶 + 前后隔圈压紧",
+    "intro": "前三片边缘紧邻，分别用镜筒内肩定位和局部点胶；其余镜组以隔圈与压圈固定。",
+    "full_macro": "OptomechFixedWithBlanks.bas",
+    "mechanics_macro": "OptomechFixed.bas",
+    "stages": [
+      [
+        "前侧预装",
+        "先装 G5、隔圈与 G4，用独立压圈锁定；再依次装 L3、L2、L1，各自沉靠后点胶固化。"
+      ],
+      [
+        "后侧装配",
+        "从内侧镜组向后堆叠隔圈和镜片，最后以后压圈压紧。"
+      ]
+    ],
+    "fixing": "前三片的胶仅用于局部固定，内肩与工装负责定位；后续镜组通过隔圈传力。新增点胶孔是入口，不是整圈灌封槽。",
+    "load_path": "前三片各自传力至镜筒内肩；其余镜组由各自压圈经隔圈压向沉靠。",
+    "note": "仅第三片增加机械外缘；镜片参考体不能代替精确光学面。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  },
+  "film-projection": {
+    "title": "胶片投影 · Film",
+    "summary": "单端装入 + 首片定位套",
+    "intro": "镜片口径在 L2 处最大，采用单端装入；L1 较小，先在定位套中预装，再整体放入镜筒。",
+    "full_macro": "OptomechFilm.bas",
+    "mechanics_macro": "OptomechFilm.bas",
+    "stages": [
+      [
+        "预装 L1",
+        "将 L1 放入定位套，使用小压圈压向套内后肩。"
+      ],
+      [
+        "从入口依次装入",
+        "L5 → 隔圈 → L4 → 隔圈 → L3 → 隔圈 → L2 → L1 定位套组件 → 主压圈。"
+      ]
+    ],
+    "fixing": "镜片由定位孔定心，平边或曲面接触处由肩面与隔圈确定轴向位置。L1 的局部压紧独立于外部镜片堆栈。",
+    "load_path": "主压圈 → L1 定位套 → L2 → 隔圈 → L3 → 隔圈 → L4 → 隔圈 → L5 → 镜筒后肩。",
+    "note": "已有导出光线与部分接触带相交；该案例保留此问题供比较。下载宏为机械版，镜片使用原 STEP 对照。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  },
+  "micro-objective": {
+    "title": "显微物镜 · 63X",
+    "summary": "五个短镜框预装 + 共同外筒",
+    "intro": "避免在深筒内直接操作多个紧邻镜组：先在台面完成五个短镜框的沉靠、心定与点胶，再整体入筒。",
+    "full_macro": "OptomechMicroCells_v10.bas",
+    "mechanics_macro": "OptomechMicroMechanics_v10.bas",
+    "stages": [
+      [
+        "台面预装",
+        "五组玻璃各自从镜框 −Z 口装入，沉靠后在工装中定心，局部点胶并固化。"
+      ],
+      [
+        "整框入筒",
+        "从 +Z 样品侧开口依次装 G1、G2、G3、G4、G5 框，最后装总压圈。"
+      ]
+    ],
+    "fixing": "统一 Φ18 镜框外圆负责入筒定位；玻璃由各自镜框的内肩与胶点保持。压圈压金属端面，玻璃不承担整串堆栈预紧。",
+    "load_path": "鼻端总压圈 → G5 框 → G4 框 → G3 框 → G2 框 → G1 框 → 外筒端肩。",
+    "note": "本文件 −Z 为筒镜侧、+Z 为样品侧。STOP 位于 G3 曲面，未另造平面金属光阑；保留原玻璃外形。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  },
+  "phone": {
+    "title": "手机镜头 · 6P",
+    "summary": "三个孔径台阶 + 矩形隔圈",
+    "intro": "先确定三个主要孔径台阶，再局部延展镜片机械外缘，避免每片都增加同样大的法兰或微型螺纹。",
+    "full_macro": "OptomechPhoneThree_v30.bas",
+    "mechanics_macro": "OptomechPhoneThreeHousing_v30.bas",
+    "stages": [
+      [
+        "从像侧依次装入",
+        "L1 → 隔圈 → L2 → 隔圈 → L3 → 隔圈 → L4 → L5 → L6。"
+      ],
+      [
+        "锁定尾环",
+        "在工装中保持各接触面贴合，再将尾环与镜筒局部胶接固化。"
+      ]
+    ],
+    "fixing": "前三处采用简单矩形隔圈；L4/L5 外缘形成相邻接触环带。尾环的胶连接镜筒，未把胶直接施加到每片玻璃上。",
+    "load_path": "尾环 → 镜片及隔圈堆栈 → 前端沉靠 → 镜筒。",
+    "note": "L1/L3/L4/L5 使用新机械外缘；原光学体保留。滤片只预留空间，未生成；注塑脱模、胶层与应力待细化。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  },
+  "slr": {
+    "title": "单反镜头 · 三筒 v5",
+    "summary": "厚壁止口 + 单向隔圈堆叠",
+    "intro": "三个外镜筒包容内部组件。前后镜组优先用厚隔圈压紧；中筒保留两只预装镜框，后筒只保留 G8 薄框。",
+    "full_macro": "OptomechSLRSpacer_v50.bas",
+    "mechanics_macro": "OptomechSLRSpacerMech_v50.bas",
+    "stages": [
+      [
+        "前筒：从物侧装",
+        "G2 → 锥隔圈 → G1 → 前压环。"
+      ],
+      [
+        "中筒：整框从物侧装",
+        "先在台面装好 G3/G4 与 G5/G6 框，再从中筒前侧先装 G5/G6 框、后装 G3/G4 框，最后总压环。"
+      ],
+      [
+        "后筒：从像侧装",
+        "G7 → 长隔圈 → G8 薄框 → 短隔圈 → G9 → 杯形隔圈 → G10 → 后压环。"
+      ]
+    ],
+    "fixing": "G3/G4、G5/G6 与 G8 的玻璃在框内局部点胶；其余镜组用沉靠、隔圈和压环定位。光阑并入中筒，同为青色，孔口保留平台。",
+    "load_path": "后压环 → G10 → 隔圈 → G9 → 隔圈 → G8 框金属端面 → 隔圈 → G7 → 后筒台肩；G8 玻璃不承受整串压紧。",
+    "note": "v5 已消除前后接头薄桥。未开孔主体最小截面厚度：前筒 8.98、中筒 8.10、后筒约 8.47 mm；不是应力合格证明。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  },
+  "wide-angle": {
+    "title": "广角镜头 · 双筒",
+    "summary": "双筒装配 + 三个矩形隔圈",
+    "intro": "前筒单向装入 G1–G3，后筒以一体光阑分界、从两端装入 G4–G7。无需额外内部镜框或点胶定位。",
+    "full_macro": "OptomechWideAngle_v10.bas",
+    "mechanics_macro": "OptomechWideAngleMech_v10.bas",
+    "stages": [
+      [
+        "前筒：从物侧装",
+        "G3 → 隔圈 → G2 → G1 → 前压环。G1/G2 通过新增外围接触带直接相抵。"
+      ],
+      [
+        "后筒：分别从两端装",
+        "物侧：G5 → 隔圈 → G4 → 中压环；像侧：G6 → 隔圈 → G7 → 后压环。"
+      ],
+      [
+        "最后合筒",
+        "两个镜筒分别装好、锁定各压环后，再连接 10 mm 金属止口；后筒前压环必须在合筒前操作。"
+      ]
+    ],
+    "fixing": "隔圈均为矩形截面，轴向厚度约 2.37 / 3.27 / 2.34 mm。光阑与后筒一体，保留 1 mm 平口，并在像侧做 45° 退让斜面。",
+    "load_path": "前压环 → G1 → G2 → 隔圈 → G3 → 前筒台肩；后筒两端压环分别将各自堆栈压向一体镜座。",
+    "note": "G2/G3/G4/G7 增加机械外缘，原有效口径内曲面保持。两个外筒主体最小截面厚度至少 4 mm。",
+    "status": "用户已在 SolidWorks 2023 运行检查通过",
+    "section": "section.png",
+    "design": "DESIGN.md"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-21",
+  "unit_tests": "11 passed",
+  "javascript_syntax": "passed",
+  "http_smoke": "passed: demos/check/generate/analyze/invalid-profile/cross-origin",
+  "browser": "Case switching, assembly instructions, static section and per-part legend verified in local browser",
+  "solidworks": {
+    "fixed-projection": "User confirmed macro run and structure review on SolidWorks 2023",
+    "film-projection": "User confirmed macro run and structure review on SolidWorks 2023",
+    "micro-objective": "User confirmed macro run and structure review on SolidWorks 2023",
+    "phone": "User confirmed macro run and structure review on SolidWorks 2023",
+    "slr": "User confirmed macro run and structure review on SolidWorks 2023",
+    "wide-angle": "User confirmed macro run and structure review on SolidWorks 2023"
+  },
+  "privacy": "Approved replacement demo folders only; STEP machine path and export user removed; no ZDA/cache/CAD outputs included",
+  "source_coordinate_check": "All 10 original STEP lens axis vertices match Zemax within 0.00001 mm",
+  "preview_3d": "Six cases available; explicit per-part colors supported; offline software render; dedicated CAD cuts excluded",
+  "version": "0.6.0-preview",
+  "http_gallery": "All six cases: plans, section images, macro bytes and design notes checked",
+  "language": "Chinese/English UI, all six case explanations, English drawings and design summaries; geometry unchanged",
+  "skill": "Standalone optomech-design with references, engine and CLI; see docs/SKILL_USAGE.md",
+  "github_pages": "Static export and project-subpath browser/resource checks passed; remote deployment pending",
+  "suggested_repository": "yogurt-lt/optomech-workflow"
+}

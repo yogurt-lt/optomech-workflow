@@ -1,0 +1,387 @@
+{
+  "section_validation": {
+    "errors": [],
+    "warnings": [
+      "Sampled meridional checks only; CAD interference, fits and contact stress require review.",
+      "No embedded rays for rechecking edited profiles. Existing ray reports apply only to the supplied baseline."
+    ]
+  },
+  "radial_stock": [
+    {
+      "part": "01_FrontBarrel",
+      "minimum_radial_stock_mm": 8.980000000000004
+    },
+    {
+      "part": "02_MiddleBarrel",
+      "minimum_radial_stock_mm": 8.100000000000001
+    },
+    {
+      "part": "03_RearBarrel",
+      "minimum_radial_stock_mm": 9.980000000000004
+    },
+    {
+      "part": "04_G3G4_InternalCell",
+      "minimum_radial_stock_mm": 5.799999999999997
+    },
+    {
+      "part": "05_G5G6_InternalCell",
+      "minimum_radial_stock_mm": 14.5
+    },
+    {
+      "part": "06_G8_InternalCell",
+      "minimum_radial_stock_mm": 4.100000000000001
+    },
+    {
+      "part": "07_FrontCupSpacer",
+      "minimum_radial_stock_mm": 8.0
+    },
+    {
+      "part": "08_G7G8_Spacer",
+      "minimum_radial_stock_mm": 3.1000000000000014
+    },
+    {
+      "part": "09_G8G9_Spacer",
+      "minimum_radial_stock_mm": 3.0
+    },
+    {
+      "part": "10_G9G10_CupSpacer",
+      "minimum_radial_stock_mm": 5.000300000000003
+    },
+    {
+      "part": "11_FrontRetainer",
+      "minimum_radial_stock_mm": 7.799999999999997
+    },
+    {
+      "part": "12_MiddleCellRetainer",
+      "minimum_radial_stock_mm": 9.599999999999994
+    },
+    {
+      "part": "13_RearRetainer",
+      "minimum_radial_stock_mm": 9.799999999999997
+    }
+  ],
+  "adjacent_glass_checks": [
+    {
+      "groups": [
+        1,
+        2
+      ],
+      "minimum_axial_gap_mm": 0.7800000000000011
+    },
+    {
+      "groups": [
+        2,
+        3
+      ],
+      "minimum_axial_gap_mm": 0.5776224848558229
+    },
+    {
+      "groups": [
+        3,
+        4
+      ],
+      "minimum_axial_gap_mm": 0.984666845141632
+    },
+    {
+      "groups": [
+        4,
+        5
+      ],
+      "minimum_axial_gap_mm": 0.4099999999999966
+    },
+    {
+      "groups": [
+        5,
+        6
+      ],
+      "minimum_axial_gap_mm": 5.393186282328131
+    },
+    {
+      "groups": [
+        6,
+        7
+      ],
+      "minimum_axial_gap_mm": 10.400000000000006
+    },
+    {
+      "groups": [
+        7,
+        8
+      ],
+      "minimum_axial_gap_mm": 18.609999999999985
+    },
+    {
+      "groups": [
+        8,
+        9
+      ],
+      "minimum_axial_gap_mm": 0.34023116434633494
+    },
+    {
+      "groups": [
+        9,
+        10
+      ],
+      "minimum_axial_gap_mm": 0.4099999999999966
+    }
+  ],
+  "empty_housing_swept_radius_checks": 9947,
+  "installed_stack_order_samples": 7928,
+  "external_barrels": 3,
+  "internal_cells": 3,
+  "standalone_spacers": 4,
+  "radial_native_holes": 15,
+  "retainers": 3,
+  "cap_thickness_mm": 6,
+  "integral_stop_land_length_mm": 1.5,
+  "front_spacer_normal_wall_mm": 3.2717766363274685,
+  "source_step_alignment": [
+    {
+      "name": "surfaces 1,2",
+      "step_vertex_z_mm": -386.074,
+      "zemax_vertex_z_mm": 0.0,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 3,4",
+      "step_vertex_z_mm": -368.684,
+      "zemax_vertex_z_mm": 17.39,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 5,6",
+      "step_vertex_z_mm": -339.574,
+      "zemax_vertex_z_mm": 46.5,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 7,8",
+      "step_vertex_z_mm": -319.784,
+      "zemax_vertex_z_mm": 66.29,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 9,10",
+      "step_vertex_z_mm": -291.664,
+      "zemax_vertex_z_mm": 94.41,
+      "delta_mm": -386.07399999999996
+    },
+    {
+      "name": "surfaces 11,12",
+      "step_vertex_z_mm": -278.804,
+      "zemax_vertex_z_mm": 107.27,
+      "delta_mm": -386.07399999999996
+    },
+    {
+      "name": "surfaces 14,15",
+      "step_vertex_z_mm": -239.014,
+      "zemax_vertex_z_mm": 147.06,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 16,17",
+      "step_vertex_z_mm": -204.564,
+      "zemax_vertex_z_mm": 181.51,
+      "delta_mm": -386.07399999999996
+    },
+    {
+      "name": "surfaces 17,18",
+      "step_vertex_z_mm": -195.054,
+      "zemax_vertex_z_mm": 191.01999999999998,
+      "delta_mm": -386.07399999999996
+    },
+    {
+      "name": "surfaces 19,20",
+      "step_vertex_z_mm": -186.324,
+      "zemax_vertex_z_mm": 199.75,
+      "delta_mm": -386.074
+    },
+    {
+      "name": "surfaces 21,22",
+      "step_vertex_z_mm": -172.444,
+      "zemax_vertex_z_mm": 213.63,
+      "delta_mm": -386.07399999999996
+    }
+  ],
+  "source_step_surface_check": [
+    {
+      "surface": 1,
+      "analytic_STEP_radius_mm": 346.939,
+      "radius_error_mm": 2.717115421546623e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 9.343636975245317e-13
+    },
+    {
+      "surface": 2,
+      "analytic_STEP_radius_mm": 1632.653,
+      "radius_error_mm": 1.3096723705530167e-10,
+      "vertex_error_mm": 9.947598300641403e-14,
+      "max_sag_error_mm": 3.943512183468556e-13
+    },
+    {
+      "surface": 3,
+      "analytic_STEP_radius_mm": 193.878,
+      "radius_error_mm": 1.6143530956469476e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.1155520951433573e-12
+    },
+    {
+      "surface": 4,
+      "analytic_STEP_radius_mm": 60.943,
+      "radius_error_mm": 3.424815986363683e-12,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.1316282072803006e-12
+    },
+    {
+      "surface": 5,
+      "analytic_STEP_radius_mm": 120.408,
+      "radius_error_mm": 2.3163693185779266e-12,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.9895196601282805e-13
+    },
+    {
+      "surface": 6,
+      "analytic_STEP_radius_mm": 60.31,
+      "radius_error_mm": 7.247535904753022e-13,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.8421709430404007e-13
+    },
+    {
+      "surface": 7,
+      "analytic_STEP_radius_mm": 239.559,
+      "radius_error_mm": 1.3784529073745944e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.9895196601282805e-13
+    },
+    {
+      "surface": 8,
+      "analytic_STEP_radius_mm": 2487.845,
+      "radius_error_mm": 1.6507328837178648e-10,
+      "vertex_error_mm": 4.121147867408581e-13,
+      "max_sag_error_mm": 6.821210263296962e-13
+    },
+    {
+      "surface": 9,
+      "analytic_STEP_radius_mm": 152.959,
+      "radius_error_mm": 2.1316282072803006e-12,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 9.947598300641403e-14
+    },
+    {
+      "surface": 10,
+      "analytic_STEP_radius_mm": 91.073,
+      "radius_error_mm": 1.4452439245360438e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.0747847884194925e-12
+    },
+    {
+      "surface": 11,
+      "analytic_STEP_radius_mm": 121.633,
+      "radius_error_mm": 3.595346242946107e-12,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.7000623958883807e-13
+    },
+    {
+      "surface": 12,
+      "analytic_STEP_radius_mm": 906.759,
+      "radius_error_mm": 8.526512829121202e-12,
+      "vertex_error_mm": 1.4210854715202004e-14,
+      "max_sag_error_mm": 1.4210854715202004e-13
+    },
+    {
+      "surface": 14,
+      "analytic_STEP_radius_mm": 1791.461,
+      "radius_error_mm": 8.185452315956354e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.8421709430404007e-13
+    },
+    {
+      "surface": 15,
+      "analytic_STEP_radius_mm": 90.808,
+      "radius_error_mm": 3.097966327914037e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 5.229594535194337e-12
+    },
+    {
+      "surface": 16,
+      "analytic_STEP_radius_mm": 112.057,
+      "radius_error_mm": 9.521272659185342e-13,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.1368683772161603e-13
+    },
+    {
+      "surface": 17,
+      "analytic_STEP_radius_mm": 91.073,
+      "radius_error_mm": 1.4452439245360438e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.8758328224066645e-12
+    },
+    {
+      "surface": 17,
+      "analytic_STEP_radius_mm": 91.073,
+      "radius_error_mm": 1.4452439245360438e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.8758328224066645e-12
+    },
+    {
+      "surface": 18,
+      "analytic_STEP_radius_mm": 220.816,
+      "radius_error_mm": 1.2249756764504127e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.5579538487363607e-13
+    },
+    {
+      "surface": 19,
+      "analytic_STEP_radius_mm": 676.045,
+      "radius_error_mm": 1.5734258340671659e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 3.979039320256561e-13
+    },
+    {
+      "surface": 20,
+      "analytic_STEP_radius_mm": 87.347,
+      "radius_error_mm": 1.1979750524915289e-11,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 2.1316282072803006e-12
+    },
+    {
+      "surface": 21,
+      "analytic_STEP_radius_mm": 808.163,
+      "radius_error_mm": 2.7478108677314594e-10,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 6.821210263296962e-13
+    },
+    {
+      "surface": 22,
+      "analytic_STEP_radius_mm": 190.857,
+      "radius_error_mm": 3.922195901395753e-12,
+      "vertex_error_mm": 0.0,
+      "max_sag_error_mm": 1.9895196601282805e-13
+    }
+  ],
+  "solidworks_runtime": "pending",
+  "stress_analysis": "not performed",
+  "frame_enclosure_samples": 2400,
+  "all_previous_stack_samples": 3164,
+  "macro_static_checks": "passed",
+  "native_detail_api": "Reused prior user-run hole and slot helper; new CAD execution pending",
+  "barrel_wall_distance_check": [
+    {
+      "part": "01_FrontBarrel",
+      "minimum_meridional_wall_mm": 8.980000000000004,
+      "previous_version_mm": 1.980000000000004
+    },
+    {
+      "part": "02_MiddleBarrel",
+      "minimum_meridional_wall_mm": 8.100000000000001,
+      "previous_version_mm": 8.099999999999994
+    },
+    {
+      "part": "03_RearBarrel",
+      "minimum_meridional_wall_mm": 8.471139238614844,
+      "previous_version_mm": 1.7999999999999972
+    }
+  ],
+  "wall_check_scope": "Distance between uncut outer/inner meridional chains, including axial and diagonal step roots; excludes local drilled holes and is not stress analysis.",
+  "pilot_radial_clearance_mm": 0.02
+}

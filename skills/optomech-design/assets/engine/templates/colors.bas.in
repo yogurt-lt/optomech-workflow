@@ -1,0 +1,29 @@
+' Shared palette. Returns a Variant containing a SAFEARRAY of Double.
+Private Function ConceptPalette(ByVal label As String) As Variant
+    Dim values(8) As Double, key As String
+    key = LCase$(label)
+    values(3) = 0.3: values(4) = 0.75: values(5) = 0.25: values(6) = 0.2
+    If InStr(key, "lens") > 0 Then
+        ' Lens: blue, 45 percent transparent.
+        values(0) = 0.25: values(1) = 0.65: values(2) = 0.95: values(7) = 0.45
+    ElseIf InStr(key, "retainer") > 0 Then
+        ' Retainer: warm orange.
+        values(0) = 0.95: values(1) = 0.55: values(2) = 0.20
+    ElseIf InStr(key, "spacer") > 0 Then
+        ' Spacer: green.
+        values(0) = 0.35: values(1) = 0.72: values(2) = 0.45
+    ElseIf InStr(key, "barrel") > 0 Then
+        ' Barrel: dark slate gray.
+        values(0) = 0.28: values(1) = 0.34: values(2) = 0.42
+    ElseIf InStr(key, "adapter") > 0 Then
+        ' Seat adapter: violet.
+        values(0) = 0.65: values(1) = 0.48: values(2) = 0.82
+    Else
+        values(0) = 0.65: values(1) = 0.68: values(2) = 0.72
+    End If
+    ConceptPalette = values
+End Function
+
+Private Sub ApplyComponentColor(ByVal component As SldWorks.Component2, ByVal label As String)
+    component.MaterialPropertyValues = ConceptPalette(label)
+End Sub

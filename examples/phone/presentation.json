@@ -1,0 +1,23 @@
+{
+  "title": "手机镜头 · 6P",
+  "summary": "三个孔径台阶 + 矩形隔圈",
+  "intro": "先确定三个主要孔径台阶，再局部延展镜片机械外缘，避免每片都增加同样大的法兰或微型螺纹。",
+  "full_macro": "OptomechPhoneThree_v30.bas",
+  "mechanics_macro": "OptomechPhoneThreeHousing_v30.bas",
+  "stages": [
+    [
+      "从像侧依次装入",
+      "L1 → 隔圈 → L2 → 隔圈 → L3 → 隔圈 → L4 → L5 → L6。"
+    ],
+    [
+      "锁定尾环",
+      "在工装中保持各接触面贴合，再将尾环与镜筒局部胶接固化。"
+    ]
+  ],
+  "fixing": "前三处采用简单矩形隔圈；L4/L5 外缘形成相邻接触环带。尾环的胶连接镜筒，未把胶直接施加到每片玻璃上。",
+  "load_path": "尾环 → 镜片及隔圈堆栈 → 前端沉靠 → 镜筒。",
+  "note": "L1/L3/L4/L5 使用新机械外缘；原光学体保留。滤片只预留空间，未生成；注塑脱模、胶层与应力待细化。",
+  "status": "用户已在 SolidWorks 2023 运行检查通过",
+  "section": "section.png",
+  "design": "DESIGN.md"
+}

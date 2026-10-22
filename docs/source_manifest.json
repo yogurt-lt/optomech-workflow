@@ -1,0 +1,13 @@
+{
+  "examples/film-projection/source.STP": "a844d76af8ff5625b2f813e5b0d554d78fb94a8469c9850fcd3fda3a15f36359",
+  "examples/fixed-projection/source.STP": "d5791577014b30f11684ea7074e880960b34e41cb1124800011e73a41661ae62",
+  "examples/fixed-projection/source.zmx": "a2e89ea2c69092c445660676da4ef4c8baffb3440000939582f665396edc814f",
+  "examples/micro-objective/source.STP": "6bfbe1fe7c0243a05e2ae42dfc9ad998a726540a4b2fc75bbadb4d152f1ff8ee",
+  "examples/micro-objective/source.zmx": "c74d9277420bc9365aec71cfcd78a189ae2e3d47eb32723c73f3f563fa29318d",
+  "examples/phone/source.STP": "a1525b552441b3d26be2749a7a6465cc13fb418dd7802b19faa62cd6ebf0af33",
+  "examples/phone/source.zmx": "9d36e4144f9f29cd59dad02c95c501a5d0b31cf33eed87a4480681a960216719",
+  "examples/slr/source.STP": "34065d42a57d34639da387790ee4de54d305aa96b6528a1fb21ed0354e779cb5",
+  "examples/slr/source.zmx": "629a49d468869a5e87868285639cc1a9890ad55529b706e4d4ad5f0393b78b87",
+  "examples/wide-angle/source.STP": "90bc630f93ece2df72370ad2ddbe86651ccead18727fcfd3d594f78b16ee46da",
+  "examples/wide-angle/source.zmx": "72db1bc8989bb543ce589c447129b1a45f869fccb4c0a75185f8e4ef45904d29"
+}

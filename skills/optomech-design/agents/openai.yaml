@@ -1,4 +1,4 @@
 interface:
   display_name: "Optomech Design / 光机结构设计"
-  short_description: "Plan lens assemblies and editable SolidWorks concepts"
-  default_prompt: "Use $optomech-design to inspect my Zemax/STEP optics, explain a manufacturable assembly scheme, and generate a reviewed editable mechanical concept."
+  short_description: "Plan lens assemblies and editable CAD concepts"
+  default_prompt: "Use $optomech-design to inspect my Zemax/STEP optics, identify the target CAD, explain the assembly scheme, and generate a reviewed editable mechanical concept."

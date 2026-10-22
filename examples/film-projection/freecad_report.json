@@ -1,0 +1,208 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "document": "FreeCAD_Model.FCStd",
+  "mechanical_bodies": 7,
+  "reference_glass_bodies": 5,
+  "native_save_reopen": "passed",
+  "solid_validity": "passed",
+  "native_editable_history": "passed",
+  "mechanical_profile_parity": "identical to accepted SW plan",
+  "source_origin_z_mm": -1017.479856504,
+  "barrel_zmin_mm": -1019.6798565040003,
+  "barrel_zmax_mm": -999.1798565040001,
+  "common_volume_checks": [
+    {
+      "a": "01_MainBarrel",
+      "b": "02_L1_SeatAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "03_L1_Retainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "04_Spacer_L2_L3",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "05_Spacer_L3_L4",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "06_Spacer_L4_L5",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "07_MainRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "Lens3_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_MainBarrel",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_SeatAdapter",
+      "b": "03_L1_Retainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_SeatAdapter",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_SeatAdapter",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 4.48465822513272e-05
+    },
+    {
+      "a": "03_L1_Retainer",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_Spacer_L2_L3",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 4.508625676827912e-08
+    },
+    {
+      "a": "04_Spacer_L2_L3",
+      "b": "Lens3_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_Spacer_L3_L4",
+      "b": "Lens3_Optical_Reference",
+      "intersection_volume_mm3": 4.162057023636434e-05
+    },
+    {
+      "a": "05_Spacer_L3_L4",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_Spacer_L4_L5",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    }
+  ],
+  "reference_contact_reviews": [
+    {
+      "a": "02_L1_SeatAdapter",
+      "b": "Lens2_Optical_Reference",
+      "volume_mm3": 4.48465822513272e-05
+    },
+    {
+      "a": "05_Spacer_L3_L4",
+      "b": "Lens3_Optical_Reference",
+      "volume_mm3": 4.162057023636434e-05
+    }
+  ],
+  "bench_preassembly": [
+    "Lens1_Optical_Reference",
+    "03_L1_Retainer"
+  ],
+  "insertion_paths": [
+    {
+      "components": [
+        "Lens5_Optical_Reference"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "06_Spacer_L4_L5"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "Lens4_Optical_Reference"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "05_Spacer_L3_L4"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "Lens3_Optical_Reference"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "04_Spacer_L2_L3"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "Lens2_Optical_Reference"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "02_L1_SeatAdapter",
+        "Lens1_Optical_Reference",
+        "03_L1_Retainer"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "components": [
+        "07_MainRetainer"
+      ],
+      "sampling_mm": "0.25 from -25..0, plus near-seat positions",
+      "result": "passed"
+    }
+  ],
+  "notes": [
+    "No special cuts omitted: original SolidWorks design does not include wrench slots or actual thread teeth.",
+    "Reference glass profiles are sampled and simplified, not exact optical prescriptions.",
+    "Original exported-ray clipping findings remain unchanged."
+  ],
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

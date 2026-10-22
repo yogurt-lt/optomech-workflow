@@ -1,0 +1,208 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "document": "FreeCAD_Model.FCStd",
+  "bodies": 19,
+  "mechanical_bodies": 9,
+  "reference_glass_bodies": 10,
+  "radial_glue_holes": 6,
+  "front_open_glue_windows": 3,
+  "wrench_slots": 6,
+  "native_save_reopen": "passed",
+  "native_common_volume_checks": [
+    {
+      "a": "01_CommonBarrel",
+      "b": "02_L1_BondedCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "03_L2_BondedCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "04_L3_BondedCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "05_G4G5_Retainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "06_Spacer_G4_G5",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "07_RearSpacer_1",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "08_RearSpacer_2",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "09_RearRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens7_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens9_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_CommonBarrel",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_BondedCell",
+      "b": "03_L2_BondedCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_BondedCell",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_L1_BondedCell",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_L2_BondedCell",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_L2_BondedCell",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_L3_BondedCell",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G4G5_Retainer",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_Spacer_G4_G5",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_Spacer_G4_G5",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "07_RearSpacer_1",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "07_RearSpacer_1",
+      "b": "Lens9_Optical_Reference",
+      "intersection_volume_mm3": 0.010903457560193341
+    },
+    {
+      "a": "08_RearSpacer_2",
+      "b": "Lens9_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "08_RearSpacer_2",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "09_RearRetainer",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    }
+  ],
+  "new_parts_interference": "passed",
+  "inherited_contact_review": [
+    {
+      "a": "07_RearSpacer_1",
+      "b": "Lens9_Optical_Reference",
+      "volume_mm3": 0.010903457560193341
+    }
+  ],
+  "front_insertion_paths": [
+    {
+      "lens": 3,
+      "lens_into_cell": "passed",
+      "cell_into_barrel": "passed",
+      "sampling_mm": "0.5 from -40..0; plus -0.01,-0.05,-0.1"
+    },
+    {
+      "lens": 2,
+      "lens_into_cell": "passed",
+      "cell_into_barrel": "passed",
+      "sampling_mm": "0.5 from -40..0; plus -0.01,-0.05,-0.1"
+    },
+    {
+      "lens": 1,
+      "lens_into_cell": "passed",
+      "cell_into_barrel": "passed",
+      "sampling_mm": "0.5 from -40..0; plus -0.01,-0.05,-0.1"
+    }
+  ],
+  "glue_window_edit_recompute": "passed",
+  "note": "Nominal thread envelopes, no adhesive solid or cure model. Translation paths sampled; threads and tools not simulated. Small inherited rear contact overlap remains recorded.",
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

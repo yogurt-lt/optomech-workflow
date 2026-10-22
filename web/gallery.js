@@ -3,7 +3,7 @@
   const $=id=>document.getElementById(id);
   let demos={},plan=null,key=null;
   const english=()=>window.i18n.language==='en';
-  function meta(){const p=demos[key];return p?(english()?{...p,...p.en,status:'User-run and reviewed in SolidWorks 2023',section:'section.en.svg',design:'DESIGN.en.md'}:p):null}
+  function meta(){const p=demos[key];return p?(english()?{...p,...p.en,section:'section.en.svg',design:'DESIGN.en.md'}:p):null}
   async function json(path){const r=await fetch(path);if(!r.ok)throw new Error(`${r.status}: ${path}`);return r.json()}
   function render(){
     if(!plan)return;const m=meta();
@@ -11,7 +11,7 @@
     $('caseTitle').textContent=m.title;$('methodTag').textContent=m.summary;$('storyIntro').textContent=m.intro;
     $('fixing').textContent=m.fixing;$('loadPath').textContent=m.load_path;$('storyNote').textContent=m.note;
     $('stageList').replaceChildren(...m.stages.map(([title,body],i)=>{const card=document.createElement('div'),h=document.createElement('h3'),p=document.createElement('p');card.className='stage';h.textContent=`${String(i+1).padStart(2,'0')} / ${title}`;p.textContent=body;card.append(h,p);return card}));
-    for(const [id,file] of [['fullMacro',m.full_macro],['mechMacro',m.mechanics_macro],['designLink',m.design]])$(id).href=`examples/${key}/${file}`;
+    for(const [id,file] of [['fullMacro',m.full_macro],['mechMacro',m.mechanics_macro],['designLink',m.design],['freecadMacro',m.freecad_macro],['freecadModel',m.freecad_model],['freecadGuide',english()?'FREECAD.en.md':'FREECAD.md']])$(id).href=`examples/${key}/${file}`;
     const image=`examples/${key}/${m.section}`;$('sectionImage').src=image;$('sectionImage').alt=m.title+(english()?' reviewed section drawing':'已检查结构截面图');$('imageLink').href=image;$('imageDownload').href=image;
     $('imageStats').textContent=english()?`${plan.lenses?.length||0} glass solids / ${plan.parts.length} mechanical parts`:`${plan.lenses?.length||0} 个玻璃实体 / ${plan.parts.length} 个机械件`;
     $('skillGuide').href=english()?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';

@@ -1,0 +1,21 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "bodies": 18,
+  "glass": 10,
+  "native_save_reopen": "passed",
+  "geometry_validity": "passed",
+  "visibility": "passed",
+  "document": "FreeCAD_Model.FCStd",
+  "native_pockets": 9,
+  "radial_holes": 6,
+  "wrench_slots": 6,
+  "aligned_hole_probes": "passed",
+  "opposite_wall_intact": "passed",
+  "slot_depth_probes": "passed",
+  "diameter_edit_recompute": "passed",
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

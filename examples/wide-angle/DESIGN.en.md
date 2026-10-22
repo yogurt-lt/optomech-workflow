@@ -1,6 +1,6 @@
 # Wide-angle lens · two barrels
 
-User-run and reviewed in SolidWorks 2023.
+User-run and reviewed in SolidWorks 2023 / FreeCAD.
 
 G1–G3 load from the object side of the front barrel. G4–G7 load from opposite ends of the rear barrel around its integral stop. No additional optical cells or local lens bonding are needed in this demo.
 

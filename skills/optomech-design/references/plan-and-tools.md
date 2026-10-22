@@ -1,11 +1,12 @@
 # Plan and standalone tools
 
-Python 3.10+ and the standard library are sufficient. Resolve paths relative to this skill directory; no installed repository, network service or CAD license is needed for these numerical checks. SolidWorks is required to execute the generated macro.
+Python 3.10+ and the standard library are sufficient. Resolve paths relative to this skill directory; no installed repository, network service or CAD license is needed for these numerical checks. Execute generated macros inside the chosen CAD application: SolidWorks or FreeCAD.
 
 ```sh
 python scripts/workflow.py analyze --step lens.STP --zmx lens.zmx
 python scripts/workflow.py check design_plan.json --report checks.json
 python scripts/workflow.py macro design_plan.json --output Optomech_Concept.bas --include-glass
+python scripts/workflow.py macro design_plan.json --cad freecad --output Optomech.FCMacro --include-glass
 ```
 
 `analyze` accepts the demonstrated surface-numbered STEP export and optional sequential Zemax text. It identifies group candidates, not actual trimmed surfaces or a manufacturing plan. `check` adds inner/outer meridional chain distances when each mechanical part records `outer_chain_vertex_count`. This detects counterbore and pilot roots, but a ring's axial thickness and local holes/slots need separate checks. It also uses the engine's overlap samples. Loading and preload paths still require explicit design/checking; the tool does not infer them from prose.
@@ -35,3 +36,5 @@ Profiles are finite `[Z_mm, radius_mm]` points around a closed, simple positive-
 Use `reference_lens_ids` to explicitly include optical reference bodies. `blank_revisions` records new rim geometry by lens ID and reason; it is not itself a geometry modifier. Describe STOP and cemented groups separately. Do not derive the exact optical geometry by extending arbitrary untrimmed STEP surfaces or by bounding boxes.
 
 `macro` preserves explicit part colors. It emits the native revolved baseline and the generator's supported glue-port option. It reports per-case extra cut metadata that it does **not** implement; do not claim those features exist until added and checked in the VBA/CAD output. The emitted macro is ASCII, saves beside the `.swp` under a new timestamped folder, and should be run from its `main` entrypoint.
+
+The default backend remains `--cad solidworks`. `--cad freecad` generates a UTF-8 `.FCMacro` and a capability report; it does not read or translate `.bas` code. FreeCAD uses millimeter native sketches, asks for an output directory, and saves a native `.FCStd` coordinate assembly. Explicit radial holes, radial windows and dimensioned wrench slots are supported in FreeCAD. Incomplete/unsupported cut data blocks export unless an explicitly accepted baseline uses `--allow-base-only`. See [FreeCAD details](freecad.md).

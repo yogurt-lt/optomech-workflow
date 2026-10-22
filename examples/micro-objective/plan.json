@@ -39,7 +39,12 @@
           8.0
         ]
       ],
-      "role": "Uniform pilot bore; rear shoulder; open nose loading; M19x0.5 nose retainer envelope"
+      "role": "Uniform pilot bore; rear shoulder; open nose loading; M19x0.5 nose retainer envelope",
+      "color_rgb": [
+        0.28,
+        0.34,
+        0.42
+      ]
     },
     {
       "name": "02_G1_CellAdapter",
@@ -82,7 +87,12 @@
         ]
       ],
       "role": "G1 independent seated/bonded cell; three local glue beads from exposed assembly mouth; metal end faces carry stack preload",
-      "group_id": 1
+      "group_id": 1,
+      "color_rgb": [
+        0.65,
+        0.48,
+        0.82
+      ]
     },
     {
       "name": "03_G2_CellAdapter",
@@ -125,7 +135,12 @@
         ]
       ],
       "role": "G2 independent seated/bonded cell; three local glue beads from exposed assembly mouth; metal end faces carry stack preload",
-      "group_id": 2
+      "group_id": 2,
+      "color_rgb": [
+        0.65,
+        0.48,
+        0.82
+      ]
     },
     {
       "name": "04_G3_CellAdapter",
@@ -168,7 +183,12 @@
         ]
       ],
       "role": "G3 independent seated/bonded cell; three local glue beads from exposed assembly mouth; metal end faces carry stack preload",
-      "group_id": 3
+      "group_id": 3,
+      "color_rgb": [
+        0.65,
+        0.48,
+        0.82
+      ]
     },
     {
       "name": "05_G4_CellAdapter",
@@ -211,7 +231,12 @@
         ]
       ],
       "role": "G4 independent seated/bonded cell; three local glue beads from exposed assembly mouth; metal end faces carry stack preload",
-      "group_id": 4
+      "group_id": 4,
+      "color_rgb": [
+        0.65,
+        0.48,
+        0.82
+      ]
     },
     {
       "name": "06_G5_CellAdapter",
@@ -254,7 +279,12 @@
         ]
       ],
       "role": "G5 independent seated/bonded cell; three local glue beads from exposed assembly mouth; metal end faces carry stack preload",
-      "group_id": 5
+      "group_id": 5,
+      "color_rgb": [
+        0.65,
+        0.48,
+        0.82
+      ]
     },
     {
       "name": "07_NoseRetainer",
@@ -276,7 +306,18 @@
           7.9
         ]
       ],
-      "role": "M19x0.5 nominal thread envelope; clamps cell end faces, not glass; wrench slots added in native CAD"
+      "role": "M19x0.5 nominal thread envelope; clamps cell end faces, not glass; wrench slots added in native CAD",
+      "color_rgb": [
+        0.95,
+        0.55,
+        0.2
+      ],
+      "cap_slot": "rear",
+      "wrench_slots": {
+        "width_mm": 1.2,
+        "radial_depth_mm": 1.2600000000000016,
+        "axial_depth_mm": 0.7
+      }
     }
   ],
   "lenses": [

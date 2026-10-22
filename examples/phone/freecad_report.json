@@ -1,0 +1,173 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "document": "FreeCAD_Model.FCStd",
+  "mechanical_bodies": 5,
+  "reference_glass_bodies": 6,
+  "bore_stages": 3,
+  "native_save_reopen": "passed",
+  "solid_validity": "passed",
+  "native_editable_history": "passed",
+  "mechanical_profiles": "identical to accepted SW phone three-stage design",
+  "source_origin_z_mm": -0.747142607111703,
+  "common_volume_checks": [
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "02_Spacer_L1_L2",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "03_Spacer_L2_L3",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "04_Spacer_L3_L4",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "05_BondedRearRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens1_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens4_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens5_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_SteppedPhoneBarrel",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_Spacer_L1_L2",
+      "b": "Lens1_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_Spacer_L1_L2",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_Spacer_L2_L3",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_Spacer_L3_L4",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_BondedRearRetainer",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    }
+  ],
+  "reference_contact_reviews": [],
+  "rear_insertion_paths": [
+    {
+      "component": "Lens1_RevisedBlank_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "02_Spacer_L1_L2",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "Lens2_Optical_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "03_Spacer_L2_L3",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "Lens3_RevisedBlank_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "04_Spacer_L3_L4",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "Lens4_RevisedBlank_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "Lens5_RevisedBlank_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "Lens6_Optical_Reference",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    },
+    {
+      "component": "05_BondedRearRetainer",
+      "approach": "from +Z image side toward -Z",
+      "sampling_mm": "0.05 from +6..0 plus +0.001,+0.005,+0.01",
+      "max_intersection_mm3": 0.0,
+      "result": "passed"
+    }
+  ],
+  "notes": [
+    "No physical threads, radial adhesive ports or tool slots in this source design; none omitted.",
+    "Bonded tail ring joins the barrel; adhesive solid and cure process not modeled.",
+    "Accepted peripheral lens revisions retained; original input files unchanged.",
+    "Optical clipping, molding draft, gates and production tolerances not verified."
+  ],
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

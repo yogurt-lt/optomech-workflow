@@ -1,6 +1,6 @@
 # SLR lens · three barrels v5
 
-User-run and reviewed in SolidWorks 2023.
+User-run and reviewed in SolidWorks 2023 / FreeCAD.
 
 Three structural barrels enclose the optical components. Front and rear stacks use substantial spacers. Two preassembled cells remain in the middle barrel, with one thin G8 cell in the rear.
 

@@ -5,6 +5,7 @@ SKILL=Path(__file__).resolve().parents[1];sys.path.insert(0,str(SKILL/'assets/en
 from optomech.__main__ import analyze
 from optomech.geometry import validate_plan
 from optomech.generator import generate_macro
+from optomech.freecad_generator import generate_freecad_macro,capability_report
 
 def distance(p,a,b):
     dx,dy=b[0]-a[0],b[1]-a[1];den=dx*dx+dy*dy
@@ -29,7 +30,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);subs=parser.add_subparsers(dest='command',required=True)
     a=subs.add_parser('analyze');a.add_argument('--step',type=Path,required=True);a.add_argument('--zmx',type=Path)
     a=subs.add_parser('check');a.add_argument('plan',type=Path);a.add_argument('--report',type=Path)
-    a=subs.add_parser('macro');a.add_argument('plan',type=Path);a.add_argument('--output',type=Path,required=True);a.add_argument('--include-glass',action='store_true')
+    a=subs.add_parser('macro');a.add_argument('plan',type=Path);a.add_argument('--output',type=Path,required=True);a.add_argument('--include-glass',action='store_true');a.add_argument('--cad',choices=['solidworks','freecad'],default='solidworks');a.add_argument('--allow-base-only',action='store_true');a.add_argument('--report',type=Path)
     args=parser.parse_args()
     if args.command=='analyze':
         result=analyze(args.step.read_text(encoding='utf-8'),args.zmx.read_bytes() if args.zmx else None)
@@ -37,13 +38,24 @@ def main():
         plan=json.loads(args.plan.read_text(encoding='utf-8-sig'));result=check(plan)
         if args.command=='macro':
             if result['errors']:print(json.dumps(result,indent=2));return 1
+            if args.cad=='freecad':
+                result['capabilities']=capability_report(plan,args.include_glass)
+                if result['capabilities']['extra_features_not_implemented'] and not args.allow_base_only:
+                    result['errors'].append('Some declared cuts lack supported data. Review capabilities; use --allow-base-only only if the listed omissions are acceptable.')
+                    print(json.dumps(result,indent=2));return 1
+                text,capabilities=generate_freecad_macro(plan,args.include_glass,args.allow_base_only)
+                args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text,encoding='utf-8')
+                result['macro']=str(args.output)
+                report=args.report or args.output.with_suffix('.capabilities.json')
+                report.parent.mkdir(parents=True,exist_ok=True);report.write_text(json.dumps(result,indent=2),encoding='utf-8')
+                print(json.dumps(result,indent=2));return 0
             text=generate_macro(plan,'Optomech_Concept',include_blanks=args.include_glass)
             palette=[]
             for p in plan['parts']:
                 if 'color_rgb' not in p:continue
                 r,g,b=p['color_rgb'];palette.append(f'    If InStr(key, "{p["name"].lower()}") > 0 Then\n        values(0) = {r}: values(1) = {g}: values(2) = {b}\n        ConceptPalette = values\n        Exit Function\n    End If')
             text=text.replace('    If InStr(key, "lens") > 0 Then','\n'.join(palette)+'\n    If InStr(key, "lens") > 0 Then')
-            if plan.get('radial_features') or any(p.get('cap_slot') for p in plan['parts']):result['warnings'].append('Extra radial_features/cap_slot metadata requires dedicated VBA cuts; the baseline generator does not implement it.')
+            if plan.get('radial_features') or any(p.get('cap_slot') or p.get('radial_windows') for p in plan['parts']):result['warnings'].append('Extra radial_features/cap_slot/radial_windows metadata requires dedicated VBA cuts; the general SolidWorks baseline generator does not implement it. Use the reviewed case macro for complete details.')
             args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_bytes(text.replace('\r\n','\n').replace('\n','\r\n').encode('ascii'));result['macro']=str(args.output)
         elif args.report:
             args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(result,indent=2),encoding='utf-8')

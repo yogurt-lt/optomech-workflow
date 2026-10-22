@@ -1,6 +1,6 @@
 # Film projection · Film
 
-User-run and reviewed in SolidWorks 2023.
+User-run and reviewed in SolidWorks 2023 / FreeCAD.
 
 L2 is the largest lens. The stack loads through one opening; the smaller L1 is first secured in an independent adapter.
 

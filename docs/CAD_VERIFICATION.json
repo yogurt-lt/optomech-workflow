@@ -1,0 +1,85 @@
+{
+  "version": "0.7.0",
+  "date": "2026-10-22",
+  "cases": {
+    "fixed-projection": {
+      "mechanical_parts": 9,
+      "glass_references": 10,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/fixed-projection/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": 0.0
+    },
+    "film-projection": {
+      "mechanical_parts": 7,
+      "glass_references": 5,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/film-projection/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": -1017.479856504
+    },
+    "micro-objective": {
+      "mechanical_parts": 7,
+      "glass_references": 10,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/micro-objective/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": 0.0
+    },
+    "phone": {
+      "mechanical_parts": 5,
+      "glass_references": 6,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/phone/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": -0.747142607111703
+    },
+    "slr": {
+      "mechanical_parts": 13,
+      "glass_references": 11,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/slr/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": -386.074
+    },
+    "wide-angle": {
+      "mechanical_parts": 8,
+      "glass_references": 10,
+      "freecad_version": [
+        "1",
+        "1",
+        "4"
+      ],
+      "native_checks": "examples/wide-angle/freecad_report.json",
+      "solidworks": "user confirmed",
+      "freecad": "user confirmed",
+      "source_origin_z_mm": 0.0
+    }
+  },
+  "scope": "User confirmations and native geometry checks are separate from production qualification."
+}

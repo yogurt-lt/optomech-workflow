@@ -3,7 +3,7 @@ import sys,json,math
 root=Path(__file__).resolve().parents[1];repo=root;sys.path.insert(0,str(repo))
 from optomech.prescription import parse_zmx,face,optical_groups,step_metadata
 from optomech.geometry import validate_plan,radial_ranges
-out=root/'examples'/'fixed-projection';out.mkdir(exist_ok=True)
+out=root/'generated'/'legacy-fixed-projection';out.mkdir(parents=True,exist_ok=True)
 s=parse_zmx((root/'examples'/'fixed-projection'/'source.zmx').read_bytes());offset=-s[2]['z_mm']
 groups=optical_groups(s,step_metadata((root/'examples'/'fixed-projection'/'source.STP').read_text())['surface_pairs'])
 def f(n,r):return face(s[n],r)+offset

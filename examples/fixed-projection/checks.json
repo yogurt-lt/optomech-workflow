@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "warnings": [
+    "Sampled meridional checks only; CAD interference, fits and contact stress require review.",
+    "No embedded rays for rechecking edited profiles. Existing ray reports apply only to the supplied baseline."
+  ]
+}

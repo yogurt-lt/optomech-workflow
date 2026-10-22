@@ -502,7 +502,12 @@
         0.32,
         0.35
       ],
-      "cap_slot": "front"
+      "cap_slot": "front",
+      "wrench_slots": {
+        "width_mm": 4.0,
+        "radial_depth_mm": 4.0,
+        "axial_depth_mm": 3.0
+      }
     },
     {
       "name": "12_MiddleCellRetainer",
@@ -530,7 +535,12 @@
         0.32,
         0.35
       ],
-      "cap_slot": "front"
+      "cap_slot": "front",
+      "wrench_slots": {
+        "width_mm": 4.0,
+        "radial_depth_mm": 4.0,
+        "axial_depth_mm": 3.0
+      }
     },
     {
       "name": "13_RearRetainer",
@@ -558,7 +568,12 @@
         0.32,
         0.35
       ],
-      "cap_slot": "rear"
+      "cap_slot": "rear",
+      "wrench_slots": {
+        "width_mm": 4.0,
+        "radial_depth_mm": 4.0,
+        "axial_depth_mm": 3.0
+      }
     }
   ],
   "lenses": [
@@ -142273,7 +142288,12 @@
         70.0
       ],
       "diameter_mm": 4.5,
-      "kind": "Front socket M4 clearance"
+      "kind": "Front socket M4 clearance",
+      "angles_degrees": [
+        90,
+        210,
+        330
+      ]
     },
     {
       "part": "02_MiddleBarrel",
@@ -142282,7 +142302,12 @@
         134.0
       ],
       "diameter_mm": 3.3,
-      "kind": "Housing joint M4 tap drill, before aperture platform"
+      "kind": "Housing joint M4 tap drill, before aperture platform",
+      "angles_degrees": [
+        90,
+        210,
+        330
+      ]
     },
     {
       "part": "03_RearBarrel",
@@ -142290,7 +142315,12 @@
         134.0
       ],
       "diameter_mm": 4.5,
-      "kind": "Rear socket M4 clearance"
+      "kind": "Rear socket M4 clearance",
+      "angles_degrees": [
+        90,
+        210,
+        330
+      ]
     },
     {
       "part": "06_G8_InternalCell",
@@ -142298,7 +142328,12 @@
         185.0
       ],
       "diameter_mm": 3.0,
-      "kind": "Three local G8 bonding access holes"
+      "kind": "Three local G8 bonding access holes",
+      "angles_degrees": [
+        90,
+        210,
+        330
+      ]
     }
   ],
   "stop": {

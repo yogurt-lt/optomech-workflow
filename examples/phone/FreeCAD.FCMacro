@@ -1,0 +1,213 @@
+# -*- coding: utf-8 -*-
+"""Optomech FreeCAD: native editable sketches, revolutions and pockets.
+
+Run in FreeCAD via Macro > Macros > Execute. No SolidWorks VBA is used.
+Unsupported cuts listed in the report, if any, are omitted.
+Set OUTPUT_DIRECTORY for a headless run, otherwise choose a folder in the GUI.
+"""
+import FreeCAD as App
+import Part
+import Sketcher
+import json,math,datetime,traceback
+from pathlib import Path
+
+OUTPUT_DIRECTORY = ""
+PLAN = json.loads('{"title":"Phone6P / three bore stages and rectangular spacers","source_origin_z_mm":-0.747142607111703,"parts":[{"name":"01_SteppedPhoneBarrel","role":"Rear-loaded three bore stages; outer shoulders lead bore steps by0.3; wall0.5; integral stop atZ0","profile_zr_mm":[[-0.3,1.9951494448389],[1.1512112716396659,1.9951494448389],[1.1512112716396659,2.5709498315895525],[2.4094300684730223,2.5709498315895525],[2.4094300684730223,3.0498539769329467],[4.658329448005697,3.0498539769329467],[4.658329448005697,2.5498539769329467],[2.709430068473022,2.5498539769329467],[2.709430068473022,2.0709498315895525],[1.451211271639666,2.0709498315895525],[1.451211271639666,1.4951494448389],[0.2005738737913828,1.4951494448389],[0.2005738737913828,1.3051494448389],[0.0,1.3051494448389],[0.0,1.0],[-0.3,1.0]],"color_rgb":[0.28,0.34,0.42],"is_glass":false,"cuts":[]},{"name":"02_Spacer_L1_L2","role":"Simple rectangular section spacer; common OD per lens pair","profile_zr_mm":[[0.45555122870654235,1.4851494448389],[0.7850162926006401,1.4851494448389],[0.7850162926006401,1.1751494448389],[0.45555122870654235,1.1751494448389]],"color_rgb":[0.35,0.72,0.45],"is_glass":false,"cuts":[]},{"name":"03_Spacer_L2_L3","role":"Simple rectangular section spacer; common OD per lens pair","profile_zr_mm":[[1.2422394010263516,1.4851494448389],[1.451211271639666,1.4851494448389],[1.451211271639666,1.2351494448389],[1.2422394010263516,1.2351494448389]],"color_rgb":[0.35,0.72,0.45],"is_glass":false,"cuts":[]},{"name":"04_Spacer_L3_L4","role":"Simple rectangular section spacer; common OD per lens pair","profile_zr_mm":[[1.8975284211290346,2.0609498315895523],[2.327807413279595,2.0609498315895523],[2.327807413279595,1.7509498315895524],[1.8975284211290346,1.7509498315895524]],"color_rgb":[0.35,0.72,0.45],"is_glass":false,"cuts":[]},{"name":"05_BondedRearRetainer","role":"Original L6 peripheral rear circular contact; local glue to housing; no screw thread","profile_zr_mm":[[4.338329448005697,2.5098539769329467],[4.618329448005698,2.5098539769329467],[4.638329448005697,2.4898539769329466],[4.638329448005697,2.2698539769329464],[4.338329448005697,2.2698539769329464]],"color_rgb":[0.95,0.55,0.2],"is_glass":false,"cuts":[]},{"name":"Lens1_RevisedBlank_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[0.03829207647637905,0.0],[0.040267043130805674,0.09885309717981632],[0.046166843072594284,0.19770619435963263],[0.056123381888839516,0.29835662057908197],[0.07018453334723479,0.4008043758381643],[0.08589099495324609,0.4924681568594485],[0.10496826871118006,0.5877265959599988],[0.12500467095146617,0.67759304794165],[0.16647067787215922,0.8537312938256864],[0.18095487612779623,0.9202324682921081],[0.1923189373239108,0.981341655639631],[0.19959154190435757,1.0334641977889887],[0.20286798146056484,1.071208107621282],[0.20394437677464244,1.1053573593743096],[0.2031363007015323,1.134114624008438],[0.2005738737913828,1.1618686976119057],[0.2005738737913828,1.4551494448389],[0.40980416535418274,1.4551494448389],[0.40980416535418274,1.2581303277431166],[0.4272684535245391,1.2293730631089883],[0.44300489417115263,1.20061579847486],[0.4570802171159143,1.1718585338407315],[0.47030317079005846,1.1413039401669702],[0.4818445646272907,1.1107493464932086],[0.4918168316152215,1.0801947528194473],[0.5007952966556871,1.047842830106053],[0.5082864058984868,1.0154909073926583],[0.518365400512212,0.9579763781244016],[0.5252544858675314,0.8968671907768789],[0.5292362511339708,0.8303660163104569],[0.5304756002239059,0.75487819664587],[0.5296845375050807,0.6937690092983472],[0.527491105771391,0.6236731767526593],[0.5151304310154969,0.3558711498473387],[0.5105041739015803,0.2336527751522931],[0.5076644515537472,0.11502905853651352],[0.5067302591054241,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]},{"name":"Lens2_Optical_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[0.747142607111703,0.0],[0.747733440932296,0.12264831035070728],[0.7494768242221009,0.24321783578021614],[0.7523873367942436,0.363787361209725],[0.7565136018447816,0.48643567156043227],[0.777092619920789,0.9396107843816897],[0.7876425887891408,1.2431133828766603],[0.7902774206945918,1.2888466511430257],[0.7935975802158095,1.3283435646457957],[0.7978152469162032,1.363682908306169],[0.802718643962969,1.393894689878919],[0.802718643962969,1.4551494448389],[1.2422394010263516,1.4551494448389],[1.2230120710005636,1.3595253384637722],[1.2071998723978057,1.2909254360642242],[1.1900903848082982,1.2244043185858744],[1.13582638131315,1.0227621812296268],[1.1035706697895324,0.8917987311941259],[1.0757326532926614,0.7629140660798234],[1.051946773074183,0.6340294009655207],[1.0390595627709256,0.552956789038782],[1.027790482874597,0.4718841771120433],[1.018174774429453,0.3908115651853045],[1.0104433329146154,0.31181773817976427],[1.0043805078753831,0.232823911174224],[1.0001277326399494,0.15590886908988213],[0.9974947183489299,0.07691504208434186],[0.9966449129882278,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]},{"name":"Lens3_RevisedBlank_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[1.1927439524971124,0.0],[1.1932669061392571,0.0509256367195803],[1.1949285120400448,0.10416607510823245],[1.1977192438988273,0.1574065134968846],[1.201621577124576,0.21064695188553673],[1.2066116180015118,0.2638873902741889],[1.2126598510493227,0.317127828662841],[1.2197320627904693,0.3703682670514931],[1.228162531659971,0.4259235071092171],[1.2376209528463264,0.4814787471669411],[1.2485158088071757,0.5393487888937369],[1.2732900288459088,0.6550888723473285],[1.3035513374519336,0.7777733608081356],[1.337627387243241,0.9004578492689427],[1.3762146957526404,1.0254571393988217],[1.416600720697031,1.1435120245214851],[1.43718807891263,1.199067264579209],[1.4571472600013804,1.2499929012987894],[1.4773568743525305,1.2986037363492977],[1.4978736221598445,1.3448997697307346],[1.5176236078644474,1.3865661997740275],[1.5376315157149534,1.4259178281482485],[1.5579128818559882,1.4629546548533978],[1.5784594652787385,1.4976766798894756],[1.5992304587461406,1.5300839032564812],[1.6218259748426735,1.5624911266234869],[1.6447321013466694,1.5925835483214208],[1.6678002525312858,1.6203611683502825],[1.6678002525312858,2.0309498315895524],[1.8975284211290346,2.0309498315895524],[1.8975284211290346,1.6003200659683645],[1.8997793628745796,1.574065134968846],[1.9059016300046627,1.5393431099327683],[1.915828550852836,1.4999914815585471],[1.9276693295170095,1.460639853184326],[1.9609208744368845,1.3587885797451655],[1.9767077740430161,1.3078629430255853],[1.9922750401694627,1.2523077029678613],[2.005765145381457,1.1967524629101374],[2.0183230004523685,1.1342528178451978],[2.0281828787117053,1.0717531727802583],[2.0357860186845467,1.006938726046247],[2.041322173338612,0.9374946759740921],[2.043991770579351,0.8842542375854399],[2.0455820528635633,0.8263841958586441],[2.046025353623209,0.7661993524627764],[2.045353230521461,0.6990701040596933],[2.0419074474279917,0.5763856155988862],[2.028038866468709,0.2222209602308959],[2.02542578551616,0.10879567844637612],[2.0245629780084835,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]},{"name":"Lens4_RevisedBlank_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[2.3399189971425636,0.0],[2.340444644911464,0.044526140859507374],[2.342017775198492,0.08905228171901475],[2.34462701658531,0.1335784225785221],[2.3482536348533327,0.1781045634380295],[2.3528718350787283,0.22263070429753684],[2.3587685384675656,0.26950032625491305],[2.3739793001958662,0.3655830512675342],[2.3929730263682276,0.46166577628015537],[2.4168713951437644,0.5647789445863829],[2.4422412225138697,0.6632051506968729],[2.50079585765053,0.8788054117008033],[2.5138563879210705,0.9303619958539171],[2.524740409915385,0.9772316178112932],[2.535524196004091,1.0311316830622759],[2.5430949218348493,1.0803447861175208],[2.5474134978291856,1.1248709269770283],[2.5486512450164778,1.164710105640798],[2.5476987244844413,1.1928318788152237],[2.545266528766355,1.2186101708917807],[2.541132266173712,1.2443884629683375],[2.5350706789315147,1.2701667550448945],[2.5276807972225557,1.2936015660235824],[2.5182941322442405,1.3170363770022706],[2.5079609801178893,1.33812770688309],[2.495668430922318,1.3592190367639092],[2.4812393608406795,1.3803103666447283],[2.4664694914577483,1.399058215427679],[2.447489585876643,1.420149545308498],[2.4283606805866427,1.4388973940914487],[2.4069548334601225,1.4576452428743991],[2.383122965071485,1.4763930916573496],[2.3567139493948903,1.4951409404403002],[2.327807413279595,1.5137467202141857],[2.327807413279595,2.0109498315895524],[2.347807413279595,2.0309498315895524],[2.789430068473022,2.0309498315895524],[2.8094300684730222,2.0109498315895524],[2.8094300684730222,1.7904367685081661],[2.7736847861569087,1.6404367685081662],[2.7690880593754823,1.6287193630188221],[2.7658739607433525,1.6170019575294783],[2.76318633401385,1.5982541087465276],[2.7631081132040882,1.5771627788657085],[2.7662084290995703,1.5513844867891515],[2.772990580118639,1.5209192325168568],[2.7818014827062605,1.4904539782445627],[2.8059702766933654,1.4154625831127605],[2.8171923471952742,1.3779668855468596],[2.8275276615823652,1.33812770688309],[2.835888941092614,1.2982885282193202],[2.842757622825448,1.2537623873598127],[2.8472291007912074,1.2068927654024366],[2.849097767956837,1.1600231434450603],[2.848524380137415,1.1084665592919465],[2.8464767704156113,1.0686273806281767],[2.8428155127618475,1.0241012397686695],[2.8376865559625988,0.9772316178112932],[2.830537649754333,0.9233315525603107],[2.81519205347759,0.8249053464498208],[2.7648136871173215,0.5272832470204819],[2.75087667135513,0.43354400310572966],[2.739735120517546,0.3468352024845837],[2.730227421896604,0.25543943966770016],[2.7236433360125423,0.16873063904655425],[2.7197330309037335,0.08436531952327712],[2.718414963727453,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]},{"name":"Lens5_RevisedBlank_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[3.330467283117111,0.0],[3.331487292968323,0.10304749157947762],[3.3345508589813067,0.20903919720408315],[3.3394486296627637,0.31797511687381663],[3.353251825110708,0.5741217387999467],[3.3558836320830943,0.6447828758830171],[3.3569707720633453,0.7066113708307036],[3.356084045534593,0.780216721958902],[3.352386432627277,0.8479336449968444],[3.3458310306453436,0.909762139944531],[3.336046216753322,0.9686464208470896],[3.3267460096081964,1.0098654174788806],[3.315125217180394,1.0510844141106717],[3.3020178738447186,1.0893591966973348],[3.2864548747961653,1.127633979283998],[3.2682236601302574,1.165908761870661],[3.2488562775347676,1.2012393304121962],[3.226914407874914,1.2365698989537315],[3.202296512055067,1.2719004674952665],[3.1796953779734873,1.3013426079465458],[3.152643250004561,1.3337289624429531],[3.126104105983889,1.3631711028942324],[3.0948870567025706,1.3955574573906397],[3.0334664586070845,1.4544417382931982],[2.9097309729869507,1.5663218720080596],[2.864894087609006,1.6104850826849786],[2.846402327193039,1.6310945810008743],[2.830180840183708,1.6517040793167699],[2.818558035133374,1.6693693635875373],[2.8094300684730222,1.6872329546259361],[2.8094300684730222,2.4898539769329466],[2.8294300684730223,2.5098539769329467],[3.4179337492429713,2.5098539769329467],[3.4379337492429713,2.4898539769329466],[3.4379337492429713,2.2409498315895524],[3.285320013011799,2.0609498315895523],[3.3169199356685253,2.0226750490028893],[3.3467128748047914,1.9844002664162261],[3.3746302306625284,1.9461254838295627],[3.4006599531705364,1.9078507012428998],[3.42483157873016,1.8695759186562366],[3.4472043643175674,1.8313011360695737],[3.4678579707935473,1.7930263534829103],[3.4882843510676422,1.7518073568511194],[3.506950294759379,1.7105883602193286],[3.5251436100439695,1.6664251495424096],[3.5416248220213205,1.6222619388654902],[3.5565493430472745,1.5780987281885712],[3.5709200560788044,1.5309913034665243],[3.5838574620413666,1.4838838787444777],[3.5962079387554797,1.433832239977303],[3.6079045024193275,1.380836387165],[3.6194540915860305,1.3219521062624413],[3.6301776689566125,1.2601236113147547],[3.6405336743730285,1.1924066882768123],[3.6500545877308785,1.121745551193742],[3.659157100981097,1.0451959860204159],[3.6678186202206904,0.9627579927568337],[3.683590358068204,0.7831609360040298],[3.6975552718590183,0.5800101668902026],[3.707847887229238,0.3768593977763753],[3.7138563183833435,0.1854854848430597],[3.715836618983329,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]},{"name":"Lens6_Optical_Reference","role":"Polyline reference only; optical surfaces remain defined by original prescription","profile_zr_mm":[[4.160296177475716,0.0],[4.159753135867533,0.04661157385732615],[4.157955814732374,0.09680865339598507],[4.154907832470143,0.14700573293464403],[4.150620926793834,0.19720281247330296],[4.145111922398201,0.24739989201196189],[4.138402969774224,0.2975969715506208],[4.130521822576289,0.34779405108927974],[4.120815312178992,0.4015766363092715],[4.110620104686771,0.45177371584793036],[4.098534012102748,0.5055563010679222],[4.085309594826441,0.5593388862879138],[4.071021173168413,0.6131214715079055],[4.037373077719311,0.7278576533105545],[3.99532283619252,0.8569358578385347],[3.9654862898413463,0.9429879941905214],[3.9307766797857875,1.0397966475865064],[3.839079403385496,1.2871965395984684],[3.7778880208224237,1.4449587895771108],[3.752892369311774,1.505912386159768],[3.7282387968257167,1.5632804770610924],[3.705521656098386,1.6134775565997512],[3.6832873425045114,1.6600891304570775],[3.6598213788457707,1.7067007043144038],[3.6370019806168306,1.749726772490397],[3.5986542559504353,1.81785138043572],[3.513018577699092,1.9612716076890313],[3.4828634468590893,2.0150541929090227],[3.47022058964466,2.040152732678352],[3.460482803394716,2.061665766766349],[3.452047922736897,2.0831788008543457],[3.446241000405336,2.1011063292610097],[3.4403981681154185,2.1262048690303392],[3.4378170624487185,2.1513034087996683],[3.4379337492429713,2.5098539769329467],[4.176816490801712,2.5098539769329467],[4.312603910328434,2.309065658778311],[4.347696766656181,2.2552830735583194],[4.376838969496142,2.208671499700993],[4.4086889983584525,2.1548889144810013],[4.4383979629431165,2.1011063292610097],[4.46404539605382,2.0509092497223507],[4.487600717067863,2.0007121701836916],[4.516166621205735,1.9325875622383688],[4.5296328391273155,1.8967325054250412],[4.542034205631739,1.8608774486117132],[4.563731518796165,1.7891673349850576],[4.573084453549919,1.7533122781717299],[4.582273855710505,1.7138717156770693],[4.596799146674199,1.638576096369081],[4.608115363307568,1.5596949713797599],[4.616164791561467,1.4772283407091056],[4.62113452142584,1.3875906986757862],[4.622634240798288,1.3230515964117961],[4.622660116081491,1.258512494147806],[4.621334511543752,1.1903878862024833],[4.618543084128928,1.115092266894495],[4.609471491538098,0.9573300169158525],[4.581715489304345,0.5808519203759105],[4.5700612073402755,0.3944056249466059],[4.565127803402652,0.29042596018795525],[4.561769217597963,0.19361730679197015],[4.559711584401585,0.09680865339598507],[4.559018647926429,0.0]],"color_rgb":[0.25,0.62,0.87],"is_glass":true,"cuts":[]}],"capabilities":{"target":"freecad","adapter_version":"0.3","baseline_only":false,"native_features":["App::Part coordinate container","PartDesign::Body","Sketcher::SketchObject","PartDesign::Revolution","PartDesign::Pocket for explicit radial holes, radial windows and wrench slots"],"requested_glass":true,"included_glass":true,"included_glass_count":6,"extra_features_not_implemented":[],"assembly":"Shared-coordinate bodies; no Assembly workbench joints or mates","units":"millimeters, source optical axis +Z","runtime_validation":"pending in FreeCAD","feature_audit":"Only declared metadata is detected; audit legacy per-case macros separately for cuts absent from plan JSON."}}')
+
+def choose_directory():
+    if OUTPUT_DIRECTORY:
+        folder=Path(OUTPUT_DIRECTORY).expanduser().resolve()
+        if not folder.is_dir():raise RuntimeError('OUTPUT_DIRECTORY must be an existing directory.')
+        return folder
+    if not App.GuiUp:raise RuntimeError('Set OUTPUT_DIRECTORY before running without the FreeCAD GUI.')
+    import FreeCADGui as Gui
+    try:
+        from PySide import QtWidgets
+    except ImportError:
+        from PySide import QtGui as QtWidgets
+    value=QtWidgets.QFileDialog.getExistingDirectory(Gui.getMainWindow(),'Optomech: choose output folder','')
+    return Path(str(value)).resolve() if value else None
+
+def checked_pocket(doc,body,sketch,name,length):
+    previous=body.Tip
+    before=previous.Shape.Volume
+    cut=body.newObject('PartDesign::Pocket',name)
+    cut.Profile=sketch
+    cut.Length=length
+    cut.Type=0
+    cut.Reversed=False
+    cut.Refine=True
+    body.Tip=cut
+    doc.recompute()
+    shape=cut.Shape
+    if shape.isNull() or not shape.isValid() or len(shape.Solids)!=1 or shape.Volume<=0 or before-shape.Volume<1e-6:
+        raise RuntimeError('Pocket failed or removed no material: '+name)
+    if App.GuiUp:
+        previous.Visibility=False
+        sketch.Visibility=False
+        cut.Visibility=True
+    return dict(name=name,type='PartDesign::Pocket',removed_volume_mm3=before-shape.Volume)
+
+
+def build_cuts(doc,body,item,offset):
+    results=[]
+    radius=max(r for z,r in item['profile_zr_mm'])
+    for spec in item.get('cuts',[]):
+        if spec['kind']=='radial_holes':
+            for row,z in enumerate(spec['zs_mm']):
+                for direction,angle in enumerate(spec['angles_degrees']):
+                    name=item['name']+'_RadialHole_'+str(row+1)+'_'+str(direction+1)
+                    a=math.radians(angle)
+                    normal=App.Vector(math.cos(a),math.sin(a),0)
+                    sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+                    sketch.Placement=App.Placement(App.Vector((radius+1)*normal.x,(radius+1)*normal.y,z+offset),App.Rotation(App.Vector(0,0,1),normal))
+                    sketch.addGeometry(Part.Circle(App.Vector(0,0,0),App.Vector(0,0,1),spec['diameter_mm']/2),False)
+                    sketch.addConstraint(Sketcher.Constraint('Diameter',0,spec['diameter_mm']))
+                    sketch.addConstraint(Sketcher.Constraint('Coincident',0,3,-1,1))
+                    results.append(checked_pocket(doc,body,sketch,name,radius+1))
+        elif spec['kind']=='radial_windows':
+            for direction,angle in enumerate(spec['angles_degrees']):
+                name=item['name']+'_GlueWindow_'+str(direction+1)
+                a=math.radians(angle)
+                normal=App.Vector(math.cos(a),math.sin(a),0)
+                tangent=App.Vector(-math.sin(a),math.cos(a),0)
+                sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+                rotation=App.Rotation(tangent,App.Vector(0,0,1),normal,'ZXY')
+                sketch.Placement=App.Placement(App.Vector((radius+1)*normal.x,(radius+1)*normal.y,offset),rotation)
+                w=spec['width_mm']/2;lo=spec['z_start_mm'];hi=spec['z_end_mm']
+                points=[App.Vector(-w,lo,0),App.Vector(w,lo,0),App.Vector(w,hi,0),App.Vector(-w,hi,0)]
+                sketch.addGeometry([Part.LineSegment(points[i],points[(i+1)%4]) for i in range(4)],False)
+                sketch.addConstraint([Sketcher.Constraint('Coincident',i,2,(i+1)%4,1) for i in range(4)])
+                sketch.addConstraint([Sketcher.Constraint('Horizontal',0),Sketcher.Constraint('Vertical',1),Sketcher.Constraint('Horizontal',2),Sketcher.Constraint('Vertical',3)])
+                sketch.addConstraint(Sketcher.Constraint('DistanceX',0,1,-w))
+                sketch.addConstraint(Sketcher.Constraint('DistanceY',0,1,lo))
+                sketch.addConstraint(Sketcher.Constraint('Distance',0,2*w))
+                sketch.addConstraint(Sketcher.Constraint('Distance',1,hi-lo))
+                results.append(checked_pocket(doc,body,sketch,name,radius+1))
+        elif spec['kind']=='wrench_slots':
+            name=item['name']+'_TwoWrenchSlots'
+            front=spec['side']=='front'
+            z=(min(z for z,r in item['profile_zr_mm']) if front else max(z for z,r in item['profile_zr_mm']))+offset
+            normal=App.Vector(0,0,-1 if front else 1)
+            sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+            sketch.Placement=App.Placement(App.Vector(0,0,z+(-.05 if front else .05)),App.Rotation(App.Vector(0,0,1),normal))
+            for side in (-1,1):
+                x0=side*(radius-spec['radial_depth_mm']);x1=side*(radius+.05)
+                x0,x1=sorted((x0,x1))
+                y=spec['width_mm']/2
+                points=[App.Vector(x0,-y,0),App.Vector(x1,-y,0),App.Vector(x1,y,0),App.Vector(x0,y,0)]
+                index=sketch.GeometryCount
+                sketch.addGeometry([Part.LineSegment(points[i],points[(i+1)%4]) for i in range(4)],False)
+                sketch.addConstraint([Sketcher.Constraint('Coincident',index+i,2,index+(i+1)%4,1) for i in range(4)])
+                sketch.addConstraint([Sketcher.Constraint('Horizontal',index),Sketcher.Constraint('Vertical',index+1),Sketcher.Constraint('Horizontal',index+2),Sketcher.Constraint('Vertical',index+3)])
+                sketch.addConstraint(Sketcher.Constraint('DistanceX',index,1,x0))
+                sketch.addConstraint(Sketcher.Constraint('DistanceY',index,1,-y))
+                sketch.addConstraint(Sketcher.Constraint('Distance',index,x1-x0))
+                sketch.addConstraint(Sketcher.Constraint('Distance',index+1,2*y))
+            results.append(checked_pocket(doc,body,sketch,name,spec['axial_depth_mm']+.05))
+        else:raise RuntimeError('Unsupported cut kind: '+spec['kind'])
+    return results
+
+
+def build_part(doc,container,item,offset):
+    body=doc.addObject('PartDesign::Body',item['name'])
+    container.addObject(body)
+    body.Label=item['name']
+    body.addProperty('App::PropertyString','DesignRole','Optomech')
+    body.DesignRole=item['role']
+    sketch=body.newObject('Sketcher::SketchObject',item['name']+'_Profile')
+    # Local x=radius, local y=Z+offset. +90 degrees around X maps local y to global +Z.
+    sketch.Placement=App.Placement(App.Vector(0,0,0),App.Rotation(App.Vector(1,0,0),90.0))
+    points=[App.Vector(r,z+offset,0) for z,r in item['profile_zr_mm']]
+    lines=[Part.LineSegment(points[i],points[(i+1)%len(points)]) for i in range(len(points))]
+    sketch.addGeometry(lines,False)
+    # Coincident vertices preserve a closed wire during later native sketch edits.
+    sketch.addConstraint([Sketcher.Constraint('Coincident',i,2,(i+1)%len(points),1) for i in range(len(points))])
+    doc.recompute()
+    revolution=body.newObject('PartDesign::Revolution',item['name']+'_Revolution')
+    revolution.Profile=sketch
+    revolution.ReferenceAxis=(sketch,['V_Axis'])
+    revolution.Angle=360.0
+    revolution.Midplane=False
+    revolution.Reversed=False
+    revolution.Refine=True
+    body.Tip=revolution
+    doc.recompute()
+    shape=revolution.Shape
+    if shape.isNull() or not shape.isValid() or len(shape.Solids)!=1 or shape.Volume<=0:
+        raise RuntimeError('Revolution did not produce one valid positive-volume solid: '+item['name'])
+    # Check actual axis placement rather than trusting sketch attachment defaults.
+    wanted_zmin=min(z+offset for z,r in item['profile_zr_mm'])
+    wanted_zmax=max(z+offset for z,r in item['profile_zr_mm'])
+    wanted_r=max(r for z,r in item['profile_zr_mm'])
+    # GUI tessellation can make BoundBox underestimate circular extrema.
+    # Use exact geometry for dimensional validation, independent of display mesh.
+    bb=shape.optimalBoundingBox(False,False)
+    for actual,wanted in [(bb.ZMin,wanted_zmin),(bb.ZMax,wanted_zmax),(bb.XMin,-wanted_r),(bb.XMax,wanted_r),(bb.YMin,-wanted_r),(bb.YMax,wanted_r)]:
+        if abs(actual-wanted)>max(1e-5,abs(wanted)*1e-7):raise RuntimeError('Unexpected coordinate transform: '+item['name'])
+    if App.GuiUp:
+        sketch.Visibility=False
+        for obj in (body,revolution):
+            obj.ViewObject.ShapeColor=tuple(item['color_rgb'])
+            obj.ViewObject.LineColor=(.12,.18,.22)
+            obj.ViewObject.Transparency=45 if item['is_glass'] else 0
+        revolution.Visibility=True
+    cuts=build_cuts(doc,body,item,offset)
+    return dict(name=item['name'],volume_mm3=body.Tip.Shape.Volume,zmin_mm=bb.ZMin,zmax_mm=bb.ZMax,solids=len(body.Tip.Shape.Solids),cuts=cuts)
+
+def main():
+    destination=choose_directory()
+    if destination is None:
+        App.Console.PrintMessage('Optomech cancelled before creating any document.\n')
+        return
+    stamp=datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+    run=destination/('Optomech_FreeCAD_'+stamp)
+    run.mkdir()
+    doc=App.newDocument('Optomech_'+stamp)
+    doc.Label=PLAN['title']+' / FreeCAD baseline'
+    container=doc.addObject('App::Part','OptomechAssembly')
+    container.Label='Coordinate assembly - no joints'
+    stage='start'
+    log=dict(freecad_version=list(App.Version()),capabilities=PLAN['capabilities'],parts=[],status='building')
+    try:
+        doc.openTransaction('Build optical mechanics')
+        for item in PLAN['parts']:
+            stage=item['name']
+            log['parts'].append(build_part(doc,container,item,PLAN['source_origin_z_mm']))
+        doc.recompute()
+        if App.GuiUp:
+            container.Visibility=True
+            bodies=[obj for obj in container.Group if obj.TypeId=='PartDesign::Body']
+            for body,item in zip(bodies,PLAN['parts']):
+                color=tuple(item['color_rgb'])
+                for obj in (body,body.Tip):
+                    obj.ViewObject.ShapeColor=color
+                    obj.ViewObject.DiffuseColor=[color]*len(body.Tip.Shape.Faces)
+                    obj.ViewObject.Transparency=45 if item['is_glass'] else 0
+                    obj.Visibility=True
+                for obj in body.Group:
+                    if obj!=body.Tip and obj.TypeId in ('Sketcher::SketchObject','PartDesign::Revolution','PartDesign::Pocket'):obj.Visibility=False
+        doc.commitTransaction()
+        stage='save native document'
+        path=run/'Optomech_Baseline.FCStd'
+        doc.saveAs(str(path))
+        if not path.is_file() or path.stat().st_size==0:raise RuntimeError('Native save did not create a document.')
+        log.update(status='success',document=str(path),note='Unsupported cuts, if any, are listed in capabilities; nominal threads are not helical geometry.')
+        (run/'build_report.json').write_text(json.dumps(log,indent=2),encoding='utf-8')
+        if App.GuiUp:
+            import FreeCADGui as Gui
+            gui_doc=Gui.getDocument(doc.Name)
+            if gui_doc is not None:
+                gui_doc.activeView().viewAxonometric()
+                gui_doc.activeView().fitAll()
+        App.Console.PrintMessage('Optomech saved: '+str(path)+'\n')
+        if PLAN['capabilities']['extra_features_not_implemented']:
+            App.Console.PrintWarning('BASELINE ONLY - dedicated holes/slots are omitted. See build_report.json.\n')
+    except Exception:
+        log.update(status='failed',stage=stage,error=traceback.format_exc())
+        (run/'build_report.json').write_text(json.dumps(log,indent=2),encoding='utf-8')
+        App.Console.PrintError('Optomech stopped at '+stage+'; report: '+str(run/'build_report.json')+'\n')
+        # Keep the incomplete document visible for diagnosis; do not mark it as a successful build.
+        raise
+
+main()

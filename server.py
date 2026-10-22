@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from optomech.__main__ import analyze
 from optomech.generator import generate_macro
+from optomech.freecad_generator import generate_freecad_macro
 from optomech.geometry import validate_plan
 
 ROOT=Path(__file__).resolve().parent
@@ -33,10 +34,10 @@ class Handler(BaseHTTPRequestHandler):
             segments=route.split('/')
             if len(segments)==4:
                 _,_,key,name=segments
-                if key in DEMOS and name in {'section.png','section.en.svg','DESIGN.md','DESIGN.en.md','plan.json','checks.json','source.STP','source.zmx',DEMOS[key]['full_macro'],DEMOS[key]['mechanics_macro']}:
+                if key in DEMOS and name in {'section.png','section.en.svg','DESIGN.md','DESIGN.en.md','plan.json','checks.json','source.STP','source.zmx','FreeCAD.FCMacro','FreeCAD_Model.FCStd','FREECAD.md','FREECAD.en.md','freecad_report.json',DEMOS[key]['full_macro'],DEMOS[key]['mechanics_macro']}:
                     path=ROOT/'examples'/key/name
                     if path.is_file():
-                        mime={'.png':'image/png','.svg':'image/svg+xml; charset=utf-8','.md':'text/markdown; charset=utf-8','.bas':'text/plain; charset=us-ascii','.json':'application/json; charset=utf-8'}.get(path.suffix,'application/octet-stream')
+                        mime={'.png':'image/png','.svg':'image/svg+xml; charset=utf-8','.md':'text/markdown; charset=utf-8','.bas':'text/plain; charset=us-ascii','.FCMacro':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'}.get(path.suffix,'application/octet-stream')
                         return self.send(200,path.read_bytes(),mime)
         return self.send(404,{'error':'Not found'})
     def do_POST(self):
@@ -58,7 +59,14 @@ class Handler(BaseHTTPRequestHandler):
                 result=validate_plan(plan)
                 if self.path=='/api/check':return self.send(200,result)
                 if result['errors']:return self.send(422,result)
-                return self.send(200,{'macro':generate_macro(plan,module='Optomech_Web',include_blanks=bool(payload.get('include_blanks'))),'checks':result})
+                cad=payload.get('cad','solidworks')
+                if cad not in ('solidworks','freecad'):raise ValueError('Choose solidworks or freecad.')
+                if cad=='freecad':
+                    macro,capabilities=generate_freecad_macro(plan,include_blanks=bool(payload.get('include_blanks')))
+                    return self.send(200,{'macro':macro,'filename':'Optomech_Web.FCMacro','cad':cad,'capabilities':capabilities,'checks':result})
+                if plan.get('radial_features') or any(p.get('cap_slot') or p.get('radial_windows') for p in plan['parts']):
+                    result['warnings'].append('General SolidWorks export contains revolved bodies only for dedicated metadata; use the reviewed case macro for complete holes/slots.')
+                return self.send(200,{'macro':generate_macro(plan,module='Optomech_Web',include_blanks=bool(payload.get('include_blanks'))),'filename':'Optomech_Web.bas','cad':cad,'checks':result})
             self.send(404,{'error':'Not found'})
         except (ValueError,KeyError,TypeError,IndexError,OverflowError) as e:self.send(400,{'error':str(e)})
 

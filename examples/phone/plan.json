@@ -71,7 +71,12 @@
           1.0
         ]
       ],
-      "role": "Rear-loaded three bore stages; outer shoulders lead bore steps by0.3; wall0.5; integral stop atZ0"
+      "role": "Rear-loaded three bore stages; outer shoulders lead bore steps by0.3; wall0.5; integral stop atZ0",
+      "color_rgb": [
+        0.28,
+        0.34,
+        0.42
+      ]
     },
     {
       "name": "02_Spacer_L1_L2",
@@ -93,7 +98,12 @@
           1.1751494448389
         ]
       ],
-      "role": "Simple rectangular section spacer; common OD per lens pair"
+      "role": "Simple rectangular section spacer; common OD per lens pair",
+      "color_rgb": [
+        0.35,
+        0.72,
+        0.45
+      ]
     },
     {
       "name": "03_Spacer_L2_L3",
@@ -115,7 +125,12 @@
           1.2351494448389
         ]
       ],
-      "role": "Simple rectangular section spacer; common OD per lens pair"
+      "role": "Simple rectangular section spacer; common OD per lens pair",
+      "color_rgb": [
+        0.35,
+        0.72,
+        0.45
+      ]
     },
     {
       "name": "04_Spacer_L3_L4",
@@ -137,7 +152,12 @@
           1.7509498315895524
         ]
       ],
-      "role": "Simple rectangular section spacer; common OD per lens pair"
+      "role": "Simple rectangular section spacer; common OD per lens pair",
+      "color_rgb": [
+        0.35,
+        0.72,
+        0.45
+      ]
     },
     {
       "name": "05_BondedRearRetainer",
@@ -163,7 +183,12 @@
           2.2698539769329464
         ]
       ],
-      "role": "Original L6 peripheral rear circular contact; local glue to housing; no screw thread"
+      "role": "Original L6 peripheral rear circular contact; local glue to housing; no screw thread",
+      "color_rgb": [
+        0.95,
+        0.55,
+        0.2
+      ]
     }
   ],
   "lenses": [

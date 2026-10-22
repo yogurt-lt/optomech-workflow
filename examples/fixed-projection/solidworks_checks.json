@@ -1,0 +1,20 @@
+[
+  {
+    "file": "OptomechPF2BondedCells_v041.bas",
+    "components": 19,
+    "sha256": "1a316bece701cf54fe14c5a9686a788833f66f2e821dbb4a463aaa07995339ea",
+    "profile_parity": "passed",
+    "ray_selection": "passed for either base normal and axis sense",
+    "details": "6 radial holes, 3 open windows, 6 wrench slots",
+    "solidworks_runtime": "pending user execution"
+  },
+  {
+    "file": "OptomechPF2BondedCellsMech_v041.bas",
+    "components": 9,
+    "sha256": "57634a843dd81d852789895cf52e056c250af22e97e45c43e2c24f8466f180b6",
+    "profile_parity": "passed",
+    "ray_selection": "passed for either base normal and axis sense",
+    "details": "6 radial holes, 3 open windows, 6 wrench slots",
+    "solidworks_runtime": "pending user execution"
+  }
+]

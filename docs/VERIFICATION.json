@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-21",
-  "unit_tests": "11 passed",
+  "date": "2026-10-22",
+  "unit_tests": "18 passed",
   "javascript_syntax": "passed",
   "http_smoke": "passed: demos/check/generate/analyze/invalid-profile/cross-origin",
   "browser": "Case switching, assembly instructions, static section and per-part legend verified in local browser",
@@ -12,13 +12,16 @@
     "slr": "User confirmed macro run and structure review on SolidWorks 2023",
     "wide-angle": "User confirmed macro run and structure review on SolidWorks 2023"
   },
-  "privacy": "Approved replacement demo folders only; STEP machine path and export user removed; no ZDA/cache/CAD outputs included",
+  "privacy": "Six approved public demo folders only; native FreeCAD snapshots included; unrelated company CAD and caches excluded",
   "source_coordinate_check": "All 10 original STEP lens axis vertices match Zemax within 0.00001 mm",
-  "preview_3d": "Six cases available; explicit per-part colors supported; offline software render; dedicated CAD cuts excluded",
-  "version": "0.6.0-preview",
+  "preview_3d": "Profile-based preview updated to PF-2 v0.4; dedicated cut geometry remains in CAD",
+  "version": "0.7.0",
   "http_gallery": "All six cases: plans, section images, macro bytes and design notes checked",
   "language": "Chinese/English UI, all six case explanations, English drawings and design summaries; geometry unchanged",
   "skill": "Standalone optomech-design with references, engine and CLI; see docs/SKILL_USAGE.md",
   "github_pages": "Static export and project-subpath browser/resource checks passed; remote deployment pending",
-  "suggested_repository": "yogurt-lt/optomech-workflow"
+  "suggested_repository": "yogurt-lt/optomech-workflow",
+  "freecad_adapter": "0.3: native sketch/revolve/Pocket; explicit holes, radial windows and wrench slots; all six demos executed in 1.1.4 and user-confirmed",
+  "freecad_checks": "docs/CAD_VERIFICATION.json and examples/*/freecad_report.json",
+  "release_v07": "All six standalone Skill FreeCAD exports and static assets checked; inline JavaScript syntax passed"
 }

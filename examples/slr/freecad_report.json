@@ -1,0 +1,487 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "document": "FreeCAD_Model.FCStd",
+  "mechanical_bodies": 13,
+  "reference_glass_bodies": 11,
+  "native_radial_holes": 15,
+  "native_wrench_slots": 6,
+  "native_save_reopen": "passed",
+  "solid_validity": "passed",
+  "mechanical_profile_parity": "identical to accepted reinforced SLR v5",
+  "common_volume_checks": [
+    {
+      "a": "01_FrontBarrel",
+      "b": "02_MiddleBarrel",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "04_G3G4_InternalCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "07_FrontCupSpacer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "11_FrontRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "12_MiddleCellRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_FrontBarrel",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "03_RearBarrel",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "04_G3G4_InternalCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "05_G5G6_InternalCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "12_MiddleCellRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_MiddleBarrel",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "05_G5G6_InternalCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "06_G8_InternalCell",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "08_G7G8_Spacer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "09_G8G9_Spacer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "10_G9G10_CupSpacer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "13_RearRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens7_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens9_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens10_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_RearBarrel",
+      "b": "Lens11_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3G4_InternalCell",
+      "b": "12_MiddleCellRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3G4_InternalCell",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3G4_InternalCell",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3G4_InternalCell",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G5G6_InternalCell",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G5G6_InternalCell",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_G8_InternalCell",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_G8_InternalCell",
+      "b": "Lens9_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "07_FrontCupSpacer",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "08_G7G8_Spacer",
+      "b": "Lens7_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "09_G8G9_Spacer",
+      "b": "Lens9_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "09_G8G9_Spacer",
+      "b": "Lens10_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "10_G9G10_CupSpacer",
+      "b": "Lens10_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "10_G9G10_CupSpacer",
+      "b": "Lens11_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "11_FrontRetainer",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "12_MiddleCellRetainer",
+      "b": "Lens3_RevisedBlank_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "12_MiddleCellRetainer",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "13_RearRetainer",
+      "b": "Lens11_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    }
+  ],
+  "reference_contact_reviews": [],
+  "insertion_paths": [
+    {
+      "stage": "A cell bench",
+      "components": [
+        "Lens4_Optical_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "A cell bench",
+      "components": [
+        "Lens3_RevisedBlank_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "B cell bench",
+      "components": [
+        "Lens5_Optical_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "B cell bench",
+      "components": [
+        "Lens6_Optical_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "G8 cell bench",
+      "components": [
+        "Lens8_Optical_Reference",
+        "Lens9_RevisedBlank_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Front barrel",
+      "components": [
+        "Lens2_Optical_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Front barrel",
+      "components": [
+        "07_FrontCupSpacer"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Front barrel",
+      "components": [
+        "Lens1_Optical_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Front barrel",
+      "components": [
+        "11_FrontRetainer"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Middle barrel",
+      "components": [
+        "05_G5G6_InternalCell",
+        "Lens5_Optical_Reference",
+        "Lens6_Optical_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Middle barrel",
+      "components": [
+        "04_G3G4_InternalCell",
+        "Lens4_Optical_Reference",
+        "Lens3_RevisedBlank_Reference"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Middle barrel",
+      "components": [
+        "12_MiddleCellRetainer"
+      ],
+      "approach": "from -Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "Lens7_Optical_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "08_G7G8_Spacer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "06_G8_InternalCell",
+        "Lens8_Optical_Reference",
+        "Lens9_RevisedBlank_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "09_G8G9_Spacer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "Lens10_RevisedBlank_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "10_G9G10_CupSpacer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "Lens11_Optical_Reference"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Rear barrel",
+      "components": [
+        "13_RearRetainer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Barrel joints",
+      "components": [
+        "02_MiddleBarrel",
+        "05_G5G6_InternalCell",
+        "Lens5_Optical_Reference",
+        "Lens6_Optical_Reference",
+        "04_G3G4_InternalCell",
+        "Lens4_Optical_Reference",
+        "Lens3_RevisedBlank_Reference",
+        "12_MiddleCellRetainer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    },
+    {
+      "stage": "Barrel joints",
+      "components": [
+        "03_RearBarrel",
+        "Lens7_Optical_Reference",
+        "08_G7G8_Spacer",
+        "06_G8_InternalCell",
+        "Lens8_Optical_Reference",
+        "Lens9_RevisedBlank_Reference",
+        "09_G8G9_Spacer",
+        "Lens10_RevisedBlank_Reference",
+        "10_G9G10_CupSpacer",
+        "Lens11_Optical_Reference",
+        "13_RearRetainer"
+      ],
+      "approach": "from +Z",
+      "sampling_mm": "1.0 to 150, plus near-seat positions",
+      "result": "passed"
+    }
+  ],
+  "paired_hole_probes": "passed",
+  "opposite_walls": "intact",
+  "slot_depth_probes": "passed",
+  "source_origin_z_mm": -386.074,
+  "notes": [
+    "Explicit common hole azimuths: 90,210,330 degrees; all paired housing holes aligned.",
+    "Translation sweeps sampled; thread teeth, screw bodies, actual tools and adhesive stress not simulated.",
+    "Reference optical geometry is sampled; exact curved contact and optical clipping not certified."
+  ],
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

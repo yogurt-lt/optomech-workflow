@@ -1,11 +1,17 @@
 ---
 name: optomech-design
-description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax prescriptions and STEP lenses, then generate editable SolidWorks concept macros. Use for optical-to-mechanical assembly design and iterative CAD error repair.
+description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax/STEP inputs, then generate editable CAD concepts through SolidWorks or FreeCAD adapters. Use for optical-to-mechanical assembly design, CAD migration and iterative model repair.
 ---
 
 # Optical-to-mechanical design
 
 Convert an optical layout into an explained, editable mechanical concept. Work in the user's language. Keep original optical inputs unchanged and distinguish newly manufactured mechanical rims from the supplied glass. This skill supports both English and Chinese requests.
+
+## Select the CAD adapter
+
+Keep assembly reasoning and the reviewed plan independent of CAD. Identify the target product/version before emitting code. Reuse the same coordinates, profiles, component IDs, optical offset and engineering assumptions; generate each application's own feature operations instead of translating VBA syntax.
+
+Read [CAD portability](references/cad-portability.md) when switching software. SolidWorks uses VBA; FreeCAD creates native `Body → Sketch → Revolution/Pocket` trees in an `App::Part` coordinate container. Explicit radial holes, open glue windows and wrench slots are supported by the FreeCAD adapter; assembly joints and real threads are separate capabilities. Unsupported cuts block export by default; use the explicit baseline option only for a clearly labeled concept within the task scope, listing every omission. A language match, STEP transfer or script syntax check is not proof of native feature parity or target-CAD runtime success.
 
 ## Establish the model before choosing hardware
 
@@ -25,15 +31,19 @@ Keep the optical stop's aperture and axial definition explicit. Give its metal a
 
 ## Deliver geometry with evidence
 
-Read [plan data and bundled tools](references/plan-and-tools.md) for the input schema and commands. The standalone bundle includes a small Python standard-library engine and the proven VBA profile template; it does not require this repository or any user CAD files to be installed elsewhere.
+Read [plan data and bundled tools](references/plan-and-tools.md) for the input schema and commands. The standalone bundle includes a small Python standard-library engine and separate SolidWorks/FreeCAD templates; it does not require this repository or any user CAD files to be installed elsewhere.
 
 Check self-intersections, mechanical/glass overlap, adjacent glass gaps, continuous seating, centering, insertion, and the preload chain. Check minimum distance between inner and outer meridional wall chains, including axial and diagonal step roots; radial wall scans alone can miss a thin bridge. Numerical geometry checks are not stress or tolerance qualification. Select dimensions by scale and process; demo dimensions are not universal manufacturing limits.
 
 Deliver the plan JSON, editable macro, a readable section, assembly sequence and a check report. The section and macro must come from the same final geometry. If requested, add a revolved 3D illustration with consistent part colors; identify cuts it does not represent. Keep real threads, screw solids and production optical surfaces separate from nominal envelopes and sampled references.
 
-## SolidWorks and the review loop
+If a nominal thread retains a cell but its teeth are omitted, label the mating parts, locking method and axial shoulder in the section. Do not leave a visibly smooth cylinder unexplained as if its retention were obvious.
+
+## Target CAD and the review loop
 
 Read [SolidWorks 2023 implementation](references/solidworks-2023.md) when emitting or repairing VBA. Preserve working plane selection, save and component insertion code; avoid replacing it with an untested API guess. Use the bundled generator for the revolved baseline. Implement and verify any additional cuts explicitly; the bundled generator does not infer every feature from prose or from arbitrary metadata.
+
+For FreeCAD, read [the FreeCAD adapter](references/freecad.md). Check its capability report and native save/shape/axis results. Never carry the SolidWorks meter conversion into a millimeter FreeCAD sketch. Keep each part a separate Body and retain the editable feature tree in `.FCStd`; STEP is a geometry handoff, not an equivalent feature-history transfer.
 
 Tell the user which checks ran and whether this exact macro was run in CAD. A screenshot of success confirms execution, not production fitness. When reviewing feedback, update the mechanical scheme if necessary, rather than repeatedly shrinking rings to make a section pass. Regenerate the section and macro together and retain the last user-accepted version.
 

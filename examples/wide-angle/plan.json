@@ -298,7 +298,12 @@
         0.35
       ],
       "outer_chain_vertex_count": 2,
-      "cap_slot": "front"
+      "cap_slot": "front",
+      "wrench_slots": {
+        "width_mm": 2.0,
+        "radial_depth_mm": 2.0,
+        "axial_depth_mm": 1.5
+      }
     },
     {
       "name": "07_MiddleRetainer",
@@ -327,7 +332,12 @@
         0.35
       ],
       "outer_chain_vertex_count": 2,
-      "cap_slot": "front"
+      "cap_slot": "front",
+      "wrench_slots": {
+        "width_mm": 2.0,
+        "radial_depth_mm": 2.0,
+        "axial_depth_mm": 1.5
+      }
     },
     {
       "name": "08_RearRetainer",
@@ -356,7 +366,12 @@
         0.35
       ],
       "outer_chain_vertex_count": 2,
-      "cap_slot": "rear"
+      "cap_slot": "rear",
+      "wrench_slots": {
+        "width_mm": 2.0,
+        "radial_depth_mm": 2.0,
+        "axial_depth_mm": 1.5
+      }
     }
   ],
   "lenses": [
@@ -104968,7 +104983,12 @@
         33.0
       ],
       "diameter_mm": 2.5,
-      "kind": "Three M3 tap drill holes in 10 mm pilot"
+      "kind": "Three M3 tap drill holes in 10 mm pilot",
+      "angles_degrees": [
+        0,
+        120,
+        240
+      ]
     },
     {
       "part": "02_RearBarrel",
@@ -104976,7 +104996,12 @@
         33.0
       ],
       "diameter_mm": 3.3,
-      "kind": "Three M3 clearance holes in common enclosing socket"
+      "kind": "Three M3 clearance holes in common enclosing socket",
+      "angles_degrees": [
+        0,
+        120,
+        240
+      ]
     }
   ],
   "stop": {

@@ -10,5 +10,6 @@ Use the bundled engine's `templates/solidworks.bas.in` rather than reconstructin
 - **Tool slots:** size width, radial depth and axial depth for the actual ring; a slot that consumes a thin retainer is not a useful tool interface.
 - **Appearance:** apply explicit `color_rgb` to both the part and assembly component. Use a common cell color and distinguish structural barrels; an integral stop does not get a fictitious separate part or color.
 - **Diagnostics:** keep staged error messages, output paths and build logs. Run syntax/invariant checks on the emitted source. State that CAD runtime is pending until this version has actually run.
+- **VBA identifiers:** avoid statement names such as `Circle` and `Line` for variables; use `portCircle` and `segment`. A declaration using `circle` caused a real syntax failure in the PF-2 detail routine. Procedure-balance and line-length checks are not a substitute for VBA compilation.
 
 The general bundled generator emits revolved bodies and optional built-in adhesive ports. It does not automatically recreate per-case `radial_features` or `cap_slot` additions. Its CLI helper reports that limitation. Implement extra native features with a version-checked API or retain a suitable reviewed case macro as the starting point.

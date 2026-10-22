@@ -1,6 +1,14 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    '光学模型 → 装配推理 → 截面检查 → 可编辑 CAD 模型':'Optical model → assembly reasoning → section review → editable CAD models',
+    '本地运行 · v0.7.0':'Local · v0.7.0',
+    '下载 FreeCAD 宏':'Download FreeCAD macro',
+    '下载可编辑 FCStd 模型':'Download editable FCStd model',
+    'FreeCAD 运行与检查说明':'FreeCAD run & review guide',
+    'SolidWorks：导入 .bas，保存为 .swp 后运行 main。FreeCAD：在宏菜单执行 .FCMacro，或直接打开 .FCStd。三维预览省略专用孔槽。':'SolidWorks: import .bas, save as .swp and run main. FreeCAD: execute .FCMacro from the Macro menu or open .FCStd directly. Dedicated cuts are omitted from the web preview.',
+    'CAD 软件':'CAD application',
+    '宏已下载。在 FreeCAD 宏菜单执行 .FCMacro，并检查生成结果。':'Macro downloaded. Execute the .FCMacro inside FreeCAD and inspect the generated model.',
     '光学模型 → 装配推理 → 截面检查 → 可编辑 SolidWorks 模型':'Optical model → assembly reasoning → section review → editable SolidWorks model',
     '本地运行 · v0.4.0':'Local · v0.5.0','本地运行 · v0.5.0':'Local · v0.5.0',
     '01 / 选择案例':'01 / Choose a demo','光学系统':'Optical system','查看与下载':'View & download',

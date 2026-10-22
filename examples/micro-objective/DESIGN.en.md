@@ -1,6 +1,6 @@
 # Microscope objective · 63X
 
-User-run and reviewed in SolidWorks 2023.
+User-run and reviewed in SolidWorks 2023 / FreeCAD.
 
 Avoid aligning and bonding several close groups inside a deep bore. Assemble and cure each group in a short cell on the bench, then load all five cells into the common barrel.
 

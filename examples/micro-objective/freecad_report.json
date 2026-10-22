@@ -1,0 +1,266 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4"
+  ],
+  "document": "FreeCAD_Model.FCStd",
+  "mechanical_bodies": 7,
+  "reference_glass_bodies": 10,
+  "native_save_reopen": "passed",
+  "solid_validity": "passed",
+  "nose_wrench_slots": 2,
+  "slot_width_mm": 1.2,
+  "slot_axial_depth_mm": 0.7,
+  "slot_edit_recompute": "passed",
+  "common_volume_checks": [
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "02_G1_CellAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "03_G2_CellAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "04_G3_CellAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "05_G4_CellAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "06_G5_CellAdapter",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "07_NoseRetainer",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens3_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens7_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens9_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "01_ObjectiveBarrel",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_G1_CellAdapter",
+      "b": "Lens1_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "02_G1_CellAdapter",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_G2_CellAdapter",
+      "b": "Lens2_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_G2_CellAdapter",
+      "b": "Lens3_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_G2_CellAdapter",
+      "b": "Lens4_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "03_G2_CellAdapter",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3_CellAdapter",
+      "b": "Lens5_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3_CellAdapter",
+      "b": "Lens6_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3_CellAdapter",
+      "b": "Lens7_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "04_G3_CellAdapter",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G4_CellAdapter",
+      "b": "Lens8_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G4_CellAdapter",
+      "b": "Lens9_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "05_G4_CellAdapter",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    },
+    {
+      "a": "06_G5_CellAdapter",
+      "b": "Lens10_Optical_Reference",
+      "intersection_volume_mm3": 0.0
+    }
+  ],
+  "reference_contact_reviews": [],
+  "bench_preassembly": [
+    {
+      "group": 1,
+      "approach": "from -Z toward +Z",
+      "result": "passed",
+      "max_overlap_mm3": 0.0
+    },
+    {
+      "group": 2,
+      "approach": "from -Z toward +Z",
+      "result": "passed",
+      "max_overlap_mm3": 0.0
+    },
+    {
+      "group": 3,
+      "approach": "from -Z toward +Z",
+      "result": "passed",
+      "max_overlap_mm3": 0.0
+    },
+    {
+      "group": 4,
+      "approach": "from -Z toward +Z",
+      "result": "passed",
+      "max_overlap_mm3": 0.0
+    },
+    {
+      "group": 5,
+      "approach": "from -Z toward +Z",
+      "result": "passed",
+      "max_overlap_mm3": 0.0
+    }
+  ],
+  "main_insertion_paths": [
+    {
+      "group": 1,
+      "components": [
+        "02_G1_CellAdapter",
+        "Lens1_Optical_Reference",
+        "Lens2_Optical_Reference"
+      ],
+      "approach": "from +Z toward -Z",
+      "sampling_mm": "0.5 from +50..0 plus near-seat samples",
+      "result": "passed"
+    },
+    {
+      "group": 2,
+      "components": [
+        "03_G2_CellAdapter",
+        "Lens3_Optical_Reference",
+        "Lens4_Optical_Reference"
+      ],
+      "approach": "from +Z toward -Z",
+      "sampling_mm": "0.5 from +50..0 plus near-seat samples",
+      "result": "passed"
+    },
+    {
+      "group": 3,
+      "components": [
+        "04_G3_CellAdapter",
+        "Lens5_Optical_Reference",
+        "Lens6_Optical_Reference",
+        "Lens7_Optical_Reference"
+      ],
+      "approach": "from +Z toward -Z",
+      "sampling_mm": "0.5 from +50..0 plus near-seat samples",
+      "result": "passed"
+    },
+    {
+      "group": 4,
+      "components": [
+        "05_G4_CellAdapter",
+        "Lens8_Optical_Reference",
+        "Lens9_Optical_Reference"
+      ],
+      "approach": "from +Z toward -Z",
+      "sampling_mm": "0.5 from +50..0 plus near-seat samples",
+      "result": "passed"
+    },
+    {
+      "group": 5,
+      "components": [
+        "06_G5_CellAdapter",
+        "Lens10_Optical_Reference"
+      ],
+      "approach": "from +Z toward -Z",
+      "sampling_mm": "0.5 from +50..0 plus near-seat samples",
+      "result": "passed"
+    }
+  ],
+  "nose_ring_insertion": "passed",
+  "mechanical_profiles": "identical to accepted SW design",
+  "notes": [
+    "No radial glue holes in the original design: bench-applied local fillets from exposed cell mouths.",
+    "+Z is the specimen nose; -Z is the tube-lens side. No separate flat stop added on the curved S7 optical STOP.",
+    "Glass is sampled reference geometry; thread teeth, adhesive solids and tools are not simulated."
+  ],
+  "user_review": "Macro/model displayed and accepted by user; concept review, not production qualification"
+}

@@ -2,9 +2,9 @@
 
 [English](README.en.md)
 
-**A reviewable optical-to-mechanical workflow, with editable SolidWorks output.**
+**A reviewable optical-to-mechanical workflow, with editable SolidWorks and FreeCAD output.**
 
-从光学文件出发，先推理装配，再生成镜筒、隔圈、压圈和沉靠结构。提供六个案例、三维预览、已检查截面图、装配讲解、文件初检和 SolidWorks VBA 生成器。
+从光学文件出发，先推理装配，再生成镜筒、隔圈、压圈和沉靠结构。提供六个案例、三维预览、已检查截面图、装配讲解、文件初检和 SolidWorks / FreeCAD 原生宏生成器。
 
 这是工程初稿工作流。装配方案包含人工 / AI 判断；目前不宣称能为任意 STEP 自动完成机械设计。
 
@@ -13,7 +13,7 @@
 | 案例 | 结构 | 验证状态 |
 |---|---|---|
 | [胶片投影](examples/film-projection/DESIGN.md) | 5 片独立镜片；单端装入；首片定位套；7 个机械件 | 用户已验证 SolidWorks 2023 能生成可用初稿；接触带通光仍待改进 |
-| [定焦投影 PF-2](examples/fixed-projection/DESIGN.md) | 10 片 / 8 组；前三片独立沉靠点胶；中央光阑；6 个机械件 | 用户已验证生成、点胶孔与分类配色；仅第三片机械外缘修订 |
+| [定焦投影 PF-2](examples/fixed-projection/DESIGN.md) | 10 片 / 8 组；共同镜筒＋前三片可拆胶接短框；宽平口光阑；9 个机械件 | 用户已验证 SolidWorks 与 FreeCAD 运行；仅第三片保留旧小余边 |
 | [显微物镜 63X](examples/micro-objective/DESIGN.md) | 五个短镜框台面预装，再统一入筒；7 个机械件 | 用户已运行检查通过 |
 | [手机 6P](examples/phone/DESIGN.md) | 三个孔径台阶、矩形隔圈、胶接尾环；5 个机械件 | 用户已运行检查通过 |
 | [单反 v5](examples/slr/DESIGN.md) | 三个厚壁外筒、三个内部镜框、四个隔圈；13 个机械件 | 用户已运行检查通过 |
@@ -50,7 +50,7 @@ Windows 也可以双击 `start_windows.cmd`。浏览器打开 `http://127.0.0.1:
 需要用户自行安装 SolidWorks，当前实机验证版本为 **2023**。打开 VBA 编辑器，导入相应 `.bas`，保存宏后运行模块的 `main`。不直接把 `.bas` 当作 `.swp` 运行。
 
 - 胶片案例：`examples/film-projection/OptomechFilm.bas` → `OptomechFilm.main`
-- 定焦案例：`examples/fixed-projection/OptomechFixed.bas` → `OptomechFixed.main`
+- 定焦案例：`examples/fixed-projection/OptomechPF2BondedCellsMech_v041.bas` → `OptomechPF2BondedCellsMech_v041.main`
 - 定焦案例含全部镜片参考体（仅第三片修订）：`OptomechFixedWithBlanks.bas` → `OptomechFixedWithBlanks.main`
 - 网页导出的宏：`Optomech_Web.bas` → `Optomech_Web.main`
 
@@ -65,7 +65,6 @@ python -m optomech analyze --step examples/fixed-projection/source.STP --zmx exa
 python -m optomech check examples/fixed-projection/plan.json
 python -m optomech generate examples/film-projection/plan.json -o generated/Film.bas
 python -m optomech generate examples/fixed-projection/plan.json -o generated/Fixed.bas --blank-references
-python tools/build_fixed_demo.py
 python -m unittest discover -s tests -v
 ```
 
@@ -84,6 +83,16 @@ python -m unittest discover -s tests -v
 ## 可下载 Skill
 
 `skills/optomech-design/` 将本项目的装配推理、加工与装配反馈、SolidWorks 2023 API 经验整理为可复用 Skill，附独立 Python 分析、截面校核和基础宏生成工具。它不包含私人对话或公司镜头数据，也不要求依赖完整案例仓库。可通过网页下载，或直接复制该目录；见[使用说明](docs/SKILL_USAGE.md)。
+
+### FreeCAD 与跨 CAD
+
+装配推理及方案 JSON 与软件分离；宏代码采用各 CAD 自己的后端。首版 FreeCAD 适配器输出原生 `Body → Sketch → Revolution` 特征树及 `.FCStd`，不是把 `.bas` 改名，也不是只导入 STEP。见[FreeCAD 迁移说明](docs/FreeCAD使用与迁移说明.md)与 `exports/freecad/`。
+
+```sh
+python skills/optomech-design/scripts/workflow.py macro examples/wide-angle/plan.json --cad freecad --output WideAngle_Baseline.FCMacro --include-glass --allow-base-only
+```
+
+当前 FreeCAD 版本仅生成旋转主体，专用孔槽明确列入能力报告；默认遇到这些特征会停止，示例命令明确选择了主体 baseline。FreeCAD 原生运行尚待验证，不能继承 SolidWorks 的运行通过状态。请先运行已知尺寸的 `00_TestSleeve_Baseline.FCMacro`。
 
 ## 检查范围
 
@@ -112,3 +121,7 @@ python -m unittest discover -s tests -v
 ### 3D assembly preview
 
 The local workbench includes an offline, rotatable solid-of-revolution preview for all six demos. Drag to orbit, scroll to zoom, switch between half-section and full views, or hide the barrels. Part colors follow each plan where explicitly provided, including the three distinct SLR barrels. Assembly instructions explain the insertion order, fastening method and load path. Section images remain the reviewed baseline. Glue ports and thread details are represented in CAD rather than in the revolved web preview.
+
+## FreeCAD：六个案例已运行确认
+
+每个案例目录提供 `FreeCAD.FCMacro`、`FreeCAD_Model.FCStd`、`FREECAD.md` 和实际验证记录 `freecad_report.json`。网页侧栏可分别下载 SolidWorks 与 FreeCAD 文件。详见 [FreeCAD 使用与迁移说明](docs/FreeCAD使用与迁移说明.md)。本机原生验证版本为 1.1.4，新修改仍需运行校核。定焦投影默认已切换到三个可拆胶接短镜框 v0.4；旧版在 `examples/fixed-projection/legacy-v02/` 留档。

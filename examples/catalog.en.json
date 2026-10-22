@@ -1,56 +1,124 @@
 {
   "fixed-projection": {
     "title": "Fixed projection · PF-2",
-    "summary": "Independent bonded seats + spacer stacks",
-    "intro": "The first three lenses have very little edge clearance. Each uses its own barrel shoulder and local adhesive bonds. The remaining groups use spacers and retaining rings.",
-    "stages": [["Front subassembly", "Install G5, the spacer and G4, then their retaining ring. Install L3, L2 and L1 onto their individual seats, bonding and curing each in a fixture."], ["Rear assembly", "Build the rear stack from the innermost group outward, then secure it with the rear retaining ring."]],
-    "fixing": "Shoulders and assembly fixtures establish position; local adhesive holds the first three lenses. Access ports are not full-circumference potting grooves. The other groups transfer preload through spacers.",
-    "load_path": "Each of the first three lenses reacts against its own barrel shoulder. The other stacks react through their spacers and seats.",
-    "note": "Only lens 3 has a revised mechanical rim. The revolved reference blanks do not replace the exact optical prescription."
+    "summary": "One barrel + three removable bonded cells",
+    "intro": "Center and bond each of the first three lenses in its own short cell on the bench, then install the cells in one common barrel. The large v0.3 glass flanges are removed.",
+    "stages": [
+      [
+        "Bench preassembly",
+        "Seat, optically center, locally bond and cure L1, L2 and L3 in their own cells; recheck before assembly. L3 has front-open adhesive windows."
+      ],
+      [
+        "Barrel assembly",
+        "Complete the deeper optical stack first, then install L3, L2 and L1 cells. Each cell seats against its own metal shoulder."
+      ]
+    ],
+    "fixing": "Glass is locally bonded to its cell. Each cell locates by its outer cylinder and rear face, and locks into the barrel with an external thread. No master ring is required for L1; thread teeth are omitted.",
+    "load_path": "Each lens to its own cell shoulder; each cell to its own barrel metal shoulder. Neighboring glass elements do not transmit the locking preload.",
+    "note": "Nine mechanical parts and a 1 mm stop land. L1/L2 use the earlier demo outlines; L3 keeps only its small prior rim. Service replaces a lens-cell assembly; glass-only replacement requires debonding.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   },
   "film-projection": {
     "title": "Film projection · Film",
     "summary": "One-sided loading + a front-lens adapter",
     "intro": "L2 is the largest lens. The stack loads through one opening; the smaller L1 is first secured in an independent adapter.",
-    "stages": [["Preassemble L1", "Seat L1 in its adapter and secure it against the rear shoulder with the small retaining ring."], ["Load through the main opening", "L5 → spacer → L4 → spacer → L3 → spacer → L2 → L1 adapter assembly → main retaining ring."]],
+    "stages": [
+      [
+        "Preassemble L1",
+        "Seat L1 in its adapter and secure it against the rear shoulder with the small retaining ring."
+      ],
+      [
+        "Load through the main opening",
+        "L5 → spacer → L4 → spacer → L3 → spacer → L2 → L1 adapter assembly → main retaining ring."
+      ]
+    ],
     "fixing": "Bores center the elements. Shoulders and spacers establish axial positions at the chosen contact radii. L1 has a local clamping path inside its adapter.",
     "load_path": "Main ring → L1 adapter → L2 → spacer → L3 → spacer → L4 → spacer → L5 → barrel rear shoulder.",
-    "note": "Some contact bands intersect exported baseline ray segments. This known limitation remains in the demo. Its download contains mechanics; use the source STEP for the glass."
+    "note": "Some contact bands intersect exported baseline ray segments. This known limitation remains in the demo. Its download contains mechanics; use the source STEP for the glass.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   },
   "micro-objective": {
     "title": "Microscope objective · 63X",
     "summary": "Five short preassembled cells inside one barrel",
     "intro": "Avoid aligning and bonding several close groups inside a deep bore. Assemble and cure each group in a short cell on the bench, then load all five cells into the common barrel.",
-    "stages": [["Bench assembly", "Insert each optical group from the −Z opening of its cell, seat and center it in a fixture, then apply and cure local adhesive bonds."], ["Load complete cells", "From the +Z specimen-side opening, insert the G1, G2, G3, G4 and G5 cells in order, followed by the main retaining ring."]],
+    "stages": [
+      [
+        "Bench assembly",
+        "Insert each optical group from the −Z opening of its cell, seat and center it in a fixture, then apply and cure local adhesive bonds."
+      ],
+      [
+        "Load complete cells",
+        "From the +Z specimen-side opening, insert the G1, G2, G3, G4 and G5 cells in order, followed by the main retaining ring."
+      ]
+    ],
     "fixing": "Common Ø18 cell exteriors establish barrel centering. Individual shoulders and bonds hold the glass. The main ring compresses metal cell end faces rather than the glass stack.",
     "load_path": "Nose retaining ring → G5 cell → G4 cell → G3 cell → G2 cell → G1 cell → barrel end shoulder.",
-    "note": "−Z faces the tube lens; +Z faces the specimen. STOP lies on a curved G3 surface, so no separate flat metal stop is added. Original glass outlines are retained."
+    "note": "−Z faces the tube lens; +Z faces the specimen. STOP lies on a curved G3 surface, so no separate flat metal stop is added. Original glass outlines are retained.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   },
   "phone": {
     "title": "Phone lens · 6P",
     "summary": "Three bore stages + rectangular spacers",
     "intro": "Choose three main bore diameters first, then extend only the required peripheral lens rims. Avoid giving every lens a large common flange or using miniature threaded retainers.",
-    "stages": [["Load from the image side", "L1 → spacer → L2 → spacer → L3 → spacer → L4 → L5 → L6."], ["Secure the tail ring", "Keep all contacts seated in a fixture, then locally bond the tail ring to the housing and cure it."]],
+    "stages": [
+      [
+        "Load from the image side",
+        "L1 → spacer → L2 → spacer → L3 → spacer → L4 → L5 → L6."
+      ],
+      [
+        "Secure the tail ring",
+        "Keep all contacts seated in a fixture, then locally bond the tail ring to the housing and cure it."
+      ]
+    ],
     "fixing": "Three simple rectangular spacers set the first gaps. Peripheral contact rims link the later lenses. Tail-ring adhesive connects the ring to the barrel rather than bonding every lens.",
     "load_path": "Tail ring → lens and spacer stack → front seat → barrel.",
-    "note": "L1/L3/L4/L5 use revised mechanical rims with the original optical bodies retained. The filter is a reserved space only. Mold release, adhesive and stress details need further design."
+    "note": "L1/L3/L4/L5 use revised mechanical rims with the original optical bodies retained. The filter is a reserved space only. Mold release, adhesive and stress details need further design.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   },
   "slr": {
     "title": "SLR lens · three barrels v5",
     "summary": "Thick pilot joints + one-sided spacer stacks",
     "intro": "Three structural barrels enclose the optical components. Front and rear stacks use substantial spacers. Two preassembled cells remain in the middle barrel, with one thin G8 cell in the rear.",
-    "stages": [["Front barrel: object-side loading", "G2 → tapered spacer → G1 → front retaining ring."], ["Middle barrel: load complete cells", "Bench-assemble the G3/G4 and G5/G6 cells. From the same front opening, insert G5/G6 first, G3/G4 second, then the common retaining ring."], ["Rear barrel: image-side loading", "G7 → long spacer → G8 cell → short spacer → G9 → cup spacer → G10 → rear retaining ring."]],
+    "stages": [
+      [
+        "Front barrel: object-side loading",
+        "G2 → tapered spacer → G1 → front retaining ring."
+      ],
+      [
+        "Middle barrel: load complete cells",
+        "Bench-assemble the G3/G4 and G5/G6 cells. From the same front opening, insert G5/G6 first, G3/G4 second, then the common retaining ring."
+      ],
+      [
+        "Rear barrel: image-side loading",
+        "G7 → long spacer → G8 cell → short spacer → G9 → cup spacer → G10 → rear retaining ring."
+      ]
+    ],
     "fixing": "G3/G4, G5/G6 and G8 are locally bonded within their cells. Other groups use shoulders, spacers and rings. The stop is integral with the teal middle barrel and has a finite aperture land.",
     "load_path": "Rear ring → G10 → spacer → G9 → spacer → G8 metal cell → spacer → G7 → rear-barrel shoulder. G8 glass does not carry the full stack preload.",
-    "note": "Version 5 removes thin bridges at the joints. Minimum uncut meridional wall distances: front 8.98, middle 8.10, rear about 8.47 mm. These are geometric checks, not stress qualification."
+    "note": "Version 5 removes thin bridges at the joints. Minimum uncut meridional wall distances: front 8.98, middle 8.10, rear about 8.47 mm. These are geometric checks, not stress qualification.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   },
   "wide-angle": {
     "title": "Wide-angle lens · two barrels",
     "summary": "Two barrels + three rectangular spacers",
     "intro": "G1–G3 load from the object side of the front barrel. G4–G7 load from opposite ends of the rear barrel around its integral stop. No additional optical cells or local lens bonding are needed in this demo.",
-    "stages": [["Front barrel: object-side loading", "G3 → spacer → G2 → G1 → front ring. G1 and G2 directly contact at the new peripheral bearing band."], ["Rear barrel: load from both ends", "Object side: G5 → spacer → G4 → middle ring. Image side: G6 → spacer → G7 → rear ring."], ["Join the barrels last", "Finish both subassemblies and secure their rings before mating the 10 mm pilot joint. The rear barrel's front ring must be accessed before joining."]],
+    "stages": [
+      [
+        "Front barrel: object-side loading",
+        "G3 → spacer → G2 → G1 → front ring. G1 and G2 directly contact at the new peripheral bearing band."
+      ],
+      [
+        "Rear barrel: load from both ends",
+        "Object side: G5 → spacer → G4 → middle ring. Image side: G6 → spacer → G7 → rear ring."
+      ],
+      [
+        "Join the barrels last",
+        "Finish both subassemblies and secure their rings before mating the 10 mm pilot joint. The rear barrel's front ring must be accessed before joining."
+      ]
+    ],
     "fixing": "Rectangular spacers are approximately 2.37 / 3.27 / 2.34 mm long. The integral stop has a 1 mm aperture land and an image-side 45° relief bevel.",
     "load_path": "Front ring → G1 → G2 → spacer → G3 → front-barrel shoulder. The two rear-barrel rings independently clamp their stacks against integral seats.",
-    "note": "G2/G3/G4/G7 have extended mechanical rims; the original clear-aperture sag is preserved. Both uncut barrel bodies have at least 4 mm minimum meridional wall distance."
+    "note": "G2/G3/G4/G7 have extended mechanical rims; the original clear-aperture sag is preserved. Both uncut barrel bodies have at least 4 mm minimum meridional wall distance.",
+    "status": "User-run and reviewed in SolidWorks 2023 / FreeCAD"
   }
 }

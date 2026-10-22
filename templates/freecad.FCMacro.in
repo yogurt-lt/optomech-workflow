@@ -1,0 +1,213 @@
+# -*- coding: utf-8 -*-
+"""Optomech FreeCAD: native editable sketches, revolutions and pockets.
+
+Run in FreeCAD via Macro > Macros > Execute. No SolidWorks VBA is used.
+Unsupported cuts listed in the report, if any, are omitted.
+Set OUTPUT_DIRECTORY for a headless run, otherwise choose a folder in the GUI.
+"""
+import FreeCAD as App
+import Part
+import Sketcher
+import json,math,datetime,traceback
+from pathlib import Path
+
+OUTPUT_DIRECTORY = ""
+PLAN = json.loads(__EMBEDDED_PLAN_JSON__)
+
+def choose_directory():
+    if OUTPUT_DIRECTORY:
+        folder=Path(OUTPUT_DIRECTORY).expanduser().resolve()
+        if not folder.is_dir():raise RuntimeError('OUTPUT_DIRECTORY must be an existing directory.')
+        return folder
+    if not App.GuiUp:raise RuntimeError('Set OUTPUT_DIRECTORY before running without the FreeCAD GUI.')
+    import FreeCADGui as Gui
+    try:
+        from PySide import QtWidgets
+    except ImportError:
+        from PySide import QtGui as QtWidgets
+    value=QtWidgets.QFileDialog.getExistingDirectory(Gui.getMainWindow(),'Optomech: choose output folder','')
+    return Path(str(value)).resolve() if value else None
+
+def checked_pocket(doc,body,sketch,name,length):
+    previous=body.Tip
+    before=previous.Shape.Volume
+    cut=body.newObject('PartDesign::Pocket',name)
+    cut.Profile=sketch
+    cut.Length=length
+    cut.Type=0
+    cut.Reversed=False
+    cut.Refine=True
+    body.Tip=cut
+    doc.recompute()
+    shape=cut.Shape
+    if shape.isNull() or not shape.isValid() or len(shape.Solids)!=1 or shape.Volume<=0 or before-shape.Volume<1e-6:
+        raise RuntimeError('Pocket failed or removed no material: '+name)
+    if App.GuiUp:
+        previous.Visibility=False
+        sketch.Visibility=False
+        cut.Visibility=True
+    return dict(name=name,type='PartDesign::Pocket',removed_volume_mm3=before-shape.Volume)
+
+
+def build_cuts(doc,body,item,offset):
+    results=[]
+    radius=max(r for z,r in item['profile_zr_mm'])
+    for spec in item.get('cuts',[]):
+        if spec['kind']=='radial_holes':
+            for row,z in enumerate(spec['zs_mm']):
+                for direction,angle in enumerate(spec['angles_degrees']):
+                    name=item['name']+'_RadialHole_'+str(row+1)+'_'+str(direction+1)
+                    a=math.radians(angle)
+                    normal=App.Vector(math.cos(a),math.sin(a),0)
+                    sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+                    sketch.Placement=App.Placement(App.Vector((radius+1)*normal.x,(radius+1)*normal.y,z+offset),App.Rotation(App.Vector(0,0,1),normal))
+                    sketch.addGeometry(Part.Circle(App.Vector(0,0,0),App.Vector(0,0,1),spec['diameter_mm']/2),False)
+                    sketch.addConstraint(Sketcher.Constraint('Diameter',0,spec['diameter_mm']))
+                    sketch.addConstraint(Sketcher.Constraint('Coincident',0,3,-1,1))
+                    results.append(checked_pocket(doc,body,sketch,name,radius+1))
+        elif spec['kind']=='radial_windows':
+            for direction,angle in enumerate(spec['angles_degrees']):
+                name=item['name']+'_GlueWindow_'+str(direction+1)
+                a=math.radians(angle)
+                normal=App.Vector(math.cos(a),math.sin(a),0)
+                tangent=App.Vector(-math.sin(a),math.cos(a),0)
+                sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+                rotation=App.Rotation(tangent,App.Vector(0,0,1),normal,'ZXY')
+                sketch.Placement=App.Placement(App.Vector((radius+1)*normal.x,(radius+1)*normal.y,offset),rotation)
+                w=spec['width_mm']/2;lo=spec['z_start_mm'];hi=spec['z_end_mm']
+                points=[App.Vector(-w,lo,0),App.Vector(w,lo,0),App.Vector(w,hi,0),App.Vector(-w,hi,0)]
+                sketch.addGeometry([Part.LineSegment(points[i],points[(i+1)%4]) for i in range(4)],False)
+                sketch.addConstraint([Sketcher.Constraint('Coincident',i,2,(i+1)%4,1) for i in range(4)])
+                sketch.addConstraint([Sketcher.Constraint('Horizontal',0),Sketcher.Constraint('Vertical',1),Sketcher.Constraint('Horizontal',2),Sketcher.Constraint('Vertical',3)])
+                sketch.addConstraint(Sketcher.Constraint('DistanceX',0,1,-w))
+                sketch.addConstraint(Sketcher.Constraint('DistanceY',0,1,lo))
+                sketch.addConstraint(Sketcher.Constraint('Distance',0,2*w))
+                sketch.addConstraint(Sketcher.Constraint('Distance',1,hi-lo))
+                results.append(checked_pocket(doc,body,sketch,name,radius+1))
+        elif spec['kind']=='wrench_slots':
+            name=item['name']+'_TwoWrenchSlots'
+            front=spec['side']=='front'
+            z=(min(z for z,r in item['profile_zr_mm']) if front else max(z for z,r in item['profile_zr_mm']))+offset
+            normal=App.Vector(0,0,-1 if front else 1)
+            sketch=body.newObject('Sketcher::SketchObject',name+'_Sketch')
+            sketch.Placement=App.Placement(App.Vector(0,0,z+(-.05 if front else .05)),App.Rotation(App.Vector(0,0,1),normal))
+            for side in (-1,1):
+                x0=side*(radius-spec['radial_depth_mm']);x1=side*(radius+.05)
+                x0,x1=sorted((x0,x1))
+                y=spec['width_mm']/2
+                points=[App.Vector(x0,-y,0),App.Vector(x1,-y,0),App.Vector(x1,y,0),App.Vector(x0,y,0)]
+                index=sketch.GeometryCount
+                sketch.addGeometry([Part.LineSegment(points[i],points[(i+1)%4]) for i in range(4)],False)
+                sketch.addConstraint([Sketcher.Constraint('Coincident',index+i,2,index+(i+1)%4,1) for i in range(4)])
+                sketch.addConstraint([Sketcher.Constraint('Horizontal',index),Sketcher.Constraint('Vertical',index+1),Sketcher.Constraint('Horizontal',index+2),Sketcher.Constraint('Vertical',index+3)])
+                sketch.addConstraint(Sketcher.Constraint('DistanceX',index,1,x0))
+                sketch.addConstraint(Sketcher.Constraint('DistanceY',index,1,-y))
+                sketch.addConstraint(Sketcher.Constraint('Distance',index,x1-x0))
+                sketch.addConstraint(Sketcher.Constraint('Distance',index+1,2*y))
+            results.append(checked_pocket(doc,body,sketch,name,spec['axial_depth_mm']+.05))
+        else:raise RuntimeError('Unsupported cut kind: '+spec['kind'])
+    return results
+
+
+def build_part(doc,container,item,offset):
+    body=doc.addObject('PartDesign::Body',item['name'])
+    container.addObject(body)
+    body.Label=item['name']
+    body.addProperty('App::PropertyString','DesignRole','Optomech')
+    body.DesignRole=item['role']
+    sketch=body.newObject('Sketcher::SketchObject',item['name']+'_Profile')
+    # Local x=radius, local y=Z+offset. +90 degrees around X maps local y to global +Z.
+    sketch.Placement=App.Placement(App.Vector(0,0,0),App.Rotation(App.Vector(1,0,0),90.0))
+    points=[App.Vector(r,z+offset,0) for z,r in item['profile_zr_mm']]
+    lines=[Part.LineSegment(points[i],points[(i+1)%len(points)]) for i in range(len(points))]
+    sketch.addGeometry(lines,False)
+    # Coincident vertices preserve a closed wire during later native sketch edits.
+    sketch.addConstraint([Sketcher.Constraint('Coincident',i,2,(i+1)%len(points),1) for i in range(len(points))])
+    doc.recompute()
+    revolution=body.newObject('PartDesign::Revolution',item['name']+'_Revolution')
+    revolution.Profile=sketch
+    revolution.ReferenceAxis=(sketch,['V_Axis'])
+    revolution.Angle=360.0
+    revolution.Midplane=False
+    revolution.Reversed=False
+    revolution.Refine=True
+    body.Tip=revolution
+    doc.recompute()
+    shape=revolution.Shape
+    if shape.isNull() or not shape.isValid() or len(shape.Solids)!=1 or shape.Volume<=0:
+        raise RuntimeError('Revolution did not produce one valid positive-volume solid: '+item['name'])
+    # Check actual axis placement rather than trusting sketch attachment defaults.
+    wanted_zmin=min(z+offset for z,r in item['profile_zr_mm'])
+    wanted_zmax=max(z+offset for z,r in item['profile_zr_mm'])
+    wanted_r=max(r for z,r in item['profile_zr_mm'])
+    # GUI tessellation can make BoundBox underestimate circular extrema.
+    # Use exact geometry for dimensional validation, independent of display mesh.
+    bb=shape.optimalBoundingBox(False,False)
+    for actual,wanted in [(bb.ZMin,wanted_zmin),(bb.ZMax,wanted_zmax),(bb.XMin,-wanted_r),(bb.XMax,wanted_r),(bb.YMin,-wanted_r),(bb.YMax,wanted_r)]:
+        if abs(actual-wanted)>max(1e-5,abs(wanted)*1e-7):raise RuntimeError('Unexpected coordinate transform: '+item['name'])
+    if App.GuiUp:
+        sketch.Visibility=False
+        for obj in (body,revolution):
+            obj.ViewObject.ShapeColor=tuple(item['color_rgb'])
+            obj.ViewObject.LineColor=(.12,.18,.22)
+            obj.ViewObject.Transparency=45 if item['is_glass'] else 0
+        revolution.Visibility=True
+    cuts=build_cuts(doc,body,item,offset)
+    return dict(name=item['name'],volume_mm3=body.Tip.Shape.Volume,zmin_mm=bb.ZMin,zmax_mm=bb.ZMax,solids=len(body.Tip.Shape.Solids),cuts=cuts)
+
+def main():
+    destination=choose_directory()
+    if destination is None:
+        App.Console.PrintMessage('Optomech cancelled before creating any document.\n')
+        return
+    stamp=datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+    run=destination/('Optomech_FreeCAD_'+stamp)
+    run.mkdir()
+    doc=App.newDocument('Optomech_'+stamp)
+    doc.Label=PLAN['title']+' / FreeCAD baseline'
+    container=doc.addObject('App::Part','OptomechAssembly')
+    container.Label='Coordinate assembly - no joints'
+    stage='start'
+    log=dict(freecad_version=list(App.Version()),capabilities=PLAN['capabilities'],parts=[],status='building')
+    try:
+        doc.openTransaction('Build optical mechanics')
+        for item in PLAN['parts']:
+            stage=item['name']
+            log['parts'].append(build_part(doc,container,item,PLAN['source_origin_z_mm']))
+        doc.recompute()
+        if App.GuiUp:
+            container.Visibility=True
+            bodies=[obj for obj in container.Group if obj.TypeId=='PartDesign::Body']
+            for body,item in zip(bodies,PLAN['parts']):
+                color=tuple(item['color_rgb'])
+                for obj in (body,body.Tip):
+                    obj.ViewObject.ShapeColor=color
+                    obj.ViewObject.DiffuseColor=[color]*len(body.Tip.Shape.Faces)
+                    obj.ViewObject.Transparency=45 if item['is_glass'] else 0
+                    obj.Visibility=True
+                for obj in body.Group:
+                    if obj!=body.Tip and obj.TypeId in ('Sketcher::SketchObject','PartDesign::Revolution','PartDesign::Pocket'):obj.Visibility=False
+        doc.commitTransaction()
+        stage='save native document'
+        path=run/'Optomech_Baseline.FCStd'
+        doc.saveAs(str(path))
+        if not path.is_file() or path.stat().st_size==0:raise RuntimeError('Native save did not create a document.')
+        log.update(status='success',document=str(path),note='Unsupported cuts, if any, are listed in capabilities; nominal threads are not helical geometry.')
+        (run/'build_report.json').write_text(json.dumps(log,indent=2),encoding='utf-8')
+        if App.GuiUp:
+            import FreeCADGui as Gui
+            gui_doc=Gui.getDocument(doc.Name)
+            if gui_doc is not None:
+                gui_doc.activeView().viewAxonometric()
+                gui_doc.activeView().fitAll()
+        App.Console.PrintMessage('Optomech saved: '+str(path)+'\n')
+        if PLAN['capabilities']['extra_features_not_implemented']:
+            App.Console.PrintWarning('BASELINE ONLY - dedicated holes/slots are omitted. See build_report.json.\n')
+    except Exception:
+        log.update(status='failed',stage=stage,error=traceback.format_exc())
+        (run/'build_report.json').write_text(json.dumps(log,indent=2),encoding='utf-8')
+        App.Console.PrintError('Optomech stopped at '+stage+'; report: '+str(run/'build_report.json')+'\n')
+        # Keep the incomplete document visible for diagnosis; do not mark it as a successful build.
+        raise
+
+main()

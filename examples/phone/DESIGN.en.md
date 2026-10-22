@@ -1,6 +1,6 @@
 # Phone lens · 6P
 
-User-run and reviewed in SolidWorks 2023.
+User-run and reviewed in SolidWorks 2023 / FreeCAD.
 
 Choose three main bore diameters first, then extend only the required peripheral lens rims. Avoid giving every lens a large common flange or using miniature threaded retainers.
 

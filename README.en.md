@@ -1,8 +1,22 @@
-# Optomech Workflow
+# Optomech Design Skill
 
 [中文](README.md)
 
-A reviewable optical-to-mechanical workflow with six user-reviewed SolidWorks 2023 / FreeCAD concept demos, an offline 3D gallery, section drawings, assembly explanations and native editable CAD output.
+**An open-source Skill for AI assistants: reason through lens assembly from Zemax / STEP inputs, then generate editable SolidWorks and FreeCAD mechanical concepts.**
+
+**[Download the Skill ZIP](https://yogurt-lt.github.io/optomech-workflow/downloads/optomech-design-skill.zip)** · [Setup & usage](docs/SKILL_USAGE.en.md) · [Live demos & 3D focus animation](https://yogurt-lt.github.io/optomech-workflow/)
+
+Extract the ZIP and add the complete `optomech-design/` folder to an assistant that supports `SKILL.md`, or ask the assistant to read that entry file directly. Keep its scripts, references and templates together. The standalone Skill does not require the demo inputs; executing CAD macros requires the chosen CAD application.
+
+Try this prompt:
+
+> Use optomech-design to inspect my Zemax and STEP files. Research the assembly approach, explain barrel segmentation, loading direction, seats, retention and load paths, then generate editable CAD macros and section drawings. Target CAD: FreeCAD or SolidWorks 2023.
+
+The Skill supplies input checks, assembly reasoning, numerical review, CAD adapters and an iterative repair process. Seven demos show the resulting designs, including a 50 mm F1.8 whole-unit manual-focus lens with a native CAD 3D cutaway animation. Manufacturing tolerances, preload and clear aperture require design-specific verification.
+
+## Manual-focus demo
+
+[Double Gauss 50 mm F1.8](examples/double-gauss-focus/DESIGN.en.md): seven elements, five optical groups and 18 mechanical parts; 4.5 mm whole-unit travel driven by a short helicoid ring. CAD execution, native motion and assembly paths have been checked at sampled poses.
 
 ## Try the local workbench
 
@@ -27,7 +41,7 @@ The main download uses the reviewed macro for the selected case, preserving its 
 
 ## GitHub Pages
 
-`python tools/build_pages.py` exports a static gallery to `dist/`. The included `.github/workflows/pages.yml` builds and deploys it when pushed to `main`. For the suggested repository `yogurt-lt/optomech-workflow`, enable **Settings → Pages → GitHub Actions**. The expected URL after a successful deployment is `https://yogurt-lt.github.io/optomech-workflow/`. See [deployment instructions](docs/GITHUB_PAGES.md). Deployment files are prepared; a repository and live website have not been created by this package.
+`python tools/build_pages.py` exports a static gallery to `dist/`. The included `.github/workflows/pages.yml` builds and deploys it when pushed to `main`. For the suggested repository `yogurt-lt/optomech-workflow`, enable **Settings → Pages → GitHub Actions**. The expected URL after a successful deployment is `https://yogurt-lt.github.io/optomech-workflow/`. See [deployment instructions](docs/GITHUB_PAGES.md). The public gallery is deployed on GitHub Pages.
 
 The static version retains all six demos, bilingual explanations, 3D views, section images and downloads. File analysis and modified-body generation remain available in the local Python workbench.
 
@@ -51,7 +65,7 @@ All six demo versions were executed in FreeCAD 1.1.4 and user-reviewed. Incomple
 
 All six concepts have been run and reviewed by the user in SolidWorks 2023. Numerical geometry checks, CAD execution and production qualification remain separate. This workflow does not claim automatic arbitrary-STEP design, production optical surfaces, ray tracing, qualified tolerances, preload or stress analysis. Known aperture issues are documented per case.
 
-Only the six specifically approved examples are packaged. The earlier private company design, unrelated CAD outputs, caches and private conversations are excluded. Only the six approved sampled-reference FreeCAD models are included. Sanitized input hashes are recorded in `docs/source_manifest.json`. Code, documentation and provided examples use the included MIT license. Nothing is automatically published to GitHub.
+The six fixed-structure examples and the approved manual-focus demo are packaged. The earlier private company design, unrelated CAD outputs, caches and private conversations are excluded. Only approved demo CAD models are included. Sanitized input hashes are recorded in `docs/source_manifest.json`. Code, documentation and provided examples use the included MIT license. Nothing is automatically published to GitHub.
 
 ## Six FreeCAD demos run and reviewed
 

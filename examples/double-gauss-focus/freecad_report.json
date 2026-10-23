@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "bodies": 25,
+  "native_body_validity": "passed",
+  "save_reopen": "passed",
+  "motion_samples": [
+    {
+      "angle_deg": 0,
+      "travel_mm": 0.0,
+      "checked_boolean_pairs": 20,
+      "interference": []
+    },
+    {
+      "angle_deg": 45,
+      "travel_mm": -0.75,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    },
+    {
+      "angle_deg": 90,
+      "travel_mm": -1.5,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    },
+    {
+      "angle_deg": 135,
+      "travel_mm": -2.25,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    },
+    {
+      "angle_deg": 180,
+      "travel_mm": -3.0,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    },
+    {
+      "angle_deg": 225,
+      "travel_mm": -3.75,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    },
+    {
+      "angle_deg": 270,
+      "travel_mm": -4.5,
+      "checked_boolean_pairs": 10,
+      "interference": []
+    }
+  ],
+  "scope": "Nominal solid intersections at sampled poses; not tolerance, stress, mirror sweep or optical performance validation."
+}

@@ -1,6 +1,17 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    "下载 Skill":"Download Skill",
+    "下载设计 Skill":"Download design Skill",
+    "开源 AI 光机设计技能 · SolidWorks / FreeCAD":"Open-source AI optomechanical design Skill · SolidWorks / FreeCAD",
+    "下载 Skill，把光学设计变成可编辑机械初稿":"Download the Skill. Turn optical layouts into editable mechanical concepts.",
+    "先核对光学文件，再推理装配顺序、定位与固定方式，最后生成 CAD 宏和截面图。下方案例展示这套方法的实际结果。":"Check optical inputs, reason through assembly, location and retention, then generate CAD macros and section drawings. Explore the resulting designs below.",
+    "下载 optomech-design Skill":"Download optomech-design Skill",
+    "安装与使用说明":"Setup & usage",
+    "三维剖面调焦演示":"3D cutaway focus animation",
+    "本页展示七个结构案例，含整组手动调焦。各案例的检查范围见说明。":"Seven structural demos, including whole-unit manual focus. See each case for its verification scope.",
+    "开源 Skill · 七个结构案例 · SolidWorks / FreeCAD":"Open-source Skill · seven structural demos · SolidWorks / FreeCAD",
+
     '手动调焦动画':'Manual focus animation',
     '光学模型 → 装配推理 → 截面检查 → 可编辑 CAD 模型':'Optical model → assembly reasoning → section review → editable CAD models',
     '本地运行 · v0.7.0':'Local · v0.7.0',
@@ -49,7 +60,7 @@
   let lang='zh';try{lang=localStorage.getItem('optomech-language')==='en'?'en':'zh'}catch{}
   function t(s){return lang==='en'?s.split('\n').map(x=>pairs[x]||x).join('\n'):s}
   function apply(){
-    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=document.body.dataset.page==='focus'?(lang==='en'?'Optomech Workflow · Manual focus':'Optomech Workflow · 手动调焦动画'):(lang==='en'?'Optomech Workflow · optical-to-mechanical demos':'Optomech Workflow · 光机结构工作台');
+    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=document.body.dataset.page==='focus'?(lang==='en'?'Optomech Design Skill · Manual focus':'Optomech Design Skill · 手动调焦动画'):(lang==='en'?'Optomech Design Skill · optical-to-mechanical demos':'Optomech Design Skill · 光机结构工作台');
     const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
     while(node=walk.nextNode()){
       if(['SCRIPT','STYLE','PRE','TEXTAREA','OPTION'].includes(node.parentElement?.tagName))continue;

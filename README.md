@@ -1,14 +1,26 @@
-# Optomech Workflow
+# Optomech Design Skill
 
 [English](README.en.md)
 
-**A reviewable optical-to-mechanical workflow, with editable SolidWorks and FreeCAD output.**
+**供 AI 助手使用的开源光机设计 Skill：从 Zemax / STEP 出发，先推理装配，再生成可编辑的 SolidWorks / FreeCAD 机械初稿。**
 
-从光学文件出发，先推理装配，再生成镜筒、隔圈、压圈和沉靠结构。提供六个案例、三维预览、已检查截面图、装配讲解、文件初检和 SolidWorks / FreeCAD 原生宏生成器。
+**[下载 Skill ZIP](https://yogurt-lt.github.io/optomech-workflow/downloads/optomech-design-skill.zip)** · [安装与使用](docs/SKILL_USAGE.md) · [在线案例与三维调焦动画](https://yogurt-lt.github.io/optomech-workflow/)
 
-这是工程初稿工作流。装配方案包含人工 / AI 判断；目前不宣称能为任意 STEP 自动完成机械设计。
+下载后解压，将完整 `optomech-design/` 文件夹加入支持 `SKILL.md` 的 AI 助手技能目录；也可以让助手直接读取其中的 `SKILL.md`。保留配套脚本、参考资料与模板。独立 Skill 不依赖本仓库的案例输入；运行 CAD 宏需要本机安装目标 CAD。
 
-## 六个公开案例
+可以这样开始：
+
+> 使用 optomech-design，检查我的 Zemax 和 STEP。先查资料并解释镜筒分段、装入方向、沉靠、固定方式和传力路径，再生成可编辑的 CAD 宏与截面图。目标软件：FreeCAD 或 SolidWorks 2023。
+
+Skill 提供文件初检、装配推理规则、数值检查、CAD 适配与反馈修订方法。网站的七个案例展示这套方法，其中双高斯 50 mm F1.8 含原生 CAD 三维剖面调焦动画。制造公差、预紧和通光仍需针对具体设计校核。
+
+## 七个公开案例
+
+| 新案例 | 结构与检查范围 |
+|---|---|
+| [双高斯 50 mm F1.8 手动调焦](examples/double-gauss-focus/DESIGN.md) | 7 片 / 5 组，18 个机械件；短螺旋环驱动整组移动 4.5 mm；CAD 运行、运动与装入路径采样检查 |
+
+## 固定结构案例
 
 | 案例 | 结构 | 验证状态 |
 |---|---|---|
@@ -35,11 +47,11 @@ Windows 也可以双击 `start_windows.cmd`。浏览器打开 `http://127.0.0.1:
 
 已提供 GitHub Pages 静态导出器与 `.github/workflows/pages.yml`。创建 `yogurt-lt/optomech-workflow`、上传项目后，在仓库 Settings → Pages 中选择 GitHub Actions。首次部署与更新步骤见[部署指南](docs/GITHUB_PAGES.md)。预期地址在部署成功后为 `https://yogurt-lt.github.io/optomech-workflow/`。
 
-静态版保留中英切换、六个案例、三维预览、截面和宏 / Skill 下载；本地版保留文件分析和修改版宏生成。运行 `python tools/build_pages.py` 可导出至 `dist/`。目前交付发布文件，不代表已替用户创建仓库或完成上线。
+静态版保留中英切换、七个案例、三维预览、截面和宏 / Skill 下载；本地版保留文件分析和修改版宏生成。运行 `python tools/build_pages.py` 可导出至 `dist/`。线上展示已通过 GitHub Pages 发布。
 
 工作台先展示三维预览，随后讲解装入顺序、固定方式和压紧力路径。02 部分直接显示各案例已检查的截面原图，可放大、下载；默认下载的是对应的已验证宏，保留其专用孔槽。
 
-页首 **English / 中文** 按钮可切换界面、六个案例的介绍与装配讲解、截面图及设计说明，语言选择保存在本地。英文截面图由同一份方案几何生成，不改变 CAD 模型。侧栏还可下载独立的工作流 Skill。
+页首 **English / 中文** 按钮可切换界面、七个案例的介绍与装配讲解、截面图及设计说明，语言选择保存在本地。英文截面图由同一份方案几何生成，不改变 CAD 模型。侧栏还可下载独立的设计 Skill。
 
 “高级工具”中可编辑各机械零件的 (Z, 半径) 顶点、检查截面交叠、导入/导出方案 JSON、生成修改版主体宏。编辑会同步三维预览，静态截面图保留为基准。通用修改版生成器不自动复现新案例的全部专用孔槽，请以原案例宏为基础细化。保存的 JSON 是后续复现与讨论的核心记录。
 
@@ -102,7 +114,7 @@ python skills/optomech-design/scripts/workflow.py macro examples/wide-angle/plan
 
 ## 项目范围与发布
 
-仓库仅包含六个明确选定的公开案例和通用实现，不包含早期公司产品案例或其输出。STEP 副本中的本机文件路径和导出用户名已清除，ZDA 缓存与本机 CAD 输出不入库。原始工作目录中的文件保持不变。
+仓库包含六个固定结构案例、新增的双高斯手动调焦案例和通用实现，不包含早期公司产品案例或其输出。STEP 副本中的本机文件路径和导出用户名已清除，ZDA 缓存与本机 CAD 输出不入库。原始工作目录中的文件保持不变。
 
 代码、文档和本仓库提供的示例按 MIT 许可证发布。未附带 SolidWorks、OpticStudio 或玻璃库软件。正式公开前请维护者审阅案例文件与作者署名；项目尚未自动推送至任何 GitHub 仓库。
 

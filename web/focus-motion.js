@@ -1,18 +1,20 @@
 /* Actual native CAD section frames; no external libraries or background autoplay. */
 (() => {
   const $=id=>document.getElementById(id),range=$('focus-angle'),play=$('focus-play'),frame=$('focus-frame');
+  let mode="3d";const query=new URLSearchParams(location.search);if(query.has("lang"))window.i18n.setLanguage(query.get("lang"));
   let motion=null,index=0,direction=1,timer=null,loading=0;
   const cache=new Map();
   const copy={
+    'focus-3d':['三维剖面','3D cutaway'], 'focus-2d':['二维截面','2D section'],
     'focus-back':['← 案例工作台','← Demo workbench'],
     'focus-kicker':['对焦机构实验 · 双高斯 50 mm F1.8','Focus mechanism experiment · Double Gauss 50 mm F1.8'],
     'focus-title':['转动调焦环，看整组镜片怎样移动','Turn the focus ring and watch the optics move'],
-    'focus-intro':['青色外壳固定，金色调焦环旋转并前移，蓝色内筒带着镜片沿光轴移动。下面的动画来自原生 CAD 在不同姿态下的真实截面。','The teal housing stays fixed. The gold focus ring rotates and translates, while the blue optical barrel moves the lens elements along the axis. These frames are actual sections of native CAD solids at each pose.'],
+    'focus-intro':['青色外壳固定，金色调焦环旋转并前移，蓝色内筒带着镜片沿光轴移动。可切换三维半剖与二维截面，均来自不同姿态下的原生 CAD 实体。','The teal housing stays fixed. The gold focus ring rotates and translates, while the blue optical barrel moves the lens elements along the axis. Switch between 3D cutaway and 2D section views, both derived from native CAD solids at each pose.'],
     'focus-reference':['参考位置','Reference'], 'focus-middle':['行程中点','Mid travel'], 'focus-near':['近端位置','Near end'],
     'focus-gold':['调焦环：旋转＋平移','Focus ring: rotation + translation'],
     'focus-blue':['光学内筒：只平移','Optical barrel: translation only'],
     'focus-teal':['固定外壳：不动','Fixed housing: stationary'],
-    'focus-caption':['6 mm 导程 · 270° 转角 · 4.5 mm 行程；每帧相隔 15°。固定虚线为安装基准，圆盘指针表示调焦环转角。','6 mm lead · 270° rotation · 4.5 mm travel; 15° per frame. Fixed dashed lines show reference positions; the dial shows focus-ring rotation.'],
+    'focus-caption':['6 mm 导程 · 270° 转角 · 4.5 mm 行程；每帧相隔 15°。圆盘指针表示调焦环转角；二维模式的固定虚线为安装基准。三维模式为固定视角的 CAD 半剖动画。','6 mm lead · 270° rotation · 4.5 mm travel; 15° per frame. The dial shows focus-ring rotation. Dashed reference lines appear in 2D; 3D uses a fixed camera and a stationary half-section plane.'],
     'focus-step1-title':['01 / 螺旋副产生行程','01 / The helicoid creates axial travel'],
     'focus-step1':['调焦环的内螺旋牙与固定壳的外螺旋牙啮合，把手动转角转为轴向位移。','The ring’s female helicoid engages the fixed housing’s male helicoid, converting manual rotation into axial travel.'],
     'focus-step2-title':['02 / 止推连接带动内筒','02 / The thrust joint moves the optical barrel'],
@@ -25,7 +27,7 @@
   };
   const en=()=>window.i18n?.language==='en';
   function labels(){for(const [id,values] of Object.entries(copy))$(id).textContent=values[en()?1:0];play.textContent=timer?(en()?'Pause':'暂停'):(en()?'Play':'播放');range.setAttribute('aria-label',en()?'Focus rotation':'调焦转角');}
-  function image(i){if(!cache.has(i)){const im=new Image();im.src='./focus-assets/'+motion.frames[i];cache.set(i,im)}return cache.get(i)}
+  function image(i){if(!cache.has(i)){const im=new Image();im.src='./focus-assets/'+(mode==='3d'?motion.frames_3d:motion.frames)[i];cache.set(i,im)}return cache.get(i)}
   async function show(i){
     if(!motion)return;
     index=Math.max(0,Math.min(motion.frames.length-1,i));range.value=index;
@@ -38,12 +40,14 @@
   }
   function pause(){if(timer)clearTimeout(timer);timer=null;labels();play.setAttribute('aria-pressed','false')}
   async function tick(){if(!timer)return;let next=index+direction;if(next>=motion.frames.length){direction=-1;next=index-1}if(next<0){direction=1;next=1}await show(next);if(timer)timer=setTimeout(tick,(index===0||index===motion.frames.length-1)?600:130)}
+  for(const dimension of ['3d','2d'])$('focus-'+dimension).onclick=()=>{if(!motion)return;pause();mode=dimension;cache.clear();for(const k of ['3d','2d'])$('focus-'+k).setAttribute('aria-pressed',String(k===mode));$('focus-gif').href='./focus-assets/'+(mode==='3d'?motion.gif_3d:motion.gif);show(index)};
   play.onclick=()=>{if(timer){pause();return;}timer=setTimeout(tick,130);labels();play.setAttribute('aria-pressed','true')};
   range.oninput=()=>{pause();show(+range.value)};
   for(const button of document.querySelectorAll('[data-focus-pose]'))button.onclick=()=>{pause();show(+button.dataset.focusPose)};
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
   document.addEventListener('languagechange',labels);labels();
+  if(query.has('embed'))new ResizeObserver(()=>parent.postMessage({type:'focus-height',height:document.querySelector('.card').getBoundingClientRect().height+12},location.origin)).observe(document.querySelector('.card'));
   range.disabled=true;
   for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=true;
-  fetch('./focus-assets/motion.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{motion=data;range.max=data.frames.length-1;range.disabled=false;play.disabled=false;for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=false;show(0)}).catch(()=>{$('focus-error').textContent=en()?'Animation data is unavailable. You can download the GIF below.':'动画数据暂时无法加载，可下载下方 GIF 查看。'});
+  fetch('./focus-assets/motion.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{motion=data;$('focus-gif').href='./focus-assets/'+data.gif_3d;range.max=data.frames.length-1;range.disabled=false;play.disabled=false;for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=false;show(0)}).catch(()=>{$('focus-error').textContent=en()?'Animation data is unavailable. You can download the GIF below.':'动画数据暂时无法加载，可下载下方 GIF 查看。'});
 })();

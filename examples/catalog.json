@@ -168,5 +168,42 @@
     "freecad_model": "FreeCAD_Model.FCStd",
     "freecad_guide": "FREECAD.md",
     "freecad_report": "freecad_report.json"
+  },
+  "double-gauss-focus": {
+    "title": "双高斯 50 mm F1.8 · 手动调焦",
+    "summary": "整组移动 · 短螺旋调焦环 · 4.5 mm 行程",
+    "intro": "7 片 / 5 组光学组件装在蓝色内筒内。青色固定外壳兼作导向筒，金色调焦环通过螺旋副旋转并前移，经止推连接推动内筒；镜片保持间距且不跟转。",
+    "stages": [
+      [
+        "预装光学内筒",
+        "前端依次装入 G2、厚隔圈、G1 与前压圈；后端装 G3、厚隔圈、G4、厚隔圈、G5，只用一只后压圈锁紧。"
+      ],
+      [
+        "装入固定外壳",
+        "固定外壳连接尾卡口；光学内筒由前端插入，装两枚导向螺钉，使其进入闭口轴向直槽。"
+      ],
+      [
+        "装调焦传力连接",
+        "放入后止推垫片、旋入短调焦环，再装前垫片、保持环和防松钉。调焦环可转动，内筒只轴向移动。"
+      ],
+      [
+        "检查全行程",
+        "0～270° 对应 0～−4.5 mm；检查导向、啮合与端部止挡，实际距离刻度需要光学标定。"
+      ]
+    ],
+    "fixing": "镜片靠内筒台肩、厚隔圈与前后压圈固定。调焦环凸缘夹在两片止推垫片之间；保持环捕获凸缘，双向传递轴向力。",
+    "load_path": "手动转角 → 固定壳/调焦环螺旋副 → 止推连接 → 光学内筒；导向螺钉与轴向直槽承担止转。",
+    "note": "单头左旋定制梯形螺旋副，导程 6 mm。Canon EF 尾卡口仅为采购件包络；0° 未标定为无穷远。相机反光镜避让、回差、公差和预紧仍需校核。",
+    "status": "CAD 宏已运行检查；原生几何运动与装入路径已采样校核",
+    "focus_animation": true,
+    "mechanical_count": 18,
+    "full_macro": "DoubleGauss50_Manual.bas",
+    "mechanics_macro": "DoubleGauss50_Manual.bas",
+    "section": "section.png",
+    "design": "DESIGN.md",
+    "freecad_macro": "FreeCAD.FCMacro",
+    "freecad_model": "FreeCAD_Model.FCStd",
+    "freecad_guide": "FREECAD.md",
+    "freecad_report": "freecad_report.json"
   }
 }

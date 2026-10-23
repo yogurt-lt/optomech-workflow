@@ -1,6 +1,7 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    '手动调焦动画':'Manual focus animation',
     '光学模型 → 装配推理 → 截面检查 → 可编辑 CAD 模型':'Optical model → assembly reasoning → section review → editable CAD models',
     '本地运行 · v0.7.0':'Local · v0.7.0',
     '下载 FreeCAD 宏':'Download FreeCAD macro',
@@ -48,7 +49,7 @@
   let lang='zh';try{lang=localStorage.getItem('optomech-language')==='en'?'en':'zh'}catch{}
   function t(s){return lang==='en'?s.split('\n').map(x=>pairs[x]||x).join('\n'):s}
   function apply(){
-    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=lang==='en'?'Optomech Workflow · optical-to-mechanical demos':'Optomech Workflow · 光机结构工作台';
+    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=document.body.dataset.page==='focus'?(lang==='en'?'Optomech Workflow · Manual focus':'Optomech Workflow · 手动调焦动画'):(lang==='en'?'Optomech Workflow · optical-to-mechanical demos':'Optomech Workflow · 光机结构工作台');
     const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
     while(node=walk.nextNode()){
       if(['SCRIPT','STYLE','PRE','TEXTAREA','OPTION'].includes(node.parentElement?.tagName))continue;

@@ -20,6 +20,14 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         route=self.path.split('?')[0]
         if route=='/':return self.send(200,(ROOT/'web'/'index.html').read_bytes(),'text/html; charset=utf-8')
+        if route=='/focus.html':return self.send(200,(ROOT/'web/focus.html').read_bytes(),'text/html; charset=utf-8')
+        if route=='/focus-motion.js':return self.send(200,(ROOT/'web/focus-motion.js').read_bytes(),'text/javascript; charset=utf-8')
+        if route.startswith('/focus-assets/'):
+            name=route.removeprefix('/focus-assets/')
+            if '/' not in name and '\\' not in name and name not in ('.','..'):
+                path=ROOT/'web/focus-assets'/name
+                mime={'.png':'image/png','.gif':'image/gif','.json':'application/json; charset=utf-8'}.get(path.suffix)
+                if mime and path.is_file():return self.send(200,path.read_bytes(),mime)
         if route=='/view3d.js':return self.send(200,(ROOT/'web'/'view3d.js').read_bytes(),'text/javascript; charset=utf-8')
         if route=='/i18n.js':return self.send(200,(ROOT/'web/i18n.js').read_bytes(),'text/javascript; charset=utf-8')
         if route=='/downloads/optomech-design-skill.zip':return self.send(200,(ROOT/'downloads/optomech-design-skill.zip').read_bytes(),'application/zip')

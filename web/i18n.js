@@ -1,6 +1,7 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    '打开独立动画与 GIF 下载 ↗':'Open animation & GIF downloads ↗',
     "下载 Skill":"Download Skill",
     "下载设计 Skill":"Download design Skill",
     "开源 AI 光机设计技能 · SolidWorks / FreeCAD":"Open-source AI optomechanical design Skill · SolidWorks / FreeCAD",
@@ -9,12 +10,12 @@
     "下载 optomech-design Skill":"Download optomech-design Skill",
     "安装与使用说明":"Setup & usage",
     "三维剖面调焦演示":"3D cutaway focus animation",
-    "本页展示七个结构案例，含整组手动调焦。各案例的检查范围见说明。":"Seven structural demos, including whole-unit manual focus. See each case for its verification scope.",
-    "开源 Skill · 七个结构案例 · SolidWorks / FreeCAD":"Open-source Skill · seven structural demos · SolidWorks / FreeCAD",
+    "本页展示八个结构案例，含整组手动及电动内对焦。各案例的检查范围见说明。":"Eight structural demos, including whole-unit manual and electric internal focus. See each case for its verification scope.",
+    "开源 Skill · 八个结构案例 · SolidWorks / FreeCAD":"Open-source Skill · eight structural demos · SolidWorks / FreeCAD",
 
     '手动调焦动画':'Manual focus animation',
     '光学模型 → 装配推理 → 截面检查 → 可编辑 CAD 模型':'Optical model → assembly reasoning → section review → editable CAD models',
-    '本地运行 · v0.7.0':'Local · v0.7.0',
+    '本地运行 · v0.8.0':'Local · v0.8.0',
     '下载 FreeCAD 宏':'Download FreeCAD macro',
     '下载可编辑 FCStd 模型':'Download editable FCStd model',
     'FreeCAD 运行与检查说明':'FreeCAD run & review guide',
@@ -24,7 +25,7 @@
     '光学模型 → 装配推理 → 截面检查 → 可编辑 SolidWorks 模型':'Optical model → assembly reasoning → section review → editable SolidWorks model',
     '本地运行 · v0.4.0':'Local · v0.5.0','本地运行 · v0.5.0':'Local · v0.5.0',
     '01 / 选择案例':'01 / Choose a demo','光学系统':'Optical system','查看与下载':'View & download',
-    '02 / 查看截面图':'02 / View section','下载已验证完整宏':'Download reviewed full macro','仅下载机械宏':'Mechanics-only macro',
+    '02 / 查看截面图':'02 / View section','下载完整宏':'Download full macro','仅下载机械宏':'Mechanics-only macro',
     '导入 SolidWorks 2023 VBA 编辑器，保存为 .swp 后运行 main。三维预览用于理解结构，孔槽与螺纹细节以 CAD 为准。':'Import into the SolidWorks 2023 VBA editor, save as .swp, then run main. The preview explains the structure; CAD defines the detailed cuts and interfaces.',
     '装配依据与完整说明 ↗':'Design rationale & instructions ↗',
     '本页展示六个经用户运行检查的初稿案例。通光、公差与预紧需按实际系统继续校核。':'Six concept demos have been run and reviewed by the user. Aperture clearance, tolerances and preload need application-specific verification.',
@@ -57,10 +58,10 @@
     '把文件核对、装配推理、宏生成和反馈修订流程带到自己的 AI 助手中。':'Bring the file checks, assembly reasoning, macro generation and review loop to your own AI assistant.'
   };
   const reverse=Object.fromEntries(Object.entries(pairs).map(([a,b])=>[b,a]));
-  let lang='zh';try{lang=localStorage.getItem('optomech-language')==='en'?'en':'zh'}catch{}
+  let lang='zh';try{lang=localStorage.getItem('optomech-language')==='en'?'en':'zh'}catch{}const requestedLanguage=new URLSearchParams(location.search).get('lang');if(['zh','en'].includes(requestedLanguage))lang=requestedLanguage;
   function t(s){return lang==='en'?s.split('\n').map(x=>pairs[x]||x).join('\n'):s}
   function apply(){
-    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=document.body.dataset.page==='focus'?(lang==='en'?'Optomech Design Skill · Manual focus':'Optomech Design Skill · 手动调焦动画'):(lang==='en'?'Optomech Design Skill · optical-to-mechanical demos':'Optomech Design Skill · 光机结构工作台');
+    document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=document.body.dataset.page==='focus'?(lang==='en'?'Optomech Design Skill · Focus animation':'Optomech Design Skill · 调焦动画'):(lang==='en'?'Optomech Design Skill · optical-to-mechanical demos':'Optomech Design Skill · 光机结构工作台');
     const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
     while(node=walk.nextNode()){
       if(['SCRIPT','STYLE','PRE','TEXTAREA','OPTION'].includes(node.parentElement?.tagName))continue;

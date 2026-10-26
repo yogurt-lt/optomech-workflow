@@ -2,6 +2,8 @@
 (() => {
   const $=id=>document.getElementById(id),range=$('focus-angle'),play=$('focus-play'),frame=$('focus-frame');
   let mode="3d";const query=new URLSearchParams(location.search);if(query.has("lang"))window.i18n.setLanguage(query.get("lang"));
+  const electric=query.get('case')==='f35-electric',assetBase=electric?'./f35-focus-assets/':'./focus-assets/';
+  frame.removeAttribute('src');frame.alt=electric?'F35 electric internal-focus CAD cutaway':'50 mm F1.8 manual focus CAD cutaway';
   let motion=null,index=0,direction=1,timer=null,loading=0;
   const cache=new Map();
   const copy={
@@ -27,27 +29,27 @@
   };
   const en=()=>window.i18n?.language==='en';
   function labels(){for(const [id,values] of Object.entries(copy))$(id).textContent=values[en()?1:0];play.textContent=timer?(en()?'Pause':'暂停'):(en()?'Play':'播放');range.setAttribute('aria-label',en()?'Focus rotation':'调焦转角');}
-  function image(i){if(!cache.has(i)){const im=new Image();im.src='./focus-assets/'+(mode==='3d'?motion.frames_3d:motion.frames)[i];cache.set(i,im)}return cache.get(i)}
+  function image(i){if(!cache.has(i)){const im=new Image();im.src=assetBase+(mode==='3d'?motion.frames_3d:motion.frames)[i];cache.set(i,im)}return cache.get(i)}
   async function show(i){
     if(!motion)return;
     index=Math.max(0,Math.min(motion.frames.length-1,i));range.value=index;
     const im=image(index),ticket=++loading;
     try{await im.decode();if(ticket!==loading)return;frame.src=im.src;$('focus-error').textContent=''}
     catch{if(ticket===loading)$('focus-error').textContent=en()?'Could not load this frame. Try moving the slider again.':'这一帧未能加载，请重新拖动进度。';return;}
-    $('focus-readout').textContent=`${motion.angles[index]}° · ${Number(motion.travel_mm[index]).toFixed(2)} mm`;
+    $('focus-readout').textContent=electric?`Cam ${motion.angles[index]}° · ${en()?'Input':'输入'} ${motion.pinion_angles[index]}° · L2 ${Number(motion.travel_mm[index]).toFixed(2)} mm`:`${motion.angles[index]}° · ${Number(motion.travel_mm[index]).toFixed(2)} mm`;
     for(const button of document.querySelectorAll('[data-focus-pose]'))button.setAttribute('aria-pressed',String(+button.dataset.focusPose===index));
     image(Math.min(index+1,motion.frames.length-1));image(Math.max(index-1,0));
   }
   function pause(){if(timer)clearTimeout(timer);timer=null;labels();play.setAttribute('aria-pressed','false')}
   async function tick(){if(!timer)return;let next=index+direction;if(next>=motion.frames.length){direction=-1;next=index-1}if(next<0){direction=1;next=1}await show(next);if(timer)timer=setTimeout(tick,(index===0||index===motion.frames.length-1)?600:130)}
-  for(const dimension of ['3d','2d'])$('focus-'+dimension).onclick=()=>{if(!motion)return;pause();mode=dimension;cache.clear();for(const k of ['3d','2d'])$('focus-'+k).setAttribute('aria-pressed',String(k===mode));$('focus-gif').href='./focus-assets/'+(mode==='3d'?motion.gif_3d:motion.gif);show(index)};
+  for(const dimension of ['3d','2d'])$('focus-'+dimension).onclick=()=>{if(!motion)return;pause();mode=dimension;cache.clear();for(const k of ['3d','2d'])$('focus-'+k).setAttribute('aria-pressed',String(k===mode));$('focus-gif').href=assetBase+(mode==='3d'?motion.gif_3d:motion.gif);show(index)};
   play.onclick=()=>{if(timer){pause();return;}timer=setTimeout(tick,130);labels();play.setAttribute('aria-pressed','true')};
   range.oninput=()=>{pause();show(+range.value)};
   for(const button of document.querySelectorAll('[data-focus-pose]'))button.onclick=()=>{pause();show(+button.dataset.focusPose)};
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
-  document.addEventListener('languagechange',labels);labels();
+  document.addEventListener('languagechange',()=>{labels();if(motion)show(index)});labels();
   if(query.has('embed'))new ResizeObserver(()=>parent.postMessage({type:'focus-height',height:document.querySelector('.card').getBoundingClientRect().height+12},location.origin)).observe(document.querySelector('.card'));
   range.disabled=true;
   for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=true;
-  fetch('./focus-assets/motion.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{motion=data;$('focus-gif').href='./focus-assets/'+data.gif_3d;range.max=data.frames.length-1;range.disabled=false;play.disabled=false;for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=false;show(0)}).catch(()=>{$('focus-error').textContent=en()?'Animation data is unavailable. You can download the GIF below.':'动画数据暂时无法加载，可下载下方 GIF 查看。'});
+  fetch(assetBase+'motion.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{motion=data;if(data.copy)Object.assign(copy,data.copy);labels();$('focus-gif').href=assetBase+data.gif_3d;range.max=data.frames.length-1;range.disabled=false;play.disabled=false;for(const button of document.querySelectorAll('[data-focus-pose]'))button.disabled=false;if(data.preset_indices)for(const [i,id] of ['focus-reference','focus-middle','focus-near'].entries())$(id).dataset.focusPose=data.preset_indices[i];$('focus-section-link').href=assetBase+'section.png';$('focus-detail-link').href=assetBase+'detail.png';show(data.initial_index??0)}).catch(()=>{$('focus-error').textContent=en()?'Animation data is unavailable. You can download the GIF below.':'动画数据暂时无法加载，可下载下方 GIF 查看。'});
 })();

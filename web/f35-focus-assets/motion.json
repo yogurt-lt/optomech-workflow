@@ -1,0 +1,204 @@
+{
+  "angles": [
+    -40,
+    -36,
+    -32,
+    -28,
+    -24,
+    -20,
+    -16,
+    -12,
+    -8,
+    -4,
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40
+  ],
+  "travel_mm": [
+    -2.0,
+    -1.971,
+    -1.888,
+    -1.7570000000000001,
+    -1.5839999999999999,
+    -1.375,
+    -1.1360000000000001,
+    -0.8730000000000002,
+    -0.5919999999999996,
+    -0.29899999999999993,
+    0.0,
+    0.2990000000000004,
+    0.5919999999999996,
+    0.8729999999999998,
+    1.1359999999999997,
+    1.375,
+    1.5840000000000005,
+    1.7570000000000006,
+    1.888,
+    1.9709999999999992,
+    2.0
+  ],
+  "pinion_angles": [
+    200,
+    180,
+    160,
+    140,
+    120,
+    100,
+    80,
+    60,
+    40,
+    20,
+    0,
+    -20,
+    -40,
+    -60,
+    -80,
+    -100,
+    -120,
+    -140,
+    -160,
+    -180,
+    -200
+  ],
+  "frames": [
+    "frame-00.png",
+    "frame-01.png",
+    "frame-02.png",
+    "frame-03.png",
+    "frame-04.png",
+    "frame-05.png",
+    "frame-06.png",
+    "frame-07.png",
+    "frame-08.png",
+    "frame-09.png",
+    "frame-10.png",
+    "frame-11.png",
+    "frame-12.png",
+    "frame-13.png",
+    "frame-14.png",
+    "frame-15.png",
+    "frame-16.png",
+    "frame-17.png",
+    "frame-18.png",
+    "frame-19.png",
+    "frame-20.png"
+  ],
+  "frames_3d": [
+    "3d-00.png",
+    "3d-01.png",
+    "3d-02.png",
+    "3d-03.png",
+    "3d-04.png",
+    "3d-05.png",
+    "3d-06.png",
+    "3d-07.png",
+    "3d-08.png",
+    "3d-09.png",
+    "3d-10.png",
+    "3d-11.png",
+    "3d-12.png",
+    "3d-13.png",
+    "3d-14.png",
+    "3d-15.png",
+    "3d-16.png",
+    "3d-17.png",
+    "3d-18.png",
+    "3d-19.png",
+    "3d-20.png"
+  ],
+  "gif": "electric-focus.gif",
+  "gif_3d": "electric-focus-3d.gif",
+  "initial_index": 10,
+  "preset_indices": [
+    0,
+    10,
+    20
+  ],
+  "provenance": "Native FreeCAD Body Tip shapes transformed once to global coordinates; rotating solids re-cut at every pose. Fixed camera and section plane.",
+  "copy": {
+    "focus-kicker": [
+      "电动内对焦实验 · F35 F2.8",
+      "Electric internal-focus experiment · F35 F2.8"
+    ],
+    "focus-title": [
+      "转动输入齿轮，看第二片怎样移动",
+      "Turn the input gear and watch L2 move"
+    ],
+    "focus-intro": [
+      "绿色输入齿轮驱动金色凸轮环；凸轮环轴向固定，只旋转。滚子带动蓝色镜座与 L2 平移，其他镜片不动。",
+      "The green input pinion drives the gold cam ring, which rotates at a fixed axial position. Followers translate the blue cell and L2; the other lenses stay fixed."
+    ],
+    "focus-reference": [
+      "负向端点",
+      "Negative endpoint"
+    ],
+    "focus-middle": [
+      "名义中位",
+      "Nominal middle"
+    ],
+    "focus-near": [
+      "正向端点",
+      "Positive endpoint"
+    ],
+    "focus-gold": [
+      "凸轮环：只旋转",
+      "Cam ring: rotation only"
+    ],
+    "focus-blue": [
+      "L2 镜座：只平移",
+      "L2 cell: translation only"
+    ],
+    "focus-teal": [
+      "固定筒及其余镜片：不动",
+      "Housing and other optics: stationary"
+    ],
+    "focus-caption": [
+      "80:16 齿轮副 · 凸轮 ±40° · L2 ±2 mm。输入齿轮转角为凸轮的 −5 倍。21 个原生 CAD 姿态采用同一个剖切平面与视角，动画不代表实际对焦距离。",
+      "80:16 gearing · cam ±40° · L2 ±2 mm. Input rotation is −5 times the cam angle. The 21 native CAD poses share one section plane and camera. These positions are not calibrated focus distances."
+    ],
+    "focus-step1-title": [
+      "01 / 齿轮驱动凸轮",
+      "01 / Gearing drives the cam"
+    ],
+    "focus-step1": [
+      "16 齿输入齿轮带动 80 齿凸轮环；凸轮环被轴向捕获，输入驱动只示意几何接口。",
+      "A 16-tooth input pinion drives the 80-tooth cam ring. The ring is captured axially; the input demonstrates a geometric drive interface."
+    ],
+    "focus-step2-title": [
+      "02 / 曲线槽推动滚子",
+      "02 / Cam slots move the followers"
+    ],
+    "focus-step2": [
+      "三组滚子沿闭口凸轮槽运动，把转角变成第二片的轴向行程。行程使用端点斜率为零的平滑曲线。",
+      "Three followers engage closed cam slots, converting rotation into axial L2 travel. The smoothstep travel law has zero slope at both endpoints."
+    ],
+    "focus-step3-title": [
+      "03 / 固定直槽限制转动",
+      "03 / Straight guides prevent rotation"
+    ],
+    "focus-step3": [
+      "肩轴穿过固定筒直槽，使镜座只轴向移动。固定后组采用外缘接触、隔圈与单只后压圈装配。",
+      "Shoulder axles pass through straight housing slots, keeping the cell from rotating. Fixed rear optics use rim contact, a spacer and one rear cap."
+    ],
+    "focus-detail-link": [
+      "查看外缘接触放大图",
+      "View rim-contact detail"
+    ],
+    "focus-scope": [
+      "这是未选马达的几何驱动 demo。L3～L6 的新机械外缘需要新制镜片；光阑表面遮光环仅为待校核标注。尚未标定对焦距离；动画不代替通光、应力、公差或回差校核。",
+      "This geometric drive demo does not select a motor. New L3–L6 mechanical rims require new lens blanks. A lens-surface opaque aperture is indicated pending optical validation. Focus distances are uncalibrated; animation does not replace optical, stress, tolerance or backlash checks."
+    ],
+    "focus-footer": [
+      "仅 L2 移动，其余镜片固定；网页动画不操作本地 CAD 文件。",
+      "Only L2 moves; all other lenses stay fixed. The animation does not operate local CAD files."
+    ]
+  }
+}

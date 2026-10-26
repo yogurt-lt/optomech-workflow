@@ -1,10 +1,10 @@
-"""Package the approved six-case project, standalone Skill and static gallery."""
+"""Package the approved fixed and focusing project, standalone Skill and static gallery."""
 from pathlib import Path
 import argparse,hashlib,json,shutil,sys,zipfile
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from build_pages import build as build_pages
-VERSION='0.7.0'
+VERSION='0.8.0'
 
 def archive(path,files):
     with zipfile.ZipFile(path,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
@@ -38,7 +38,7 @@ def build(output):
         if p.resolve().is_relative_to(output):continue
         files.append((p,Path('optomech-workflow')/rel))
     archive(output/f'optomech-workflow-v{VERSION}.zip',files)
-    manifest=dict(version=VERSION,date='2026-10-22',cases=6,cad_review='All six cases user-confirmed in SolidWorks 2023 and FreeCAD; native FreeCAD checks used 1.1.4',publication='Local release files only; no GitHub push or remote deployment performed',files=[])
+    manifest=dict(version=VERSION,date='2026-10-26',cases=len(catalog),cad_review='See individual case reports: six fixed cases user-confirmed; focusing cases include sampled native motion checks and separate runtime status',publication='Release archive manifest; remote deployment status must be verified separately',files=[])
     for p in sorted(output.glob('*.zip')):
         manifest['files'].append(dict(name=p.name,bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()))
     (output/'release_manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')

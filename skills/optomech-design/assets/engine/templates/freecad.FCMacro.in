@@ -155,6 +155,20 @@ def build_part(doc,container,item,offset):
     cuts=build_cuts(doc,body,item,offset)
     return dict(name=item['name'],volume_mm3=body.Tip.Shape.Volume,zmin_mm=bb.ZMin,zmax_mm=bb.ZMax,solids=len(body.Tip.Shape.Solids),cuts=cuts)
 
+def apply_body_appearance(body,item):
+    """Set one material per solid after recompute, avoiding stale per-face overrides."""
+    color=tuple(item['color_rgb'])
+    glass=item.get('is_glass',False)
+    material=App.Material();material.DiffuseColor=color;material.Transparency=.45 if glass else 0.
+    body.ViewObject.DisplayModeBody='Tip'
+    for obj in [body]+list(body.Group):
+        view=obj.ViewObject
+        if 'ShapeAppearance' in view.PropertiesList:
+            view.ShapeAppearance=[material]
+            view.Transparency=45 if glass else 0
+        if obj!=body:obj.Visibility=(obj==body.Tip)
+    body.Visibility=True
+
 def main():
     destination=choose_directory()
     if destination is None:
@@ -179,14 +193,7 @@ def main():
             container.Visibility=True
             bodies=[obj for obj in container.Group if obj.TypeId=='PartDesign::Body']
             for body,item in zip(bodies,PLAN['parts']):
-                color=tuple(item['color_rgb'])
-                for obj in (body,body.Tip):
-                    obj.ViewObject.ShapeColor=color
-                    obj.ViewObject.DiffuseColor=[color]*len(body.Tip.Shape.Faces)
-                    obj.ViewObject.Transparency=45 if item['is_glass'] else 0
-                    obj.Visibility=True
-                for obj in body.Group:
-                    if obj!=body.Tip and obj.TypeId in ('Sketcher::SketchObject','PartDesign::Revolution','PartDesign::Pocket'):obj.Visibility=False
+                apply_body_appearance(body,item)
         doc.commitTransaction()
         stage='save native document'
         path=run/'Optomech_Baseline.FCStd'
@@ -200,6 +207,7 @@ def main():
             if gui_doc is not None:
                 gui_doc.activeView().viewAxonometric()
                 gui_doc.activeView().fitAll()
+                doc.save()
         App.Console.PrintMessage('Optomech saved: '+str(path)+'\n')
         if PLAN['capabilities']['extra_features_not_implemented']:
             App.Console.PrintWarning('BASELINE ONLY - dedicated holes/slots are omitted. See build_report.json.\n')

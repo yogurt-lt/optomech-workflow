@@ -1,0 +1,522 @@
+{
+  "status": "passed",
+  "body_count": 24,
+  "body_validity": [
+    {
+      "name": "01_FixedGuideBarrel",
+      "valid": true,
+      "solids": 1,
+      "volume": 43394.19501005542
+    },
+    {
+      "name": "02_L1Retainer",
+      "valid": true,
+      "solids": 1,
+      "volume": 959.1130674578479
+    },
+    {
+      "name": "03_L2MovingCell",
+      "valid": true,
+      "solids": 1,
+      "volume": 4251.7072657962
+    },
+    {
+      "name": "04_L2Retainer",
+      "valid": true,
+      "solids": 1,
+      "volume": 419.6812813935482
+    },
+    {
+      "name": "09_L7Retainer",
+      "valid": true,
+      "solids": 1,
+      "volume": 369.03555192521867
+    },
+    {
+      "name": "10_GearedCamRing",
+      "valid": true,
+      "solids": 1,
+      "volume": 12222.903979542432
+    },
+    {
+      "name": "11_CamKeeper",
+      "valid": true,
+      "solids": 1,
+      "volume": 2316.4385042390304
+    },
+    {
+      "name": "12_FrontThrustWasher",
+      "valid": true,
+      "solids": 1,
+      "volume": 212.08577845119424
+    },
+    {
+      "name": "13_RearThrustWasher",
+      "valid": true,
+      "solids": 1,
+      "volume": 212.08577845119632
+    },
+    {
+      "name": "14_InputPinion",
+      "valid": true,
+      "solids": 1,
+      "volume": 331.5666684164292
+    },
+    {
+      "name": "05_RearRectangularSpacer",
+      "valid": true,
+      "solids": 1,
+      "volume": 452.2810306201784
+    },
+    {
+      "name": "Lens1_Optical_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 10028.228977949055
+    },
+    {
+      "name": "Lens2_Optical_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 6043.326912977226
+    },
+    {
+      "name": "Lens3_RevisedBlank_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 1327.556404547634
+    },
+    {
+      "name": "Lens4_RevisedBlank_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 1473.560176956962
+    },
+    {
+      "name": "Lens5_RevisedBlank_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 2585.2606782480757
+    },
+    {
+      "name": "Lens6_RevisedBlank_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 1692.627665835232
+    },
+    {
+      "name": "Lens7_Optical_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume": 1864.9506227319685
+    },
+    {
+      "name": "21_GuideAxle",
+      "valid": true,
+      "solids": 1,
+      "volume": 113.73036644893108
+    },
+    {
+      "name": "31_CamRoller",
+      "valid": true,
+      "solids": 1,
+      "volume": 35.657469317325855
+    },
+    {
+      "name": "22_GuideAxle",
+      "valid": true,
+      "solids": 1,
+      "volume": 113.73036644893108
+    },
+    {
+      "name": "32_CamRoller",
+      "valid": true,
+      "solids": 1,
+      "volume": 35.65746931732587
+    },
+    {
+      "name": "23_GuideAxle",
+      "valid": true,
+      "solids": 1,
+      "volume": 113.73036644893108
+    },
+    {
+      "name": "33_CamRoller",
+      "valid": true,
+      "solids": 1,
+      "volume": 35.65746931732586
+    }
+  ],
+  "motion_samples": [
+    {
+      "angle_deg": 0,
+      "travel_mm": 0.0,
+      "intersections": []
+    },
+    {
+      "angle_deg": -40,
+      "travel_mm": -2.0,
+      "intersections": []
+    },
+    {
+      "angle_deg": -30,
+      "travel_mm": -1.828125,
+      "intersections": []
+    },
+    {
+      "angle_deg": -20,
+      "travel_mm": -1.375,
+      "intersections": []
+    },
+    {
+      "angle_deg": -10,
+      "travel_mm": -0.734375,
+      "intersections": []
+    },
+    {
+      "angle_deg": 10,
+      "travel_mm": 0.734375,
+      "intersections": []
+    },
+    {
+      "angle_deg": 20,
+      "travel_mm": 1.375,
+      "intersections": []
+    },
+    {
+      "angle_deg": 30,
+      "travel_mm": 1.828125,
+      "intersections": []
+    },
+    {
+      "angle_deg": 40,
+      "travel_mm": 2.0,
+      "intersections": []
+    }
+  ],
+  "insertion_samples": [
+    {
+      "module": "G3_from_rear",
+      "shift_mm": 35,
+      "intersections": []
+    },
+    {
+      "module": "G3_from_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "module": "G3_from_rear",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "module": "G3_from_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "module": "G3_from_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "G4_from_rear",
+      "shift_mm": 35,
+      "intersections": []
+    },
+    {
+      "module": "G4_from_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "module": "G4_from_rear",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "module": "G4_from_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "module": "G4_from_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "Rear_spacer_from_rear",
+      "shift_mm": 30,
+      "intersections": []
+    },
+    {
+      "module": "Rear_spacer_from_rear",
+      "shift_mm": 15,
+      "intersections": []
+    },
+    {
+      "module": "Rear_spacer_from_rear",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "module": "Rear_spacer_from_rear",
+      "shift_mm": 3,
+      "intersections": []
+    },
+    {
+      "module": "Rear_spacer_from_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "L7_from_rear",
+      "shift_mm": 30,
+      "intersections": []
+    },
+    {
+      "module": "L7_from_rear",
+      "shift_mm": 15,
+      "intersections": []
+    },
+    {
+      "module": "L7_from_rear",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "module": "L7_from_rear",
+      "shift_mm": 3,
+      "intersections": []
+    },
+    {
+      "module": "L7_from_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "Rear_retainer",
+      "shift_mm": 15,
+      "intersections": []
+    },
+    {
+      "module": "Rear_retainer",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "module": "Rear_retainer",
+      "shift_mm": 4,
+      "intersections": []
+    },
+    {
+      "module": "Rear_retainer",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "module": "Rear_retainer",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "L2_from_front",
+      "shift_mm": -35,
+      "intersections": []
+    },
+    {
+      "module": "L2_from_front",
+      "shift_mm": -25,
+      "intersections": []
+    },
+    {
+      "module": "L2_from_front",
+      "shift_mm": -15,
+      "intersections": []
+    },
+    {
+      "module": "L2_from_front",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "module": "L2_from_front",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "module": "Cam_ring_from_rear",
+      "shift_mm": 60,
+      "intersections": []
+    },
+    {
+      "module": "Cam_ring_from_rear",
+      "shift_mm": 40,
+      "intersections": []
+    },
+    {
+      "module": "Cam_ring_from_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "module": "Cam_ring_from_rear",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "module": "Cam_ring_from_rear",
+      "shift_mm": 0,
+      "intersections": []
+    }
+  ],
+  "source_step": {
+    "solids": 7,
+    "bounds_mm": [
+      -23.689000002733838,
+      23.689000002733838,
+      -47.378,
+      47.378,
+      0.0,
+      65.01451722099999
+    ],
+    "tessellated_bounds_mm": {
+      "x": [
+        -23.688287442727447,
+        23.689
+      ],
+      "y": [
+        -23.688999994,
+        23.689
+      ],
+      "z": [
+        0.0,
+        65.014517221
+      ]
+    },
+    "note": "Raw B-spline control-pole bounds can overestimate Y. Tessellated points confirm the round lens radius and Z0 coordinate; no affine scaling applied.",
+    "glass_volume_comparison": [
+      {
+        "lens": 1,
+        "step_mm3": 10035.108420177823,
+        "reference_mm3": 10028.228977949055
+      },
+      {
+        "lens": 2,
+        "step_mm3": 6044.17945847312,
+        "reference_mm3": 6043.326912977226
+      },
+      {
+        "lens": 3,
+        "step_mm3": 1279.9013005752943,
+        "reference_mm3": 1327.556404547634
+      },
+      {
+        "lens": 4,
+        "step_mm3": 1246.0073524620077,
+        "reference_mm3": 1473.560176956962
+      },
+      {
+        "lens": 5,
+        "step_mm3": 2216.6063765752765,
+        "reference_mm3": 2585.2606782480757
+      },
+      {
+        "lens": 6,
+        "step_mm3": 1581.4572609725965,
+        "reference_mm3": 1692.627665835232
+      },
+      {
+        "lens": 7,
+        "step_mm3": 1865.2281487219077,
+        "reference_mm3": 1864.9506227319685
+      }
+    ]
+  },
+  "scope": "Native nominal solids, sampled reference glass, sampled motion/insertion only; no tolerance, stress, optical or thread engagement qualification.",
+  "rim_contact": {
+    "area_mm2": 34.400439556808294,
+    "expected_annulus_area_mm2": 34.400439556808244,
+    "volume_mm3": 0.0,
+    "distance_mm": 0.0,
+    "band_radius_mm": [
+      10.7,
+      11.2
+    ],
+    "z_mm": 47.92251722098738
+  },
+  "original_optical_region_preserved": [
+    {
+      "lens": 1,
+      "surface": 1,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 1,
+      "surface": 2,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 2,
+      "surface": 3,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 2,
+      "surface": 4,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 3,
+      "surface": 5,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 3,
+      "surface": 6,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 4,
+      "surface": 6,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 4,
+      "surface": 7,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 5,
+      "surface": 9,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 5,
+      "surface": 10,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 6,
+      "surface": 10,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 6,
+      "surface": 11,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 7,
+      "surface": 12,
+      "max_prescription_sag_deviation_mm": 0.0
+    },
+    {
+      "lens": 7,
+      "surface": 13,
+      "max_prescription_sag_deviation_mm": 0.0
+    }
+  ],
+  "accepted_focus_mechanism_unchanged": "Verified: moving cell/cap, cam, gears, washers/keeper, accessories, motion law and existing cam/guide cuts match v0.1."
+}

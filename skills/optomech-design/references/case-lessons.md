@@ -1,4 +1,4 @@
-# Lessons from six reviewed concepts
+# Lessons from fixed and focusing concepts
 
 These describe the final accepted architecture, not universal recipes. Values belong to their demo scale.
 
@@ -10,3 +10,6 @@ These describe the final accepted architecture, not universal recipes. Values be
 - **Wide angle:** two barrels used three simple spacers. The close G1/G2 pair gained a direct peripheral bearing contact. The second barrel loaded from both sides of its stop; its front ring had to be secured before mating the barrels. The stop bevel went on the image side because the upstream glass left insufficient space for an upstream bevel.
 
 When a user rejects a concept as difficult to machine or assemble, change the architecture as needed. Do not just report that the sampled section has no overlap. Document what changed, why, and which actual CAD/runtime and manufacturing checks remain.
+
+- **Double Gauss manual focus:** the helicoid ring rotates and translates; a captured thrust joint moves the optical unit, while straight slots prevent rotation. Deep rear optics use substantial spacers and one accessible cap.
+- **F35 electric internal focus v0.2:** only L2 translates. An axially fixed geared cam drives three followers through straight guides. Tight rear glass edges use newly manufactured flat peripheral contact rims and one rear cap rather than thin spacers or separately bonded main-barrel seats. Transparent rim contact alone does not make an opaque stop. Native motion, insertion and face-contact checks accompany the CAD. Read [focusing and apertures](focusing-and-apertures.md) before reusing these choices.

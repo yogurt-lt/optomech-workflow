@@ -10,7 +10,7 @@ function focusCase(meta){
  document.getElementById('mechMacro').hidden=!!meta&&meta.full_macro===meta.mechanics_macro;
  const active=!!meta?.focus_animation,box=document.getElementById('focus-case'),f=document.getElementById('focus-embed');
  document.querySelector('.preview-card').hidden=active;box.hidden=!active;
- if(active){const url='focus.html?embed=1&lang='+window.i18n.language;if(f.getAttribute('src')!==url)f.src=url;}
+ if(active){const url='focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss');if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
  else if(f.hasAttribute('src'))f.removeAttribute('src');
  document.getElementById('heroSkillGuide').href=window.i18n.language==='en'?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
 }
@@ -30,11 +30,11 @@ window.addEventListener('message',e=>{const f=document.getElementById('focus-emb
   function options(){const value=key;$('demo').replaceChildren(...Object.entries(demos).map(([k,m])=>new Option(english()?m.en.title:m.title,k)));if(value)$('demo').value=value}
   async function load(value){
     $('demo').disabled=true;$('language-toggle').disabled=true;
-    try{const data=await json(`examples/${value}/plan.json`);key=value;plan=data;render()}
+    try{const data=await json(`examples/${value}/plan.json`);key=value;plan=data;$('demo').value=value;render()}
     catch(e){$('banner').textContent=(english()?'Could not load this demo: ':'案例加载失败：')+e.message}
     finally{$('demo').disabled=false;$('language-toggle').disabled=false}
   }
   $('demo').onchange=()=>load($('demo').value);
   document.addEventListener('languagechange',()=>{options();render()});
-  (async()=>{try{demos=await json('data/catalog.json');options();await load('fixed-projection')}catch(e){$('banner').textContent=e.message}})();
+  (async()=>{try{demos=await json('data/catalog.json');options();await load(Object.hasOwn(demos,new URLSearchParams(location.search).get('demo'))?new URLSearchParams(location.search).get('demo'):'fixed-projection')}catch(e){$('banner').textContent=e.message}})();
 })();

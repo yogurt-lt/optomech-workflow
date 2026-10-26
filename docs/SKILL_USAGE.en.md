@@ -24,3 +24,7 @@ The tools check an explicit plan and generate revolved bodies. FreeCAD supports 
 The updated Skill separates shared design reasoning from CAD backends. See `references/freecad.md` for the native FreeCAD backend. Unsupported cuts block generation by default; `--allow-base-only` explicitly selects a labeled baseline and lists omissions. Rebuild native operations from the shared plan rather than translating VBA. The six FreeCAD demos were executed and user-reviewed; new or edited outputs require their own runtime validation.
 
 The standalone Skill contains reusable code and distilled guidance, without private conversations, company optics or credentials. The full project package provides the six public examples, but the standalone Skill does not depend on them.
+
+## Focus mechanisms
+
+Read `references/focusing-and-apertures.md` for whole-unit/manual and internal/electric focus reasoning. `scripts/motion_law.py` exports a geometric travel CSV. Define moving components, fixed references and assembly access before drawing cams, followers or helicoids. F35 dimensions and ±2 mm travel are case examples; its lens-surface opaque aperture requires optical validation.

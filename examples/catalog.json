@@ -205,5 +205,50 @@
     "freecad_model": "FreeCAD_Model.FCStd",
     "freecad_guide": "FREECAD.md",
     "freecad_report": "freecad_report.json"
+  },
+  "f35-electric": {
+    "title": "F35 F2.8 · 电动内对焦",
+    "summary": "仅 L2 移动 · 齿轮驱动凸轮 · 4 mm 行程",
+    "intro": "固定导向筒保持不动。绿色输入齿轮驱动金色凸轮环旋转，通过三组滚子带动蓝色 L2 镜座轴向移动；轴向直槽限制镜座转动。后组采用外缘相抵、矩形隔圈与单只后压圈。",
+    "stages": [
+      [
+        "预装移动镜座",
+        "在台面将 L2 与前压圈装入蓝色镜座。"
+      ],
+      [
+        "装导向与凸轮",
+        "移动镜座入筒，安装肩轴与滚子，捕获凸轮环的轴向位置，再装输入齿轮；检查全行程。"
+      ],
+      [
+        "后端单向装入",
+        "G3（L3/L4）→ G4（L5/L6）→ 矩形隔圈 → L7 → 后压圈；另装 L1 和前压圈。"
+      ],
+      [
+        "检查调焦",
+        "凸轮 −40～40° 对应 L2 −2～2 mm；输入齿轮转角为凸轮的 −5 倍。"
+      ]
+    ],
+    "fixing": "后组由一只可操作的后压圈锁紧；L4/L5 外围平环带直接接触。L3～L6 需新制 Ø22.4 mm 机械外缘，原光学面及中央间隔保持。",
+    "load_path": "输入齿轮 → 凸轮环 → 滚子 → L2 移动镜座；固定筒直槽止转。后压圈 → L7 → 矩形隔圈 → G4 → 外缘接触 → G3 → 固定台肩。",
+    "note": "光阑处不设尖薄金属片；镜片表面遮光环仅为待光学校核标注。扩缘相抵本身不构成不透明光阑。动画为名义几何运动，未标定实际对焦距离。",
+    "status": "方案已确认；原生 FreeCAD 24 实体、9 个运动位置及 35 个装入位置校核通过；本版 SW 单独运行状态见报告",
+    "focus_animation": true,
+    "animation_case": "f35-electric",
+    "mechanical_count": 17,
+    "full_macro": "F35_Electric_v02.bas",
+    "mechanics_macro": "F35_Electric_v02.bas",
+    "section": "section.png",
+    "design": "DESIGN.md",
+    "freecad_macro": "FreeCAD.FCMacro",
+    "freecad_model": "FreeCAD_Model.FCStd",
+    "freecad_guide": "FREECAD.md",
+    "freecad_report": "freecad_report.json",
+    "extra_files": [
+      "native_plan.json",
+      "rim_contact.png",
+      "cam_assembly.png",
+      "solidworks_checks.json",
+      "focus_curve.csv"
+    ]
   }
 }

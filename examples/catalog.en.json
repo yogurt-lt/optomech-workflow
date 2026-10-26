@@ -147,5 +147,32 @@
     "load_path": "Manual rotation → housing/ring helicoid → thrust coupling → optical barrel. Guide screws in straight axial slots prevent barrel rotation.",
     "note": "Custom single-start left-hand trapezoidal helicoid, 6 mm lead. The Canon EF rear interface is a purchased-part envelope. Zero degrees is not calibrated infinity; mirror clearance, backlash, tolerances and preload remain to be checked.",
     "status": "CAD macros run and reviewed; native motion and assembly paths sampled"
+  },
+  "f35-electric": {
+    "title": "F35 F2.8 · Electric internal focus",
+    "summary": "L2 only · Geared cam drive · 4 mm travel",
+    "intro": "The teal guide housing remains fixed. A green input pinion rotates the gold cam ring, whose three followers translate the blue L2 cell. Straight guides prevent cell rotation. The rear optics use rim contact, a rectangular spacer and one accessible retaining cap.",
+    "stages": [
+      [
+        "Preassemble L2",
+        "Bench-assemble L2 and its front retaining cap in the blue cell."
+      ],
+      [
+        "Fit guides and cam",
+        "Insert the cell, install shoulder axles and rollers, capture the cam axially and fit the input pinion. Check full travel."
+      ],
+      [
+        "Load from the rear",
+        "G3 (L3/L4) → G4 (L5/L6) → rectangular spacer → L7 → rear cap. Fit L1 and its front retainer separately."
+      ],
+      [
+        "Check focus motion",
+        "Cam −40…40° gives L2 −2…2 mm. Input pinion rotation is −5 times the cam angle."
+      ]
+    ],
+    "fixing": "One accessible rear cap closes the fixed rear stack. L4/L5 contact on peripheral flat annuli. L3–L6 require new OD22.4 mm blanks; original optical faces and the central gap are retained.",
+    "load_path": "Input pinion → cam → rollers → L2 cell; housing straight guides prevent rotation. Rear cap → L7 → spacer → G4 → rim contact → G3 → fixed shoulder.",
+    "note": "No thin knife-edge metal stop is squeezed into the gap. A lens-surface opaque annulus is indicated pending optical validation; transparent rim contact alone does not make a stop. Motion is geometric, without calibrated focus distances.",
+    "status": "Concept approved; native FreeCAD checks: 24 bodies, 9 motion poses, 35 insertion poses. Separate SW runtime status is recorded in its report."
   }
 }

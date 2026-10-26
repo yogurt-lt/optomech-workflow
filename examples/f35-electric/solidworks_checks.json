@@ -1,0 +1,13 @@
+{
+  "status": "generated; SolidWorks runtime pending user review",
+  "components": 24,
+  "section_count": 499,
+  "loft_cuts": 113,
+  "geometry": "3 cam loft cuts and explicit80/16 tooth involute gear spaces. Screw threads nominal; SW runtime pending.",
+  "pose_macros": [
+    "FocusMinus2mm",
+    "FocusMiddle",
+    "FocusPlus2mm"
+  ],
+  "mates": "none; coordinate pose macros"
+}

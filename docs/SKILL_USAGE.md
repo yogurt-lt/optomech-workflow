@@ -28,3 +28,7 @@ python scripts/workflow.py macro design_plan.json --cad freecad --output Concept
 新版 Skill 将设计流程与 CAD 后端分离。FreeCAD 的原生特征适配见 `references/freecad.md`；若方案包含未迁移的孔槽，默认会停止，只有明确选择主体 baseline（`--allow-base-only`）才继续，并列出遗漏。SolidWorks 宏不能直接转换成 FreeCAD 宏；应从同一方案重新生成。六个 demo 已分别在 FreeCAD 运行并经用户确认；新方案和修改版仍需各自验证。
 
 分发包包含通用代码和提炼后的经验，不包含私人对话、公司镜头文件或账号凭据。六个公开示例在完整项目包中提供，独立 Skill 不依赖这些输入。
+
+## 调焦机构
+
+Skill 包含整组手动与单组电动对焦推理参考 `references/focusing-and-apertures.md`，以及几何行程 CSV 工具 `scripts/motion_law.py`。先确定运动组件、固定基准和装配路径，再画凸轮、滚子或螺旋副。F35 示例的 ±2 mm 行程与尺寸不是通用默认；光阑表面遮光方案仍需光学校核。

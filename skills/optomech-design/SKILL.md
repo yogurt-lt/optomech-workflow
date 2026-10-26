@@ -1,6 +1,6 @@
 ---
 name: optomech-design
-description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax/STEP inputs, then generate editable CAD concepts through SolidWorks or FreeCAD adapters. Use for optical-to-mechanical assembly design, CAD migration and iterative model repair.
+description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax/STEP inputs, then generate editable CAD concepts through SolidWorks or FreeCAD adapters. Use for optical-to-mechanical assembly design, manual/electric focusing, CAD migration and iterative model repair.
 ---
 
 # Optical-to-mechanical design
@@ -29,6 +29,8 @@ Validate incoming components against the housing **and all already-installed com
 
 Keep the optical stop's aperture and axial definition explicit. Give its metal aperture land finite thickness and a practical relief bevel; do not run a wedge to zero thickness. A stop integral with a barrel is one part and uses that barrel's color. A STOP on a curved optical surface is not automatically a separate flat aperture plate.
 
+For a focusing mechanism or lens-integrated aperture, read [focusing and apertures](references/focusing-and-apertures.md). Define fixed, rotating and translating groups before drawing slots or gears; distinguish a geometric motion law from optical focus calibration.
+
 ## Deliver geometry with evidence
 
 Read [plan data and bundled tools](references/plan-and-tools.md) for the input schema and commands. The standalone bundle includes a small Python standard-library engine and separate SolidWorks/FreeCAD templates; it does not require this repository or any user CAD files to be installed elsewhere.
@@ -47,6 +49,6 @@ For FreeCAD, read [the FreeCAD adapter](references/freecad.md). Check its capabi
 
 Tell the user which checks ran and whether this exact macro was run in CAD. A screenshot of success confirms execution, not production fitness. When reviewing feedback, update the mechanical scheme if necessary, rather than repeatedly shrinking rings to make a section pass. Regenerate the section and macro together and retain the last user-accepted version.
 
-For design choices and known failure modes from the six public demos, read [case lessons](references/case-lessons.md). They are examples, not a catalog of mandatory architectures.
+For design choices and known failure modes from the public fixed and focusing demos, read [case lessons](references/case-lessons.md). They are examples, not a catalog of mandatory architectures.
 
 Do not publish input optics, conversation transcripts or a whole working directory as part of using this skill. Package only the specifically approved examples when the user asks for release preparation.

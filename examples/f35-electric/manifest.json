@@ -1,0 +1,30 @@
+{
+  "case": "F35 F2.8 electric internal focus",
+  "version": "0.2",
+  "publication_date": "2026-10-26",
+  "original_inputs_sha256": {
+    "f35F2.8.zmx": "e208cfc8c154c89ba6bedbe50fb1c2b9c244bdd151e3571aa5bd95a1e1cdd76b",
+    "f35F2.8.STP": "c6d1e5fe9aedd52e936b65a35185aa33a2bc702fbf7f7a5a53b6a3f2855b72eb"
+  },
+  "files": {
+    "cam_assembly.png": "f4719c6d8608624ec1b64f7edececd653508c5ff370228905f17b8b20dc9fba8",
+    "DESIGN.en.md": "00ae8cf2a99f123287bd1d0030933c2d0737ce04c4da3221dd8179039ef3d80d",
+    "DESIGN.md": "3a008c5cf415a2e865a4decbd08b73b004c7264870a232f5176a23d36342391d",
+    "F35_Electric_v02.bas": "4b5bc3cc1cddc26a8e356a6d79388e2d017963c75f3a44128f1292b2c9357186",
+    "focus_curve.csv": "c7d7d0a024cbd2a0a648a903ccd13d5b6223f17d8cfc04cf9dc16ef12f3c9002",
+    "FREECAD.en.md": "bd768ddb322a85895ed9c9f56edba5965acb23959dac7d43cd33a940aa5b9ff6",
+    "FreeCAD.FCMacro": "8d0d0410a5896c3f449caf306014d7cae56118ea4b991e9c3a465453479b9b2e",
+    "FREECAD.md": "49338e52202f5ae22644cbe1431b7b88027d73e273ad1ce9b64bf41c441216dd",
+    "FreeCAD_Model.FCStd": "7dbb7a0fb0abea6a9589efcfe23311ff556b3df1f6fb9fc5de6b9f5db34ddd81",
+    "freecad_report.json": "f680d6541befabb7bb173332c500a0cdc08e24a2038543862cf9a500cd2f931a",
+    "native_plan.json": "a3f7473a2a5b813a09ce6e0afedd4649c105c361e8e0422eaea01a31d8bac748",
+    "plan.json": "a1a914f4576403579a2280199b87527b667c184eef71b1dc7b4cb677754cc0bd",
+    "rim_contact.png": "4a2d02034449a2483e26b6134b22004d6ffa48a241332b38aae67a5894a7dc4c",
+    "section.en.svg": "5eba32672476e1182eaf923ab616665bb7c34fdb3599aa5cba17929b084689ee",
+    "section.png": "785d33c8ecba25900064db692ba12a4e41a4749568ef7531224bb69d8c8e7e1f",
+    "solidworks_checks.json": "2c6180016e26b2fd624ac57e91571090e4b80933f16f29068ffd817894f7e553"
+  },
+  "animation_metadata_sha256": "d8c3abd4cbc785bcb58c17b6730dc6ad7471d065000ee9680de88cb550d4a126",
+  "native_model_unchanged_from_approved_archive": true,
+  "checks": "Native CAD checks in freecad_report.json; exact SolidWorks runtime status in solidworks_checks.json."
+}

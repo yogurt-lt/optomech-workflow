@@ -248,7 +248,8 @@
       "rim_contact.png",
       "cam_assembly.png",
       "solidworks_checks.json",
-      "focus_curve.csv"
+      "focus_curve.csv",
+      "manifest.json"
     ]
   }
 }

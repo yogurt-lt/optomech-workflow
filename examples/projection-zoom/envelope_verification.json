@@ -1,0 +1,209 @@
+{
+  "status": "passed",
+  "coaxial_motion_samples": [
+    {
+      "zoom_deg": 0,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 0,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 0,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 15,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 15,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 15,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 30,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 30,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 30,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 45,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 45,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 45,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 60,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 60,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 60,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 75,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 75,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 75,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 90,
+      "focus_deg": -45,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 90,
+      "focus_deg": 0,
+      "envelope_overlaps": []
+    },
+    {
+      "zoom_deg": 90,
+      "focus_deg": 45,
+      "envelope_overlaps": []
+    }
+  ],
+  "insertion_samples": [
+    {
+      "operation": "G2/G3 module from rear, before rear optics/base",
+      "positions": 59,
+      "overlaps": []
+    },
+    {
+      "operation": "G1 module from front",
+      "positions": 39,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 module from rear; reverse path permits removal",
+      "positions": 44,
+      "overlaps": []
+    },
+    {
+      "operation": "G1 bench step 1",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G1 bench step 2",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G1 bench step 3",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G23 bench step 1",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G23 bench step 2",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G23 bench step 3",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G23 bench step 4",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 1",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 2",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 3",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 4",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 5",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 6",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "G4 bench step 7",
+      "positions": 34,
+      "overlaps": []
+    },
+    {
+      "operation": "Aperture foil onto front support face before module insertion",
+      "positions": 22,
+      "overlaps": []
+    },
+    {
+      "operation": "Aperture cap wraps short support neck from front",
+      "positions": 22,
+      "overlaps": []
+    }
+  ],
+  "scope": "Conservative complete revolution-profile envelopes; convex holes/cam cuts can only remove material. Fixed hardware, roller/groove, gear tooth engagement and three-dimensional assembly of pins are separate checks. Includes revised glass. Samples do not simulate screw engagement or tools.",
+  "cam_contact_status": "Native full-solid Boolean contact check incomplete: complex cam/stop pair exceeded practical runtime. Nominal design groove width4.2 versus roller OD4; report does not certify continuous contact/clearance."
+}

@@ -21,6 +21,8 @@ Read [CAD portability](references/cad-portability.md) when switching software. S
 
 ## Explain and then implement the assembly
 
+For fixed-focal, focusing or zoom barrels, first evaluate the simplest suitable architecture: stepped lens cells/spacer stacks; for moving groups, a straight-slot guide sleeve, outer cam and short focus ring. Read [compact sleeve lessons](references/compact-sleeves.md). Use a different mechanism when stroke, loads, access or optical grouping justify it.
+
 Write a short plan with the barrel splits, insertion directions, bench subassemblies, seats, radial centering, fastening and preload path. Explain it before generating geometry; proceed within the user's existing authorization. Do not impose a particular number of barrels, an adhesive process or a rim extension merely because another demo used it.
 
 Prefer substantial, accessible rings and simple turned sections when the space permits. A short vertex air gap does not directly determine spacer length: calculate the actual contact sag. Close edges may justify a revised peripheral bearing rim, a locally bonded seat or a preassembled cell. These are alternatives requiring geometric and manufacturing reasons.

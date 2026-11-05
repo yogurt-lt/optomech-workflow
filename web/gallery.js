@@ -10,10 +10,10 @@ function focusCase(meta){
  document.getElementById('mechMacro').hidden=!!meta&&meta.full_macro===meta.mechanics_macro;
  const active=!!meta?.focus_animation,box=document.getElementById('focus-case'),f=document.getElementById('focus-embed');
  document.querySelector('.preview-card').hidden=active;box.hidden=!active;
- if(active){const url=meta.animation_case==='zoom-7x'?('zoom.html?embed=1&lang='+window.i18n.language):('focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss'));if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
+ if(active){const url=meta.animation_case==='projection-zoom'?('projection.html?embed=1&lang='+window.i18n.language):meta.animation_case==='zoom-7x'?('zoom.html?embed=1&lang='+window.i18n.language):('focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss'));if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
  else if(f.hasAttribute('src'))f.removeAttribute('src');
  document.getElementById('heroSkillGuide').href=window.i18n.language==='en'?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
- if(meta?.animation_case==='zoom-7x'){
+ if(['projection-zoom','zoom-7x'].includes(meta?.animation_case)){
   box.querySelector('h2').textContent=english()?'Transparent 3D zoom mechanism':'完整外形 · 半透明三维变焦演示';
   document.getElementById('focusStandalone').textContent=english()?'Open interactive zoom preview ↗':'打开独立三维变焦预览 ↗';
   f.title=english()?'Full native CAD transparent zoom animation':'完整原生CAD半透明变焦动画';
@@ -44,5 +44,5 @@ window.addEventListener('message',e=>{const f=document.getElementById('focus-emb
   }
   $('demo').onchange=()=>load($('demo').value);
   document.addEventListener('languagechange',()=>{options();render()});
-  (async()=>{try{demos=await json('data/catalog.json');options();await load(Object.hasOwn(demos,new URLSearchParams(location.search).get('demo'))?new URLSearchParams(location.search).get('demo'):'fixed-projection')}catch(e){$('banner').textContent=e.message}})();
+  (async()=>{try{demos=await json('data/catalog.json');options();await load(Object.hasOwn(demos,new URLSearchParams(location.search).get('demo'))?new URLSearchParams(location.search).get('demo'):'projection-zoom')}catch(e){$('banner').textContent=e.message}})();
 })();

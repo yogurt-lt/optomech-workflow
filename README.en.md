@@ -12,7 +12,11 @@ Try this prompt:
 
 > Use optomech-design to inspect my Zemax and STEP files. Research the assembly approach, explain barrel segmentation, loading direction, seats, retention and load paths, then generate editable CAD macros and section drawings. Target CAD: FreeCAD or SolidWorks 2023.
 
-The Skill supplies input checks, assembly reasoning, numerical review, CAD adapters and an iterative repair process. Nine demos show the resulting designs, including a 50 mm F1.8 whole-unit manual-focus lens with a native CAD 3D cutaway animation. Manufacturing tolerances, preload and clear aperture require design-specific verification.
+The Skill supplies input checks, assembly reasoning, numerical review, CAD adapters and an iterative repair process. Ten demos show the resulting designs, including a 50 mm F1.8 whole-unit manual-focus lens with a native CAD 3D cutaway animation. Manufacturing tolerances, preload and clear aperture require design-specific verification.
+
+## Featured compact projection zoom
+
+**The default gallery case is the [30–39 mm F3.5 projection zoom with whole-unit focus](examples/projection-zoom/DESIGN.en.md).** Three cells, a straight-slot inner guide, an outer cam and a short focus ring, without guide rods. G2/G3 share a cell; local peripheral flat contacts replace two close-pair spacers.47 mechanical parts and10 reference lenses. The user confirmed SolidWorks execution; native FreeCAD geometry and nominal motion/insertion paths were sampled. [Explore the independent zoom/focus controls](https://yogurt-lt.github.io/optomech-workflow/?lang=en), with solid edge lines and optics-only/mechanics-only views.
 
 ## Manual-focus demo
 
@@ -51,7 +55,7 @@ The main download uses the reviewed macro for the selected case, preserving its 
 
 `python tools/build_pages.py` exports a static gallery to `dist/`. The included `.github/workflows/pages.yml` builds and deploys it when pushed to `main`. For the suggested repository `yogurt-lt/optomech-workflow`, enable **Settings → Pages → GitHub Actions**. The expected URL after a successful deployment is `https://yogurt-lt.github.io/optomech-workflow/`. See [deployment instructions](docs/GITHUB_PAGES.md). The public gallery is deployed on GitHub Pages.
 
-The static version retains all six demos, bilingual explanations, 3D views, section images and downloads. File analysis and modified-body generation remain available in the local Python workbench.
+The static version retains all ten demos, bilingual explanations, 3D views, section images and downloads. File analysis and modified-body generation remain available in the local Python workbench.
 
 Advanced tools let you edit profiles, inspect overlap, save/import plans and analyze another STEP/Zemax system. Edited profiles update the 3D preview; section drawings remain the reviewed baseline. The general modified-body generator does not automatically reproduce all dedicated per-case cuts.
 
@@ -78,3 +82,5 @@ The six fixed-structure examples and the approved manual-focus demo are packaged
 ## Six FreeCAD demos run and reviewed
 
 Each demo includes `FreeCAD.FCMacro`, `FreeCAD_Model.FCStd`, bilingual guides and `freecad_report.json`. The gallery exposes separate SolidWorks and FreeCAD downloads. See the [FreeCAD guide](docs/FreeCAD-guide.en.md). Native verification used 1.1.4; new edits require their own checks. PF-2 now uses the accepted three removable bonded cells; its old variant is archived in `examples/fixed-projection/legacy-v02/`.
+
+Large demo models and preview meshes are stored in checked chunks under `assets/`. Run `python tools/build_pages.py` to restore the exact files, verifying chunk and full-file SHA-256 hashes. Website downloads provide the complete original files.

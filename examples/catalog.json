@@ -1,4 +1,48 @@
 {
+  "projection-zoom": {
+    "title": "30–39 mm F3.5 · 投影变焦与调焦",
+    "summary": "紧凑三层套筒 · 三镜筒 · 两处机械余边相抵",
+    "intro": "G2/G3共用一个阶梯镜筒；L1/L2与L7/L8以局部外围平边相抵，取消两只近间距小隔圈。变焦和整组调焦使用独立输入。",
+    "stages": [
+      [
+        "台面预装三个镜筒",
+        "G1后双片→L1→压圈；中筒L6→厚隔圈→L4/L5→前压圈；G4后端顺序装片。"
+      ],
+      [
+        "安装独立光阑片",
+        "黑化圆环片只夹持外缘，装在短直筒支座中，不承受镜片压紧力。"
+      ],
+      [
+        "装直槽与凸轮筒",
+        "镜框先入内筒，再套外凸轮筒，从外侧装肩轴和滚子；导向与驱动分别承担各自作用。"
+      ],
+      [
+        "调焦与维修",
+        "后端装短调焦环和局部固定座；拆外侧肩轴与止推件后可抽出模块，玻璃不胶死在主筒中。"
+      ]
+    ],
+    "fixing": "三只镜筒；两处外围平边相抵，中筒采用一只厚矩形隔圈和前压圈。独立光阑片外圈夹持。",
+    "load_path": "玻璃 → 座/隔圈 → 镜框 → 内导向筒 → 局部后座。齿轮 → 凸轮槽 → 滚子只负责驱动。",
+    "note": "仅L2新制Ø35、L7新制Ø28余边；光学边缘退让、通光、接触应力和量产公差待校核。",
+    "status": "用户已确认 v0.3 SolidWorks 运行；FreeCAD57实体及名义运动、装拆抽样检查通过",
+    "focus_animation": true,
+    "animation_case": "projection-zoom",
+    "mechanical_count": 47,
+    "full_macro": "Projection_Zoom_v03.bas",
+    "mechanics_macro": "Projection_Zoom_v03.bas",
+    "section": "section.png",
+    "design": "DESIGN.md",
+    "freecad_macro": "FreeCAD.FCMacro",
+    "freecad_model": "FreeCAD_Model.FCStd",
+    "freecad_guide": "FREECAD.md",
+    "freecad_report": "freecad_report.json",
+    "extra_files": [
+      "motion.png",
+      "aperture.png",
+      "envelope_verification.json",
+      "runtime_review.json"
+    ]
+  },
   "fixed-projection": {
     "title": "定焦投影 · PF-2",
     "summary": "共同镜筒＋三个可拆胶接短镜框",

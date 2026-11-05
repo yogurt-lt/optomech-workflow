@@ -12,9 +12,11 @@
 
 > 使用 optomech-design，检查我的 Zemax 和 STEP。先查资料并解释镜筒分段、装入方向、沉靠、固定方式和传力路径，再生成可编辑的 CAD 宏与截面图。目标软件：FreeCAD 或 SolidWorks 2023。
 
-Skill 提供文件初检、装配推理规则、数值检查、CAD 适配与反馈修订方法。网站的九个案例展示这套方法，其中双高斯 50 mm F1.8 含原生 CAD 三维剖面调焦动画。制造公差、预紧和通光仍需针对具体设计校核。
+Skill 提供文件初检、装配推理规则、数值检查、CAD 适配与反馈修订方法。网站的十个案例展示这套方法，其中双高斯 50 mm F1.8 含原生 CAD 三维剖面调焦动画。制造公差、预紧和通光仍需针对具体设计校核。
 
-## 九个公开案例
+## 十个公开案例
+
+**首页默认案例：[30–39 mm F3.5 投影变焦与整组调焦](examples/projection-zoom/DESIGN.md)。** 三只镜筒、直槽内筒、外凸轮筒和短调焦环；不使用导杆。G2/G3 共筒，近间距镜片采用局部外围平边相抵；47 个机械件、10 片参考镜片。SolidWorks 已由用户运行确认，FreeCAD 原生实体与名义运动、装拆路径通过抽样检查。[查看三维双输入动画](https://yogurt-lt.github.io/optomech-workflow/)，支持实体边缘线、只看镜片和只看机械。
 
 [24.42 ～ 187.67 mm 七倍变焦物镜](examples/zoom-7x/DESIGN.md)：G2 变倍、G3 折返补偿，双槽凸轮与独立导杆联动；78 个机械件、13 片参考镜片。[查看完整外形半透明三维变焦动画](https://yogurt-lt.github.io/optomech-workflow/?demo=zoom-7x)。可切换全部、只看机械、只看镜片，并查看实时凸轮展开图。源焦距端点比约 7.685×；名义运动及装拆路径已抽样检查。
 
@@ -51,11 +53,11 @@ Windows 也可以双击 `start_windows.cmd`。浏览器打开 `http://127.0.0.1:
 
 已提供 GitHub Pages 静态导出器与 `.github/workflows/pages.yml`。创建 `yogurt-lt/optomech-workflow`、上传项目后，在仓库 Settings → Pages 中选择 GitHub Actions。首次部署与更新步骤见[部署指南](docs/GITHUB_PAGES.md)。预期地址在部署成功后为 `https://yogurt-lt.github.io/optomech-workflow/`。
 
-静态版保留中英切换、九个案例、三维预览、截面和宏 / Skill 下载；本地版保留文件分析和修改版宏生成。运行 `python tools/build_pages.py` 可导出至 `dist/`。线上展示已通过 GitHub Pages 发布。
+静态版保留中英切换、十个案例、三维预览、截面和宏 / Skill 下载；本地版保留文件分析和修改版宏生成。运行 `python tools/build_pages.py` 可导出至 `dist/`。线上展示已通过 GitHub Pages 发布。
 
 工作台先展示三维预览，随后讲解装入顺序、固定方式和压紧力路径。02 部分直接显示各案例已检查的截面原图，可放大、下载；默认下载的是对应的已验证宏，保留其专用孔槽。
 
-页首 **English / 中文** 按钮可切换界面、九个案例的介绍与装配讲解、截面图及设计说明，语言选择保存在本地。英文截面图由同一份方案几何生成，不改变 CAD 模型。侧栏还可下载独立的设计 Skill。
+页首 **English / 中文** 按钮可切换界面、十个案例的介绍与装配讲解、截面图及设计说明，语言选择保存在本地。英文截面图由同一份方案几何生成，不改变 CAD 模型。侧栏还可下载独立的设计 Skill。
 
 “高级工具”中可编辑各机械零件的 (Z, 半径) 顶点、检查截面交叠、导入/导出方案 JSON、生成修改版主体宏。编辑会同步三维预览，静态截面图保留为基准。通用修改版生成器不自动复现新案例的全部专用孔槽，请以原案例宏为基础细化。保存的 JSON 是后续复现与讨论的核心记录。
 
@@ -141,3 +143,5 @@ The local workbench includes an offline, rotatable solid-of-revolution preview f
 ## FreeCAD：六个案例已运行确认
 
 每个案例目录提供 `FreeCAD.FCMacro`、`FreeCAD_Model.FCStd`、`FREECAD.md` 和实际验证记录 `freecad_report.json`。网页侧栏可分别下载 SolidWorks 与 FreeCAD 文件。详见 [FreeCAD 使用与迁移说明](docs/FreeCAD使用与迁移说明.md)。本机原生验证版本为 1.1.4，新修改仍需运行校核。定焦投影默认已切换到三个可拆胶接短镜框 v0.4；旧版在 `examples/fixed-projection/legacy-v02/` 留档。
+
+大型案例模型和预览网格在 `assets/` 中分块存储。运行 `python tools/build_pages.py` 会校验每块及完整文件的 SHA-256 并还原；网站提供完整原文件下载。

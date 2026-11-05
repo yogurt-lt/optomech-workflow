@@ -1,4 +1,37 @@
 {
+  "projection-zoom": {
+    "title": "30–39 mm F3.5 · Projection zoom & focus",
+    "summary": "Compact sleeves · three cells · peripheral flat contacts",
+    "intro": "G2/G3 share one stepped cell. Local rim contacts replace the two close-pair spacers. Zoom and whole-unit focus have independent inputs.",
+    "stages": [
+      [
+        "Preassemble three cells",
+        "G1: rear doublet→L1→retainer. Middle: L6→spacer→L4/L5→front retainer. Rear-load G4."
+      ],
+      [
+        "Separate aperture disk",
+        "A blackened disk is clamped at its rim in a short support; it carries no glass preload."
+      ],
+      [
+        "Sleeve and followers",
+        "Load cells, slide on the cam, then install shoulder axles and rollers from outside."
+      ],
+      [
+        "Focus and service",
+        "Install the short rear focus ring and local fixed base. Remove external axles and thrust parts to withdraw modules."
+      ]
+    ],
+    "fixing": "Three cells; two peripheral flat contacts; one substantial rectangular middle spacer and front retainer. Separate rim-clamped stop disk.",
+    "load_path": "Glass → seats/spacers → cells → guide sleeve → local base. Gear/cam/roller chain supplies drive.",
+    "note": "New L2 Ø35 and L7 Ø28 rims; narrow edge relief, aperture, stresses and production fits need review.",
+    "status": "User-confirmed v0.3 SolidWorks execution;57 native FreeCAD solids and sampled nominal motion/insertion checks passed",
+    "full_macro": "Projection_Zoom_v03.bas",
+    "mechanics_macro": "Projection_Zoom_v03.bas",
+    "mechanical_count": 47,
+    "extra_files": [
+      "runtime_review.json"
+    ]
+  },
   "fixed-projection": {
     "title": "Fixed projection · PF-2",
     "summary": "One barrel + three removable bonded cells",

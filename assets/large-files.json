@@ -1,0 +1,80 @@
+{
+  "examples/projection-zoom/FreeCAD_Model.FCStd": {
+    "bytes": 25688881,
+    "sha256": "b75a67ca0dba75b2ac608cbda9f55c72c58e64dfe8baf80c258bf0ddd50c1564",
+    "parts": [
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part00",
+        "sha256": "739c4b88a624a8a7ea2792ecb6a9bb070059cb9b5ed3f015a3319d6cef581b05"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part01",
+        "sha256": "9456140dbfd052a46f16c5dfe3950b03618dfdc5058ca6ffebc783d6da953a45"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part02",
+        "sha256": "4c9a8c5301769ae56b6cbdeaa50d94ecbec23ab34bd83aecae897764ae5ed9b7"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part03",
+        "sha256": "1c30e42852883cb09337d60b8ddecf521b41c815520f67955b1a0c8e33b60537"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part04",
+        "sha256": "689852984ae05c88123e5d29b7d5ea2c77fa55c50b7043d634119e75d2c96484"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part05",
+        "sha256": "81903ec3b41ace108bbc17cbc7312f603f029969c6bb29d95a5e5b88ce5f36f8"
+      },
+      {
+        "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part06",
+        "sha256": "e262e1b708a53210e7405cf0c5125da6c38834602eb4852a998f5efe5d53a97c"
+      }
+    ]
+  },
+  "web/projection-assets/meshes.json": {
+    "bytes": 22704755,
+    "sha256": "3ca9bebc8b55115edf831f98ecbf85360c6c21916970f2b812b642fac9b6606d",
+    "parts": [
+      {
+        "path": "assets/projection-zoom/meshes.json.part00",
+        "sha256": "d548d1d6de1380ab714c7995bee2eb5e004a56eb1106a2323be33b24bc76a1e0"
+      },
+      {
+        "path": "assets/projection-zoom/meshes.json.part01",
+        "sha256": "58d1379de8242c5c5519fba940075365dbcd815891a67d538cb843b5e9604d83"
+      },
+      {
+        "path": "assets/projection-zoom/meshes.json.part02",
+        "sha256": "463ba07de76cde997271689ed7d3fae38a70f44a6522a4ed5ab6ac9cafd2f78d"
+      },
+      {
+        "path": "assets/projection-zoom/meshes.json.part03",
+        "sha256": "25c680268cd1bd466cb172506d90cb44ea3515b05e50c67440f473c510e47eed"
+      },
+      {
+        "path": "assets/projection-zoom/meshes.json.part04",
+        "sha256": "84ef5e81ea38fe08725d55f66d5a372451ef3e0adbc29bfda24f0c28b2a4cbd7"
+      },
+      {
+        "path": "assets/projection-zoom/meshes.json.part05",
+        "sha256": "8f24dc06d837db475bea5672cc87892a5a07037509d8b70d480634813f1cfe94"
+      }
+    ]
+  },
+  "web/projection-assets/edges.json": {
+    "bytes": 5478170,
+    "sha256": "0f68205ed6543a6d899f1ac582dffc31daff94874cfccd2f457f796057693648",
+    "parts": [
+      {
+        "path": "assets/projection-zoom/edges.json.part00",
+        "sha256": "adc0f25a6c209e9462a14e24e9c58c5d558b3d67b1f561a543bb0b9d3ddd130e"
+      },
+      {
+        "path": "assets/projection-zoom/edges.json.part01",
+        "sha256": "628654338ff29f7b35cefa25995ef8c8f6bfac42462f8a57e6584612ce7e29ed"
+      }
+    ]
+  }
+}

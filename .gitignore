@@ -10,3 +10,8 @@ Optomech_*/
 *.ZDA
 *.log
 .DS_Store
+
+# Restored exactly from assets/large-files.json by tools/build_pages.py
+/examples/projection-zoom/FreeCAD_Model.FCStd
+/web/projection-assets/meshes.json
+/web/projection-assets/edges.json

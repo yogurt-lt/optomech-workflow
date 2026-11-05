@@ -1,0 +1,366 @@
+{
+  "status": "passed",
+  "bodies": 57,
+  "parts": [
+    {
+      "name": "02_G1_FrontRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1147.3500333368172
+    },
+    {
+      "name": "23_G4_Spacer9_10",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3207.14449978229
+    },
+    {
+      "name": "24_G4_RearRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 871.6855289352184
+    },
+    {
+      "name": "30_InnerGuide",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 83226.2934803145
+    },
+    {
+      "name": "40_ZoomCam",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70808.42576132424
+    },
+    {
+      "name": "41_FocusRing",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5101.515024170471
+    },
+    {
+      "name": "50_RearFixedBase",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 23348.695201147053
+    },
+    {
+      "name": "51_FocusRearThrustShim",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 785.0840041320881
+    },
+    {
+      "name": "FixedThrustButton_60",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 36.756634047000595
+    },
+    {
+      "name": "FixedThrustButton_180",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 36.756634047000595
+    },
+    {
+      "name": "FixedThrustButton_300",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 36.756634047000595
+    },
+    {
+      "name": "a_FollowerAxle_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "a_Roller_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "a_FollowerAxle_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "a_Roller_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "a_FollowerAxle_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "a_Roller_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "b_FollowerAxle_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "b_Roller_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "b_FollowerAxle_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "b_Roller_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "b_FollowerAxle_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "b_Roller_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "c_FollowerAxle_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "c_Roller_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "c_FollowerAxle_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "c_Roller_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "c_FollowerAxle_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70.45924733563015
+    },
+    {
+      "name": "c_Roller_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "ZoomSafetyDowel",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 39.95791696100861
+    },
+    {
+      "name": "FocusAxle_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 55.24215791980461
+    },
+    {
+      "name": "FocusRoller_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "FocusAxle_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 55.24215791980461
+    },
+    {
+      "name": "FocusRoller_120",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "FocusAxle_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 55.24215791980461
+    },
+    {
+      "name": "FocusRoller_240",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 27.308294141329284
+    },
+    {
+      "name": "42_ZoomPinion",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 325.8931158026757
+    },
+    {
+      "name": "43_FocusPinion",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 101.84159868820535
+    },
+    {
+      "name": "31_CamRearCollar",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1719.6493853740412
+    },
+    {
+      "name": "25_BlackStopFoil",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 13.54811831860619
+    },
+    {
+      "name": "26_StopRetainingRing",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 123.22169346014194
+    },
+    {
+      "name": "22_G4_Spacer89",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 579.3868391291911
+    },
+    {
+      "name": "Lens06_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1070.9425037505544
+    },
+    {
+      "name": "01_G1_Cell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 25665.28319236346
+    },
+    {
+      "name": "10_G23_SharedCell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 30899.474522355606
+    },
+    {
+      "name": "11_G23_FrontRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 528.1114631432532
+    },
+    {
+      "name": "14_G23_RectSpacer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 783.6509766743061
+    },
+    {
+      "name": "20_G4_StopCell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 58432.182383189116
+    },
+    {
+      "name": "Lens01_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 17212.28210653619
+    },
+    {
+      "name": "Lens02_BearingRim",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5261.973885089523
+    },
+    {
+      "name": "Lens03_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7312.074499771705
+    },
+    {
+      "name": "Lens04_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5201.896580763348
+    },
+    {
+      "name": "Lens05_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2417.184610865113
+    },
+    {
+      "name": "Lens07_BearingRim",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3181.6221536434646
+    },
+    {
+      "name": "Lens08_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2360.4835927517775
+    },
+    {
+      "name": "Lens09_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7154.466121502566
+    },
+    {
+      "name": "Lens10_Reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5159.08595547925
+    }
+  ],
+  "rebuilt": [
+    "01_G1_Cell",
+    "10_G23_SharedCell",
+    "11_G23_FrontRetainer",
+    "14_G23_RectSpacer",
+    "20_G4_StopCell",
+    "Lens01_Reference",
+    "Lens02_BearingRim",
+    "Lens03_Reference",
+    "Lens04_Reference",
+    "Lens05_Reference",
+    "Lens07_BearingRim",
+    "Lens08_Reference",
+    "Lens09_Reference",
+    "Lens10_Reference"
+  ],
+  "gui_colors_saved": true,
+  "sha256": "b75a67ca0dba75b2ac608cbda9f55c72c58e64dfe8baf80c258bf0ddd50c1564"
+}

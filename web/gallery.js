@@ -10,11 +10,19 @@ function focusCase(meta){
  document.getElementById('mechMacro').hidden=!!meta&&meta.full_macro===meta.mechanics_macro;
  const active=!!meta?.focus_animation,box=document.getElementById('focus-case'),f=document.getElementById('focus-embed');
  document.querySelector('.preview-card').hidden=active;box.hidden=!active;
- if(active){const url='focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss');if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
+ if(active){const url=meta.animation_case==='zoom-7x'?('zoom.html?embed=1&lang='+window.i18n.language):('focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss'));if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
  else if(f.hasAttribute('src'))f.removeAttribute('src');
  document.getElementById('heroSkillGuide').href=window.i18n.language==='en'?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
+ if(meta?.animation_case==='zoom-7x'){
+  box.querySelector('h2').textContent=english()?'Transparent 3D zoom mechanism':'完整外形 · 半透明三维变焦演示';
+  document.getElementById('focusStandalone').textContent=english()?'Open interactive zoom preview ↗':'打开独立三维变焦预览 ↗';
+  f.title=english()?'Full native CAD transparent zoom animation':'完整原生CAD半透明变焦动画';
+ }else{
+  box.querySelector('h2').textContent=english()?'3D focus cutaway':'三维剖面调焦演示';
+  document.getElementById('focusStandalone').textContent=english()?'Open animation and GIF downloads ↗':'打开独立动画与 GIF 下载 ↗';
+ }
 }
-window.addEventListener('message',e=>{const f=document.getElementById('focus-embed');if(e.origin===location.origin&&e.source===f.contentWindow&&e.data?.type==='focus-height')f.style.height=Math.max(300,Math.min(1400,e.data.height))+'px'});
+window.addEventListener('message',e=>{const f=document.getElementById('focus-embed');if(e.origin===location.origin&&e.source===f.contentWindow&&e.data?.type==='focus-height')f.style.height=Math.max(300,Math.min(2800,e.data.height))+'px'});
   function render(){
     if(!plan)return;const m=meta();focusCase(m);
     $('status').textContent=m.status;$('caseSummary').textContent=m.summary;$('banner').textContent=m.title+' · '+m.status;
@@ -25,7 +33,7 @@ window.addEventListener('message',e=>{const f=document.getElementById('focus-emb
     const image=`examples/${key}/${m.section}`;$('sectionImage').src=image;$('sectionImage').alt=m.title+(english()?' reviewed section drawing':'已检查结构截面图');$('imageLink').href=image;$('imageDownload').href=image;
     $('imageStats').textContent=english()?`${plan.lenses?.length||0} glass solids / ${m.mechanical_count||plan.parts.length} mechanical parts`:`${plan.lenses?.length||0} 个玻璃实体 / ${m.mechanical_count||plan.parts.length} 个机械件`;
     $('skillGuide').href=english()?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
-    window.optomech3d.update(plan);window.i18n.apply();
+    if(!m.focus_animation)window.optomech3d.update(plan);window.i18n.apply();
   }
   function options(){const value=key;$('demo').replaceChildren(...Object.entries(demos).map(([k,m])=>new Option(english()?m.en.title:m.title,k)));if(value)$('demo').value=value}
   async function load(value){

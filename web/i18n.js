@@ -10,8 +10,8 @@
     "下载 optomech-design Skill":"Download optomech-design Skill",
     "安装与使用说明":"Setup & usage",
     "三维剖面调焦演示":"3D cutaway focus animation",
-    "本页展示八个结构案例，含整组手动及电动内对焦。各案例的检查范围见说明。":"Eight structural demos, including whole-unit manual and electric internal focus. See each case for its verification scope.",
-    "开源 Skill · 八个结构案例 · SolidWorks / FreeCAD":"Open-source Skill · eight structural demos · SolidWorks / FreeCAD",
+    "本页展示九个结构案例，含整组手动及电动内对焦。各案例的检查范围见说明。":"Nine structural demos, including whole-unit manual and electric internal focus. See each case for its verification scope.",
+    "开源 Skill · 九个结构案例 · SolidWorks / FreeCAD":"Open-source Skill · nine structural demos · SolidWorks / FreeCAD",
 
     '手动调焦动画':'Manual focus animation',
     '光学模型 → 装配推理 → 截面检查 → 可编辑 CAD 模型':'Optical model → assembly reasoning → section review → editable CAD models',

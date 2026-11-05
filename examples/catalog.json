@@ -251,5 +251,44 @@
       "focus_curve.csv",
       "manifest.json"
     ]
+  },
+  "zoom-7x": {
+    "title": "24.42 ～ 187.67 mm 七倍变焦物镜",
+    "summary": "双组凸轮联动 · 外壳透明三维预览",
+    "intro": "G1与G4固定，G2长行程变倍，G3折返补偿。完整外形、外部结构半透明，可拖动视角并观察内部运动。",
+    "stages": [
+      [
+        "预装光学模块",
+        "G1隔圈堆栈；G2双片短框台面找正点胶；G3新余边后装；G4光阑两侧装片。"
+      ],
+      [
+        "装导向和凸轮",
+        "四根导杆、两只滑架、旋转凸轮和两只滚子；后座固定凸轮的轴向位置。"
+      ],
+      [
+        "连接输入",
+        "20齿输入轮驱动128齿凸轮，凸轮只旋转，镜组只平移。"
+      ],
+      [
+        "维修",
+        "G2光学短筒可前抽；G4尾芯可后拆；移除G4后可维修G3。"
+      ]
+    ],
+    "fixing": "四只矩形隔圈；仅G2胶合双片使用局部点胶短框。L8需新制Ø64机械余边，G4取消L9独立镜框。",
+    "load_path": "齿轮 → 凸轮槽 → 滚子 → 滑架 → 镜组；导杆 → 固定座 → 安装脚承重。",
+    "note": "两端比约7.69倍。焦距为源组态标签；透明度仅为展示。名义运动与装拆抽样通过，生产公差、预紧、消隙及光学性能待校核。",
+    "status": "用户已运行检查 SolidWorks；FreeCAD 原生实体及名义运动、装拆抽样检查通过",
+    "focus_animation": true,
+    "animation_case": "zoom-7x",
+    "mechanical_count": 78,
+    "full_macro": "Zoom_v02.bas",
+    "mechanics_macro": "Zoom_v02.bas",
+    "section": "section.png",
+    "design": "DESIGN.md",
+    "freecad_macro": "FreeCAD.FCMacro",
+    "freecad_model": "FreeCAD_Model.FCStd",
+    "freecad_guide": "FREECAD.md",
+    "freecad_report": "freecad_report.json",
+    "extra_files": []
   }
 }

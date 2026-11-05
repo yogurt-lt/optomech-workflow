@@ -1,6 +1,6 @@
 ---
 name: optomech-design
-description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax/STEP inputs, then generate editable CAD concepts through SolidWorks or FreeCAD adapters. Use for optical-to-mechanical assembly design, manual/electric focusing, CAD migration and iterative model repair.
+description: Plan reviewable lens barrels, spacers, retainers and optical cells from Zemax/STEP inputs, then generate editable CAD concepts through SolidWorks or FreeCAD adapters. Use for optical-to-mechanical assembly design, manual/electric focusing, multi-group zoom mechanisms, CAD migration and iterative model repair.
 ---
 
 # Optical-to-mechanical design
@@ -30,6 +30,9 @@ Validate incoming components against the housing **and all already-installed com
 Keep the optical stop's aperture and axial definition explicit. Give its metal aperture land finite thickness and a practical relief bevel; do not run a wedge to zero thickness. A stop integral with a barrel is one part and uses that barrel's color. A STOP on a curved optical surface is not automatically a separate flat aperture plate.
 
 For a focusing mechanism or lens-integrated aperture, read [focusing and apertures](references/focusing-and-apertures.md). Define fixed, rotating and translating groups before drawing slots or gears; distinguish a geometric motion law from optical focus calibration.
+
+
+For multi-configuration zoom lenses and resource-aware CAD generation, read [zoom mechanisms and CAD recovery](references/zoom-and-cad-recovery.md).
 
 ## Deliver geometry with evidence
 

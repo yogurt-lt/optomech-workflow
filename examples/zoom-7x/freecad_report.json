@@ -1,0 +1,1694 @@
+{
+  "status": "passed",
+  "bodies": 91,
+  "body_validity": [
+    {
+      "name": "01_G1_FixedBarrel",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 548853.4627416215,
+      "volume_matches_build": true
+    },
+    {
+      "name": "02_G1_FrontRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 14119.179295646018,
+      "volume_matches_build": true
+    },
+    {
+      "name": "03_G1_Spacer12",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 5932.528128920763,
+      "volume_matches_build": true
+    },
+    {
+      "name": "04_G1_Spacer23",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 31579.776293731353,
+      "volume_matches_build": true
+    },
+    {
+      "name": "05_G1_Spacer34",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 20621.49716077246,
+      "volume_matches_build": true
+    },
+    {
+      "name": "10_FrontChassis",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 460791.27854083874,
+      "volume_matches_build": true
+    },
+    {
+      "name": "11_RearChassis",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 589747.1440568459,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideRod_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 19556.41426859647,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideEndCollar_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 483.7738527262925,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideRod_90",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 19556.41426859647,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideEndCollar_90",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 483.7738527262926,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideRod_180",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 19556.41426859647,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideEndCollar_180",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 483.77385272629266,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideRod_270",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 19556.41426859647,
+      "volume_matches_build": true
+    },
+    {
+      "name": "GuideEndCollar_270",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 483.7738527262924,
+      "volume_matches_build": true
+    },
+    {
+      "name": "ChassisTie_45",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 25899.289836194264,
+      "volume_matches_build": true
+    },
+    {
+      "name": "TieEndNut_45",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 796.6764810238359,
+      "volume_matches_build": true
+    },
+    {
+      "name": "ChassisTie_165",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 25899.289836194264,
+      "volume_matches_build": true
+    },
+    {
+      "name": "TieEndNut_165",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 796.6764810238359,
+      "volume_matches_build": true
+    },
+    {
+      "name": "ChassisTie_285",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 25899.289836194268,
+      "volume_matches_build": true
+    },
+    {
+      "name": "TieEndNut_285",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 796.6764810238357,
+      "volume_matches_build": true
+    },
+    {
+      "name": "21_G2_L5RearRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 13727.00870410835,
+      "volume_matches_build": true
+    },
+    {
+      "name": "22_G2_DoubletCell",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 25945.78715360422,
+      "volume_matches_build": true
+    },
+    {
+      "name": "23_G2_CellRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 14093.161327884083,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_Bush_0_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895943,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_BushKeeper_0_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625228,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_Bush_0_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895926,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_BushKeeper_0_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625225,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_Bush_1_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895966,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_BushKeeper_1_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625228,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_Bush_1_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895915,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_BushKeeper_1_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625225,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_Bush_0_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.3425466889591,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_BushKeeper_0_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625222,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_Bush_0_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895886,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_BushKeeper_0_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625224,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_Bush_1_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.3425466889592,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_BushKeeper_1_0",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625222,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_Bush_1_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 492.34254668895886,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_BushKeeper_1_1",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.59612011625224,
+      "volume_matches_build": true
+    },
+    {
+      "name": "43_G4_L10Retainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 4343.172833333478,
+      "volume_matches_build": true
+    },
+    {
+      "name": "44_G4_TailBarrel",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 88525.07428617723,
+      "volume_matches_build": true
+    },
+    {
+      "name": "45_G4_TailSpacer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 566.560388371475,
+      "volume_matches_build": true
+    },
+    {
+      "name": "46_G4_TailRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 2437.333401851418,
+      "volume_matches_build": true
+    },
+    {
+      "name": "50_GearedZoomCam",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 610616.0041685012,
+      "volume_matches_build": true
+    },
+    {
+      "name": "56_TravelStopPin",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 650.3096792930875,
+      "volume_matches_build": true
+    },
+    {
+      "name": "51_FrontCamThrust",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 584.3362335677099,
+      "volume_matches_build": true
+    },
+    {
+      "name": "52_RearCamThrust",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 584.3362335676691,
+      "volume_matches_build": true
+    },
+    {
+      "name": "53_InputPinion",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 2680.3513136432916,
+      "volume_matches_build": true
+    },
+    {
+      "name": "54_InputShaft",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 1176.2122895040188,
+      "volume_matches_build": true
+    },
+    {
+      "name": "55_PinionKeeper",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 197.2606027189032,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_FollowerAxle",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 622.506584308818,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g2_CamRoller",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 349.5461650090157,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_FollowerAxle",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 622.5065843088178,
+      "volume_matches_build": true
+    },
+    {
+      "name": "g3_CamRoller",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 349.54616500901545,
+      "volume_matches_build": true
+    },
+    {
+      "name": "60_UpperCover",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 230052.30238888357,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_30",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958487,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_30",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427728,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_90",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958492,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_90",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427728,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_135",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958487,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_135",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427726,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_210",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958487,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_210",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427728,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_270",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958492,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_270",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427728,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Front_330",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 96.99667317958487,
+      "volume_matches_build": true
+    },
+    {
+      "name": "CoverBolt_Rear_330",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 105.47897334427728,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens01_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 333385.4651726254,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens02_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 293166.34483201767,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens03_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 278017.8375019981,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens04_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 286097.25092397537,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens05_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 95306.60370035356,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens06_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 19057.52341249181,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens07_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 42632.13782649012,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens09_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 36700.06479436468,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens10_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 30976.576591239693,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens11_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 5787.17055613852,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens12_RevisedRim",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 10746.077537188428,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens13_RevisedRim",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 17398.949856794847,
+      "volume_matches_build": true
+    },
+    {
+      "name": "20_G2_MovingCarrier",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 135482.07261964076,
+      "volume_matches_build": true
+    },
+    {
+      "name": "25_G2_OpticalBarrel",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 86483.29585715606,
+      "volume_matches_build": true
+    },
+    {
+      "name": "G2CoreLock_20",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 249.7396744112514,
+      "volume_matches_build": true
+    },
+    {
+      "name": "G2CoreLock_140",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 249.73967441125123,
+      "volume_matches_build": true
+    },
+    {
+      "name": "G2CoreLock_260",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 249.73967441125103,
+      "volume_matches_build": true
+    },
+    {
+      "name": "61_LowerCover",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 232638.40022876795,
+      "volume_matches_build": true
+    },
+    {
+      "name": "30_G3_MovingCarrier",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 107998.10803878451,
+      "volume_matches_build": true
+    },
+    {
+      "name": "31_G3_RearRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 3985.284995447815,
+      "volume_matches_build": true
+    },
+    {
+      "name": "41_G4_L9FrontRetainer",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 1405.9559055920367,
+      "volume_matches_build": true
+    },
+    {
+      "name": "42_G4_StopHousing",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 163298.35553992956,
+      "volume_matches_build": true
+    },
+    {
+      "name": "Lens08_OpticalReference",
+      "validity_checked_during_native_build": true,
+      "reopened_solids": 1,
+      "volume_mm3": 31938.718166060564,
+      "volume_matches_build": true
+    }
+  ],
+  "motion_samples": [
+    {
+      "angle_deg": 0,
+      "g2_shift_mm": 0.0,
+      "g3_shift_mm": 0.0,
+      "intersections": []
+    },
+    {
+      "angle_deg": 90,
+      "g2_shift_mm": 30.427636363636317,
+      "g3_shift_mm": -6.315264359225409,
+      "intersections": []
+    },
+    {
+      "angle_deg": 165,
+      "g2_shift_mm": 55.78399999999992,
+      "g3_shift_mm": -7.701745542150547,
+      "intersections": []
+    },
+    {
+      "angle_deg": 174.44437473110565,
+      "g2_shift_mm": 58.9769999999999,
+      "g3_shift_mm": -7.715000000000032,
+      "intersections": []
+    },
+    {
+      "angle_deg": 240,
+      "g2_shift_mm": 81.14036363636352,
+      "g3_shift_mm": -5.247741184430936,
+      "intersections": []
+    },
+    {
+      "angle_deg": 275.7414312347627,
+      "g2_shift_mm": 93.22399999999986,
+      "g3_shift_mm": -2.015000000000441,
+      "intersections": []
+    },
+    {
+      "angle_deg": 309.7979707442995,
+      "g2_shift_mm": 104.73799999999987,
+      "g3_shift_mm": 8.35300000000106,
+      "intersections": []
+    },
+    {
+      "angle_deg": 315,
+      "g2_shift_mm": 106.49672727272711,
+      "g3_shift_mm": 10.75899523017938,
+      "intersections": []
+    },
+    {
+      "angle_deg": 330,
+      "g2_shift_mm": 111.56799999999984,
+      "g3_shift_mm": 19.907999999999618,
+      "intersections": []
+    }
+  ],
+  "insertion_samples": [
+    {
+      "operation": "G1_L4",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L4",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L4",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L4",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L4",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer34",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer34",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer34",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer34",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer34",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L3",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L3",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L3",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L3",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L3",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer23",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer23",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer23",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer23",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer23",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L2",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L2",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L2",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L2",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L2",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer12",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer12",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer12",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer12",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_spacer12",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L1",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L1",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L1",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L1",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_L1",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G1_retainer",
+      "shift_mm": -200,
+      "intersections": []
+    },
+    {
+      "operation": "G1_retainer",
+      "shift_mm": -80,
+      "intersections": []
+    },
+    {
+      "operation": "G1_retainer",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G1_retainer",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G1_retainer",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_rear",
+      "shift_mm": 100,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_rear",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_cap",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_cap",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_cap",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_cap",
+      "shift_mm": 3,
+      "intersections": []
+    },
+    {
+      "operation": "G2_L5_cap",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G2_doublet_in_cell",
+      "shift_mm": -50,
+      "intersections": []
+    },
+    {
+      "operation": "G2_doublet_in_cell",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G2_doublet_in_cell",
+      "shift_mm": -5,
+      "intersections": []
+    },
+    {
+      "operation": "G2_doublet_in_cell",
+      "shift_mm": -1,
+      "intersections": []
+    },
+    {
+      "operation": "G2_doublet_in_cell",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_rear",
+      "shift_mm": 80,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_rear",
+      "shift_mm": 40,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_cap",
+      "shift_mm": 40,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_cap",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_cap",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_cap",
+      "shift_mm": 3,
+      "intersections": []
+    },
+    {
+      "operation": "G2_cell_cap",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G3_glass_rear",
+      "shift_mm": 100,
+      "intersections": []
+    },
+    {
+      "operation": "G3_glass_rear",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "G3_glass_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G3_glass_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "operation": "G3_glass_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G3_cap_rear",
+      "shift_mm": 100,
+      "intersections": []
+    },
+    {
+      "operation": "G3_cap_rear",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "G3_cap_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G3_cap_rear",
+      "shift_mm": 5,
+      "intersections": []
+    },
+    {
+      "operation": "G3_cap_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front",
+      "shift_mm": -50,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front",
+      "shift_mm": -10,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front",
+      "shift_mm": -3,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front_cap",
+      "shift_mm": -50,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front_cap",
+      "shift_mm": -20,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front_cap",
+      "shift_mm": -10,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front_cap",
+      "shift_mm": -3,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L9_front_cap",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L10_rear",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L10_rear",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L10_rear",
+      "shift_mm": 10,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L10_rear",
+      "shift_mm": 3,
+      "intersections": []
+    },
+    {
+      "operation": "G4_L10_rear",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L11",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L11",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L11",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L11",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L11",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "tail_spacer",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "tail_spacer",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "tail_spacer",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "operation": "tail_spacer",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "tail_spacer",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L12",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L12",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L12",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L12",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L12",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L13",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L13",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L13",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L13",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "tail_L13",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "tail_cap",
+      "shift_mm": 50,
+      "intersections": []
+    },
+    {
+      "operation": "tail_cap",
+      "shift_mm": 20,
+      "intersections": []
+    },
+    {
+      "operation": "tail_cap",
+      "shift_mm": 8,
+      "intersections": []
+    },
+    {
+      "operation": "tail_cap",
+      "shift_mm": 2,
+      "intersections": []
+    },
+    {
+      "operation": "tail_cap",
+      "shift_mm": 0,
+      "intersections": []
+    },
+    {
+      "operation": "G4_tail_module_rear",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        60
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_tail_module_rear",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        30
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_tail_module_rear",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        10
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_tail_module_rear",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        3
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_tail_module_rear",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_complete_rear_long_end",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        100
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_complete_rear_long_end",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        50
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_complete_rear_long_end",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        20
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_complete_rear_long_end",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        5
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G4_complete_rear_long_end",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G2_optical_core_withdraws_front_with_rails_installed",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G2_optical_core_withdraws_front_with_rails_installed",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -10
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G2_optical_core_withdraws_front_with_rails_installed",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -40
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G2_optical_core_withdraws_front_with_rails_installed",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -100
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "G2_optical_core_withdraws_front_with_rails_installed",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -200
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Front_chassis_from_front",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -150
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Front_chassis_from_front",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -80
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Front_chassis_from_front",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -30
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Front_chassis_from_front",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        -5
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Front_chassis_from_front",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Rear_chassis_from_rear",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        150
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Rear_chassis_from_rear",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        80
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Rear_chassis_from_rear",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        30
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Rear_chassis_from_rear",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        5
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Rear_chassis_from_rear",
+      "pose_deg": 330,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Cam_from_rear_before_rear_plate_and_pins",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        250
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Cam_from_rear_before_rear_plate_and_pins",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        150
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Cam_from_rear_before_rear_plate_and_pins",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        50
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Cam_from_rear_before_rear_plate_and_pins",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        10
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Cam_from_rear_before_rear_plate_and_pins",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Upper_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Upper_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        5,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Upper_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        20,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Upper_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        60,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Upper_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        130,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Lower_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        0,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Lower_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        -5,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Lower_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        -20,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Lower_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        -60,
+        0
+      ],
+      "intersections": []
+    },
+    {
+      "operation": "Lower_cover_lifts_off",
+      "pose_deg": 0,
+      "shift_xyz_mm": [
+        0,
+        -130,
+        0
+      ],
+      "intersections": []
+    }
+  ],
+  "scope": "Nominal native solids and sampled source-reference glass; sampled motion/insertion, not optical/tolerance/stress/fit qualification.",
+  "revision_scope": "v02 changed-body pairs checked at nine angles. Unchanged pairs and motion law retain passed v01 verification; full insertion paths rerun.",
+  "outside_range_hard_stop_test": [
+    {
+      "angle_deg": -3,
+      "intentional_stop_overlap_mm3": 37.70027245326248
+    },
+    {
+      "angle_deg": 333,
+      "intentional_stop_overlap_mm3": 37.70027245326045
+    }
+  ],
+  "rim_contact": {
+    "area_mm2": 93.49379737083291,
+    "expected_area_mm2": 93.4937973708324,
+    "overlap_volume_mm3": 0.0,
+    "distance_mm": 0.0
+  }
+}

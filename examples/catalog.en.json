@@ -174,5 +174,32 @@
     "load_path": "Input pinion → cam → rollers → L2 cell; housing straight guides prevent rotation. Rear cap → L7 → spacer → G4 → rim contact → G3 → fixed shoulder.",
     "note": "No thin knife-edge metal stop is squeezed into the gap. A lens-surface opaque annulus is indicated pending optical validation; transparent rim contact alone does not make a stop. Motion is geometric, without calibrated focus distances.",
     "status": "Concept approved; native FreeCAD checks: 24 bodies, 9 motion poses, 35 insertion poses. Separate SW runtime status is recorded in its report."
+  },
+  "zoom-7x": {
+    "title": "24.42–187.67 mm seven-times zoom objective",
+    "summary": "Two-group cam drive · transparent 3D preview",
+    "intro": "G1/G4 stay fixed. G2 varies magnification and G3 compensates with a reversing motion. Orbit the complete transparent assembly.",
+    "stages": [
+      [
+        "Optical preassembly",
+        "Spacer stacks; one bonded G2 doublet cell; revised L8 rim; two-end G4 loading."
+      ],
+      [
+        "Guide and cam assembly",
+        "Four rods support two carriages. Two cam grooves drive two rollers."
+      ],
+      [
+        "Input drive",
+        "20-tooth input drives128-tooth cam; cam rotates without axial motion."
+      ],
+      [
+        "Service",
+        "G2 core withdraws forwards; G4 tail is removable; remove G4 to access G3."
+      ]
+    ],
+    "fixing": "Four rectangular spacers. One locally bonded doublet cell. L8 needs a new OD64 mechanical rim; L9 loads directly into the G4 body.",
+    "load_path": "Gear → cam → rollers → carriages → optics. Guide rods transfer load to the mounting feet.",
+    "note": "Endpoint ratio7.685x. Focal lengths are source labels. Mechanical interpolation and nominal geometry; illustrative transparency.",
+    "status": "User-reviewed SolidWorks execution; native FreeCAD solids and sampled nominal motion/insertion checks passed"
   }
 }

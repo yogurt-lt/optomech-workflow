@@ -12,11 +12,15 @@ Try this prompt:
 
 > Use optomech-design to inspect my Zemax and STEP files. Research the assembly approach, explain barrel segmentation, loading direction, seats, retention and load paths, then generate editable CAD macros and section drawings. Target CAD: FreeCAD or SolidWorks 2023.
 
-The Skill supplies input checks, assembly reasoning, numerical review, CAD adapters and an iterative repair process. Eight demos show the resulting designs, including a 50 mm F1.8 whole-unit manual-focus lens with a native CAD 3D cutaway animation. Manufacturing tolerances, preload and clear aperture require design-specific verification.
+The Skill supplies input checks, assembly reasoning, numerical review, CAD adapters and an iterative repair process. Nine demos show the resulting designs, including a 50 mm F1.8 whole-unit manual-focus lens with a native CAD 3D cutaway animation. Manufacturing tolerances, preload and clear aperture require design-specific verification.
 
 ## Manual-focus demo
 
 [Double Gauss 50 mm F1.8](examples/double-gauss-focus/DESIGN.en.md): seven elements, five optical groups and 18 mechanical parts; 4.5 mm whole-unit travel driven by a short helicoid ring. CAD execution, native motion and assembly paths have been checked at sampled poses.
+
+## Two-group zoom demo
+
+[24.42–187.67 mm seven-times zoom objective](examples/zoom-7x/DESIGN.en.md): G2 variator and reversing G3 compensator, a two-groove cam and independent guides; 78 mechanical parts and 13 reference lenses. [Explore the transparent 3D animation](https://yogurt-lt.github.io/optomech-workflow/?demo=zoom-7x&lang=en), including optics-only/mechanics-only views and a live unwrapped cam diagram. Source endpoint ratio is 7.685×; nominal motion and service paths were sampled.
 
 ## Electric internal-focus demo
 

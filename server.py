@@ -6,6 +6,7 @@ from optomech.__main__ import analyze
 from optomech.generator import generate_macro
 from optomech.freecad_generator import generate_freecad_macro
 from optomech.geometry import validate_plan
+from tools.asset_parts import restore_large_assets
 
 ROOT=Path(__file__).resolve().parent
 DEMOS=json.loads((ROOT/'examples/catalog.json').read_text(encoding='utf-8'))
@@ -22,7 +23,10 @@ class Handler(BaseHTTPRequestHandler):
         if route=='/':return self.send(200,(ROOT/'web'/'index.html').read_bytes(),'text/html; charset=utf-8')
         if route=='/focus.html':return self.send(200,(ROOT/'web/focus.html').read_bytes(),'text/html; charset=utf-8')
         if route=='/focus-motion.js':return self.send(200,(ROOT/'web/focus-motion.js').read_bytes(),'text/javascript; charset=utf-8')
-        if route.startswith(('/focus-assets/','/f35-focus-assets/')):
+        if route in ('/zoom.html','/projection.html','/zoom-preview.js','/projection-preview.js'):
+            path=ROOT/'web'/route.lstrip('/')
+            return self.send(200,path.read_bytes(),'text/html; charset=utf-8' if path.suffix=='.html' else 'text/javascript; charset=utf-8')
+        if route.startswith(('/focus-assets/','/f35-focus-assets/','/zoom-assets/','/projection-assets/')):
             folder,name=route.lstrip('/').split('/',1)
             if '/' not in name and '\\' not in name and name not in ('.','..'):
                 path=ROOT/'web'/folder/name
@@ -80,6 +84,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);parser.add_argument('--no-browser',action='store_true');args=parser.parse_args()
+    restore_large_assets(ROOT)
     server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)
     url=f'http://127.0.0.1:{server.server_port}';print('Optomech workflow: '+url,flush=True)
     if not args.no_browser:webbrowser.open(url)

@@ -2,11 +2,11 @@
   "projection-zoom": {
     "title": "30–39 mm F3.5 · Projection zoom & focus",
     "summary": "Compact sleeves · three cells · peripheral flat contacts",
-    "intro": "G2/G3 share one stepped cell. Local rim contacts replace the two close-pair spacers. Zoom and whole-unit focus have independent inputs.",
+    "intro": "G1 front, G2 shared middle cell, G3 rear. Stepped pilots locate lenses; spacers and retainers carry preload. Outer-cam zoom and short-ring whole-unit focus.",
     "stages": [
       [
         "Preassemble three cells",
-        "G1: rear doublet→L1→retainer. Middle: L6→spacer→L4/L5→front retainer. Rear-load G4."
+        "G1: doublet→L1→retainer. G2: L6→spacer→doublet→retainer. Rear-load G3."
       ],
       [
         "Separate aperture disk",
@@ -21,15 +21,20 @@
         "Install the short rear focus ring and local fixed base. Remove external axles and thrust parts to withdraw modules."
       ]
     ],
-    "fixing": "Three cells; two peripheral flat contacts; one substantial rectangular middle spacer and front retainer. Separate rim-clamped stop disk.",
+    "fixing": "Three removable cells, two peripheral flat contacts. G2 includes a dedicated L6 pilot; G3 uses a substantial tapered-bore spacer. Independent rim-clamped stop foil.",
     "load_path": "Glass → seats/spacers → cells → guide sleeve → local base. Gear/cam/roller chain supplies drive.",
     "note": "New L2 Ø35 and L7 Ø28 rims; narrow edge relief, aperture, stresses and production fits need review.",
-    "status": "User-confirmed v0.3 SolidWorks execution;57 native FreeCAD solids and sampled nominal motion/insertion checks passed",
-    "full_macro": "Projection_Zoom_v03.bas",
-    "mechanics_macro": "Projection_Zoom_v03.bas",
+    "status": "v0.5 SolidWorks execution confirmed by user;57 FreeCAD solids and nominal motion/insertion samples checked",
+    "full_macro": "Projection_Zoom_v05_Fast.bas",
+    "mechanics_macro": "Projection_Zoom_v05_Fast.bas",
     "mechanical_count": 47,
     "extra_files": [
-      "runtime_review.json"
+      "runtime_review.json",
+      "Projection_Zoom_v05.bas",
+      "support_audit.json",
+      "fast_macro_checks.json",
+      "REVISION.md",
+      "FAST_MACRO.md"
     ]
   },
   "fixed-projection": {

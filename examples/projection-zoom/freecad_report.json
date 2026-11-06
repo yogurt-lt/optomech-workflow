@@ -24,13 +24,13 @@
       "name": "30_InnerGuide",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 83226.2934803145
+      "volume_mm3": 74234.39557128318
     },
     {
       "name": "40_ZoomCam",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 70808.42576132424
+      "volume_mm3": 60770.56597734306
     },
     {
       "name": "41_FocusRing",
@@ -252,7 +252,7 @@
       "name": "22_G4_Spacer89",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 579.3868391291911
+      "volume_mm3": 1978.85600019729
     },
     {
       "name": "Lens06_Reference",
@@ -264,103 +264,89 @@
       "name": "01_G1_Cell",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 25665.28319236346
+      "volume_mm3": 25665.283192363426
     },
     {
       "name": "10_G23_SharedCell",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 30899.474522355606
+      "volume_mm3": 31444.552942919498
     },
     {
       "name": "11_G23_FrontRetainer",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 528.1114631432532
+      "volume_mm3": 528.1114631432528
     },
     {
       "name": "14_G23_RectSpacer",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 783.6509766743061
+      "volume_mm3": 783.6509766743051
     },
     {
       "name": "20_G4_StopCell",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 58432.182383189116
+      "volume_mm3": 57733.12682259826
     },
     {
       "name": "Lens01_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 17212.28210653619
+      "volume_mm3": 17212.28210653618
     },
     {
       "name": "Lens02_BearingRim",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 5261.973885089523
+      "volume_mm3": 5261.973885089512
     },
     {
       "name": "Lens03_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 7312.074499771705
+      "volume_mm3": 7312.074499771704
     },
     {
       "name": "Lens04_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 5201.896580763348
+      "volume_mm3": 5201.896580763337
     },
     {
       "name": "Lens05_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 2417.184610865113
+      "volume_mm3": 2417.1846108651102
     },
     {
       "name": "Lens07_BearingRim",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 3181.6221536434646
+      "volume_mm3": 3181.622153643464
     },
     {
       "name": "Lens08_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 2360.4835927517775
+      "volume_mm3": 2360.483592751776
     },
     {
       "name": "Lens09_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 7154.466121502566
+      "volume_mm3": 7154.466121502561
     },
     {
       "name": "Lens10_Reference",
       "valid": true,
       "solids": 1,
-      "volume_mm3": 5159.08595547925
+      "volume_mm3": 5159.085955479246
     }
   ],
-  "rebuilt": [
-    "01_G1_Cell",
-    "10_G23_SharedCell",
-    "11_G23_FrontRetainer",
-    "14_G23_RectSpacer",
-    "20_G4_StopCell",
-    "Lens01_Reference",
-    "Lens02_BearingRim",
-    "Lens03_Reference",
-    "Lens04_Reference",
-    "Lens05_Reference",
-    "Lens07_BearingRim",
-    "Lens08_Reference",
-    "Lens09_Reference",
-    "Lens10_Reference"
+  "modified": [
+    "10_G23_SharedCell"
   ],
-  "gui_colors_saved": true,
-  "sha256": "b75a67ca0dba75b2ac608cbda9f55c72c58e64dfe8baf80c258bf0ddd50c1564"
+  "sha256": "029c68806731163facdaf705a28db8502c841cbb0fb8053dab14005c83ace14c"
 }

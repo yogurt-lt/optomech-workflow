@@ -1,6 +1,7 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    "SolidWorks 宏包含较多原生特征，生成时间较长，请耐心等待。手机端 3D 渲染预览也需要时间。":"SolidWorks macros build many native features and may take time; please wait. Mobile 3D previews also need time to load and render.",
     '打开独立动画与 GIF 下载 ↗':'Open animation & GIF downloads ↗',
     "下载 Skill":"Download Skill",
     "下载设计 Skill":"Download design Skill",

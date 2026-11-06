@@ -1,79 +1,79 @@
 {
   "examples/projection-zoom/FreeCAD_Model.FCStd": {
-    "bytes": 25688881,
-    "sha256": "b75a67ca0dba75b2ac608cbda9f55c72c58e64dfe8baf80c258bf0ddd50c1564",
+    "bytes": 25887582,
+    "sha256": "029c68806731163facdaf705a28db8502c841cbb0fb8053dab14005c83ace14c",
     "parts": [
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part00",
-        "sha256": "739c4b88a624a8a7ea2792ecb6a9bb070059cb9b5ed3f015a3319d6cef581b05"
+        "sha256": "090143939db2ffde905619fde8e30e7dbdcc211101760e5ac4bfa1674621842a"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part01",
-        "sha256": "9456140dbfd052a46f16c5dfe3950b03618dfdc5058ca6ffebc783d6da953a45"
+        "sha256": "3e885eaa03f5f1d29b37d80b038197e4f0fb56f12d95332f003d29da3c4adc1a"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part02",
-        "sha256": "4c9a8c5301769ae56b6cbdeaa50d94ecbec23ab34bd83aecae897764ae5ed9b7"
+        "sha256": "33245f8ff9f939fc645fa589a0d82c8e3f880cc4ebd3fa3453dabd251b17d661"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part03",
-        "sha256": "1c30e42852883cb09337d60b8ddecf521b41c815520f67955b1a0c8e33b60537"
+        "sha256": "69559888c3ae83e54e7900664f1a63f4824c39613499ca844653917c9c088ad1"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part04",
-        "sha256": "689852984ae05c88123e5d29b7d5ea2c77fa55c50b7043d634119e75d2c96484"
+        "sha256": "61b7b688e4a22ed41c6953be626d6a1bc481fc92b930c9e46d863454b9116b9c"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part05",
-        "sha256": "81903ec3b41ace108bbc17cbc7312f603f029969c6bb29d95a5e5b88ce5f36f8"
+        "sha256": "b80631da844f485bb1d3c2ac8de325399a822a7ef5bd38b9419e8831f7550904"
       },
       {
         "path": "assets/projection-zoom/FreeCAD_Model.FCStd.part06",
-        "sha256": "e262e1b708a53210e7405cf0c5125da6c38834602eb4852a998f5efe5d53a97c"
+        "sha256": "dbbcdc61513fddd7bbc4b89be60c504b396f20dd4d37b9bdb8ac41126415c99f"
       }
     ]
   },
   "web/projection-assets/meshes.json": {
-    "bytes": 22704755,
-    "sha256": "3ca9bebc8b55115edf831f98ecbf85360c6c21916970f2b812b642fac9b6606d",
+    "bytes": 22747113,
+    "sha256": "c50bd59825842fd55d6259bf3006a58216f80538677faa0d0e96e81e799216ce",
     "parts": [
       {
         "path": "assets/projection-zoom/meshes.json.part00",
-        "sha256": "d548d1d6de1380ab714c7995bee2eb5e004a56eb1106a2323be33b24bc76a1e0"
+        "sha256": "2201d4388945090ae84fa7e4e2a14114f7a4fe94a48e273f2aa56c1e968e5d97"
       },
       {
         "path": "assets/projection-zoom/meshes.json.part01",
-        "sha256": "58d1379de8242c5c5519fba940075365dbcd815891a67d538cb843b5e9604d83"
+        "sha256": "2c62d1046d33c0db7c446c6b6fe2531fb1c85b3881b096626f50557612f47d9f"
       },
       {
         "path": "assets/projection-zoom/meshes.json.part02",
-        "sha256": "463ba07de76cde997271689ed7d3fae38a70f44a6522a4ed5ab6ac9cafd2f78d"
+        "sha256": "27de67b074f555b1682c6a91563d5478da4e32657be2f3f9d790cfb82d8e8653"
       },
       {
         "path": "assets/projection-zoom/meshes.json.part03",
-        "sha256": "25c680268cd1bd466cb172506d90cb44ea3515b05e50c67440f473c510e47eed"
+        "sha256": "b0c9518dfa9341c015888e8d38f547bef41d408bf5c56a8056679aac6682bdfc"
       },
       {
         "path": "assets/projection-zoom/meshes.json.part04",
-        "sha256": "84ef5e81ea38fe08725d55f66d5a372451ef3e0adbc29bfda24f0c28b2a4cbd7"
+        "sha256": "901dacf489de0b6dc0d1d7f46f9515c0d1647642a318937180c72ca1ccbf58c5"
       },
       {
         "path": "assets/projection-zoom/meshes.json.part05",
-        "sha256": "8f24dc06d837db475bea5672cc87892a5a07037509d8b70d480634813f1cfe94"
+        "sha256": "efa109a928d8a0e55ed7d353a60fa5ff3abf03fc22f1c7d46d9a13152422bba0"
       }
     ]
   },
   "web/projection-assets/edges.json": {
-    "bytes": 5478170,
-    "sha256": "0f68205ed6543a6d899f1ac582dffc31daff94874cfccd2f457f796057693648",
+    "bytes": 5616288,
+    "sha256": "ad310a8418704cdc8b1ab85c2ced893638642ddce2ed7f7e85fab8d47d9e3bf9",
     "parts": [
       {
         "path": "assets/projection-zoom/edges.json.part00",
-        "sha256": "adc0f25a6c209e9462a14e24e9c58c5d558b3d67b1f561a543bb0b9d3ddd130e"
+        "sha256": "4696717caa2c1612f68fc22b8f38b9c8a4e369e934012ec95b6880edc2017a3e"
       },
       {
         "path": "assets/projection-zoom/edges.json.part01",
-        "sha256": "628654338ff29f7b35cefa25995ef8c8f6bfac42462f8a57e6584612ce7e29ed"
+        "sha256": "7772ffa2b3e793b7069c8d6e47b06032fe93aa3a8d65ece2b2f97059b8b78830"
       }
     ]
   }

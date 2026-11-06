@@ -1,0 +1,11 @@
+{
+  "status": "static checks passed; SolidWorks runtime and timings pending",
+  "geometry_calls_unchanged": true,
+  "data_and_placement_unchanged": true,
+  "loft_calls": 1004,
+  "old_explicit_cut_rebuilds": 1004,
+  "new_explicit_cut_checkpoints": 28,
+  "final_per_part_geometry_checks_preserved": true,
+  "source_sha256": "0502f0d8322aaf70bd393d11f7a45ddd78c8dc9ece0cbd1ae3f7b3fee81b34b0",
+  "optimized_sha256": "ff891b2248b4c667ed9675a90824e5fa376affa2e4ef06d4ec88141eecac1933"
+}

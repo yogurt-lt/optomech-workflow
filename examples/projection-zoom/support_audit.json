@@ -1,0 +1,124 @@
+{
+  "status": "nominal_radial_pilots_found",
+  "scope": "400 axial samples per lens maximum-radius land; housing bore only. Maximum accepted radial clearance 0.2 mm is a local demo screening assumption, not a production fit. This does not qualify tolerance, stress or optical aperture.",
+  "regression": {
+    "old_L6": {
+      "lens": 6,
+      "cell": "10_G23_SharedCell",
+      "lens_od_mm": 24.0,
+      "minimum_radial_clearance_mm": 3.1500000000000004,
+      "sampled_pilot_engagement_mm": 0.0,
+      "radial_pilot_found": false
+    },
+    "new_L6": {
+      "lens": 6,
+      "cell": "10_G23_SharedCell",
+      "lens_od_mm": 24.0,
+      "minimum_radial_clearance_mm": 0.019999999999999574,
+      "sampled_pilot_engagement_mm": 1.9402112601981187,
+      "radial_pilot_found": true
+    }
+  },
+  "lenses": [
+    {
+      "lens": 1,
+      "cell": "01_G1_Cell",
+      "lens_od_mm": 44.0,
+      "minimum_radial_clearance_mm": 0.14999999999999858,
+      "sampled_pilot_engagement_mm": 10.909747483035744,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 2,
+      "cell": "01_G1_Cell",
+      "lens_od_mm": 35.0,
+      "minimum_radial_clearance_mm": 0.14999999999999858,
+      "sampled_pilot_engagement_mm": 8.442007337578245,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 3,
+      "cell": "01_G1_Cell",
+      "lens_od_mm": 34.0,
+      "minimum_radial_clearance_mm": 0.14999999999999858,
+      "sampled_pilot_engagement_mm": 4.9555788449703755,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 4,
+      "cell": "10_G23_SharedCell",
+      "lens_od_mm": 30.0,
+      "minimum_radial_clearance_mm": 0.15000000000000036,
+      "sampled_pilot_engagement_mm": 8.291938374010442,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 5,
+      "cell": "10_G23_SharedCell",
+      "lens_od_mm": 30.0,
+      "minimum_radial_clearance_mm": 0.15000000000000036,
+      "sampled_pilot_engagement_mm": 0.8626529203749982,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 6,
+      "cell": "10_G23_SharedCell",
+      "lens_od_mm": 24.0,
+      "minimum_radial_clearance_mm": 0.019999999999999574,
+      "sampled_pilot_engagement_mm": 1.9402112601981187,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 7,
+      "cell": "20_G4_StopCell",
+      "lens_od_mm": 28,
+      "minimum_radial_clearance_mm": 0.15000000000000036,
+      "sampled_pilot_engagement_mm": 6.728572393877432,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 8,
+      "cell": "20_G4_StopCell",
+      "lens_od_mm": 28.0,
+      "minimum_radial_clearance_mm": 0.15000000000000036,
+      "sampled_pilot_engagement_mm": 2.4740677652458225,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 9,
+      "cell": "20_G4_StopCell",
+      "lens_od_mm": 38.0,
+      "minimum_radial_clearance_mm": 0.14999999999999858,
+      "sampled_pilot_engagement_mm": 1.7591783500050633,
+      "radial_pilot_found": true
+    },
+    {
+      "lens": 10,
+      "cell": "20_G4_StopCell",
+      "lens_od_mm": 40.0,
+      "minimum_radial_clearance_mm": 0.14999999999999858,
+      "sampled_pilot_engagement_mm": 2.30154098872095,
+      "radial_pilot_found": true
+    }
+  ],
+  "reviewed_axial_units": [
+    {
+      "unit": "L1 + cemented L2/L3",
+      "closure": "front retainer -> L1 peripheral flat -> revised L2 rim -> cemented doublet -> rear housing shoulder",
+      "radial": "L1, L2 and L3 stepped bore lands"
+    },
+    {
+      "unit": "cemented L4/L5 + L6",
+      "closure": "front retainer -> L4/L5 -> spacer14 -> L6 -> rear housing shoulder",
+      "radial": "L4/L5 ID30.3; L6 ID24.04",
+      "metal_step_clearance_mm": 0.14017972975587
+    },
+    {
+      "unit": "L7 through L10",
+      "closure": "rear retainer -> L10 -> spacer23 -> L9 -> spacer22 -> L8 -> revised L7 peripheral flat -> front housing shoulder",
+      "radial": "ID28.3 / 38.3 / 40.3 stepped lands",
+      "note": "Independent stop foil carries no lens preload"
+    }
+  ],
+  "remaining": "Axial paths are an explicit reviewed design record, not an automated contact stress proof. Revised glass rims, optical clearance, tolerance and preload remain to be qualified."
+}

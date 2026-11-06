@@ -16,7 +16,7 @@ Skill 提供文件初检、装配推理规则、数值检查、CAD 适配与反�
 
 ## 十个公开案例
 
-**首页默认案例：[30–39 mm F3.5 投影变焦与整组调焦](examples/projection-zoom/DESIGN.md)。** 三只镜筒、直槽内筒、外凸轮筒和短调焦环；不使用导杆。G2/G3 共筒，近间距镜片采用局部外围平边相抵；47 个机械件、10 片参考镜片。SolidWorks 已由用户运行确认，FreeCAD 原生实体与名义运动、装拆路径通过抽样检查。[查看三维双输入动画](https://yogurt-lt.github.io/optomech-workflow/)，支持实体边缘线、只看镜片和只看机械。
+**首页默认案例：[30–39 mm F3.5 投影变焦与整组调焦](examples/projection-zoom/DESIGN.md)。** 三只镜筒、直槽内筒、外凸轮筒和短调焦环；不使用导杆。G2 中组共筒，近间距镜片采用局部外围平边相抵；47 个机械件、10 片参考镜片。SolidWorks 已由用户运行确认，FreeCAD 原生实体与名义运动、装拆路径通过抽样检查。[查看三维双输入动画](https://yogurt-lt.github.io/optomech-workflow/)，支持实体边缘线、只看镜片和只看机械。
 
 [24.42 ～ 187.67 mm 七倍变焦物镜](examples/zoom-7x/DESIGN.md)：G2 变倍、G3 折返补偿，双槽凸轮与独立导杆联动；78 个机械件、13 片参考镜片。[查看完整外形半透明三维变焦动画](https://yogurt-lt.github.io/optomech-workflow/?demo=zoom-7x)。可切换全部、只看机械、只看镜片，并查看实时凸轮展开图。源焦距端点比约 7.685×；名义运动及装拆路径已抽样检查。
 
@@ -145,3 +145,5 @@ The local workbench includes an offline, rotatable solid-of-revolution preview f
 每个案例目录提供 `FreeCAD.FCMacro`、`FreeCAD_Model.FCStd`、`FREECAD.md` 和实际验证记录 `freecad_report.json`。网页侧栏可分别下载 SolidWorks 与 FreeCAD 文件。详见 [FreeCAD 使用与迁移说明](docs/FreeCAD使用与迁移说明.md)。本机原生验证版本为 1.1.4，新修改仍需运行校核。定焦投影默认已切换到三个可拆胶接短镜框 v0.4；旧版在 `examples/fixed-projection/legacy-v02/` 留档。
 
 大型案例模型和预览网格在 `assets/` 中分块存储。运行 `python tools/build_pages.py` 会校验每块及完整文件的 SHA-256 并还原；网站提供完整原文件下载。
+
+本轮 v0.5：G1前组、G2中组共筒、G3后组；补齐L6径向定位，改用厚斜孔隔圈并缩短大筒。SolidWorks宏已由用户运行确认。宏包含大量原生特征，生成较慢；手机端3D预览也需加载与渲染时间，请耐心等待。

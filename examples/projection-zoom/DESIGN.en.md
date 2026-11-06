@@ -1,17 +1,31 @@
-# 30–39 mm F3.5 projection zoom and focus · v0.3
+# 30–39 mm F3.5 projection zoom and whole-unit focus · v0.5
 
-Three mechanical cells replace four: G1, combined G2/G3, and G4. The guide, cam law, short focus ring and separate black stop disk are unchanged.
+Three removable cells run inside a straight-slot guide sleeve. An outer cam drives zoom; a short rear ring drives whole-unit focus. No guide rods. Prefer simple stepped cells, substantial spacers and accessible end retainers.
 
-G1 removes its small spacer. Only L2 receives a new Ø35 peripheral rim (previous Ø34), with a flat bearing band at r17.15–17.50 against L1's existing peripheral flat. Front-load the rear doublet, L1 and the front retainer.
+|Mechanical module|Bench assembly|Location and preload|
+|---|---|---|
+|G1 front|Front-load L2/L3 cemented doublet → L1 → retainer|New L2 OD35 peripheral flat bears against L1; stepped pilot bores and rear seat|
+|G2 middle shared cell|Front-load L6 → rectangular spacer → L4/L5 doublet → retainer|L6 ID24.04 pilot and rear seat; doublet ID30.3 pilot; spacer clears the metal step by about0.14 mm|
+|G3 rear|Rear-load L7 → L8 → tapered-bore spacer → L9 → long spacer → L10 → retainer|New L7 OD28 rim bears against L8; stepped pilots and front seat; independent stop foil carries no glass preload|
 
-G2/G3 share one stepped cell. From the left/front opening insert L6, a substantial rectangular spacer, the original L4/L5 cemented doublet, then one front retainer. Spacer ID22.6, OD29.8, axial length about2.64 mm; L6 seats on the rear shoulder. The threaded G3 insert and rear retainer are removed.
+These are mechanical module numbers: G2 combines the original optical G2/G3; G3 corresponds to original optical G4. Internal CAD IDs remain stable. L6 pilot engagement is about1.94 mm; diametral clearance0.04 mm is a demo assumption, not a released fit.
 
-G4 removes the L7/L8 thin inward-projecting spacer. Only L7 receives a new Ø28 rim (previous Ø26), with a flat band at r13.20–14.00 against L8's peripheral flat. Rear-load L7, L8, the substantial spacer, L9, long spacer, L10 and the rear retainer.
+Zoom rotates the outer cam0–90° to move three units. The axially retained short focus ring rotates±45° and shifts the complete inner guide/cells/cam assembly±0.6 mm relative to the fixed rear base. Bench-assemble cells; install guide, cam and external followers; finish with rear thrust and focus components. Disengage drive, remove thrust retention and external axles to withdraw a module.
 
-The revised rims require new glass manufacture. Narrow edge relief still involves original nominal optical edges and needs optical review. Optical vertices, center thicknesses, air gaps and motion laws are preserved. These are nominal geometric contacts; bevels, pressure, fits and tolerances are not qualified. No new adhesive joints are introduced. If original finished glass must be used, consider fixture-aligned local bonds to the removable cell; never fill the optical air gap simply because the edges are close.
+The main sleeves are shortened17.9 mm at the front. The L8–L9 spacer has outer-diameter location, finite end contacts and a tapered bore. Only L2 radius grows0.5 mm and L7 radius1 mm, requiring newly manufactured glass rims and optical review of edge relief. Source prescriptions remain unchanged. No new adhesive joints or filled optical air gaps.
 
-Zoom rotates the cam0–90° and changes the three unit positions. Focus rotates the axially retained rear ring±45° and translates the complete inner assembly±0.6 mm. Motor/bearing-support selection is outside this prototype.
+## Running and loading
 
-References: [projection lens mounting US7061699B2](https://patents.google.com/patent/US7061699B2/en), [Dymax optical assembly](https://dymax.com/markets/electronics/optical-telecommunications/optoelectronics-assembly). These support mounting principles, not this design's dimensions.
+Recommended SolidWorks macro: Projection_Zoom_v05_Fast.bas. Import into a new VBA macro, save as swp and run main. The user confirmed execution of this revision. SolidWorks macro generation is slow because many native cam cuts are built; please allow time. The optimized macro reduces intermediate display/rebuild overhead; no speed multiplier has been measured. mainReuse can reuse matching prior Fast outputs; retain .reuse sidecars. The baseline Projection_Zoom_v05.bas is also provided.
 
-Checks:57 native single solids,21 coaxial motion samples and sampled insertion paths. Full3D cam contact, optical clearance, stresses and production tolerances remain open. The user confirmed v0.3 SolidWorks execution. The macro retains adjacent-section cuts and small VBA procedures.
+FreeCAD: open FreeCAD_Model.FCStd and edit MotionControl.ZoomDeg / FocusDeg, or run FreeCAD.FCMacro.
+
+Mobile 3D previews load full native meshes and edge lines and may take time to render. Please wait. The preview retains transparent mechanics, prominent lenses, solid edge lines and optics-only/mechanics-only controls.
+
+## Evidence and lessons
+
+57 valid native single solids,21 coaxial motion samples and662 insertion samples passed. Each lens has a nominal radial pilot; axial seats and preload paths are recorded separately. The previous L6 had axial closure but lacked radial location in an oversized bore. This version adds a pilot. Clear insertion and no overlap do not establish a complete assembly.
+
+Combine synchronous constant-spacing groups first, then restore each small lens pilot. Compare local peripheral bearing flats or serviceable bonded cells before forcing tiny spacers into close gaps. Spacers need location, finite contacts and adequate section; they must not bottom on unrelated metal before glass closes. Use a separately retained blackened stop foil instead of a sharp nose; check guidance, groove-end stock and aperture envelope across travel when shortening sleeves.
+
+Optical clearance, contact stress, preload, tolerances and complete3D cam contact remain open. The source has30/34.5/39 mm focal nodes; intermediate positions use mechanical interpolation.

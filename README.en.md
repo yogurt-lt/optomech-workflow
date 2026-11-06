@@ -16,7 +16,7 @@ The Skill supplies input checks, assembly reasoning, numerical review, CAD adapt
 
 ## Featured compact projection zoom
 
-**The default gallery case is the [30–39 mm F3.5 projection zoom with whole-unit focus](examples/projection-zoom/DESIGN.en.md).** Three cells, a straight-slot inner guide, an outer cam and a short focus ring, without guide rods. G2/G3 share a cell; local peripheral flat contacts replace two close-pair spacers.47 mechanical parts and10 reference lenses. The user confirmed SolidWorks execution; native FreeCAD geometry and nominal motion/insertion paths were sampled. [Explore the independent zoom/focus controls](https://yogurt-lt.github.io/optomech-workflow/?lang=en), with solid edge lines and optics-only/mechanics-only views.
+**The default gallery case is the [30–39 mm F3.5 projection zoom with whole-unit focus](examples/projection-zoom/DESIGN.en.md).** Three cells, a straight-slot inner guide, an outer cam and a short focus ring, without guide rods. G2 shares a cell; local peripheral flat contacts replace two close-pair spacers.47 mechanical parts and10 reference lenses. The user confirmed SolidWorks execution; native FreeCAD geometry and nominal motion/insertion paths were sampled. [Explore the independent zoom/focus controls](https://yogurt-lt.github.io/optomech-workflow/?lang=en), with solid edge lines and optics-only/mechanics-only views.
 
 ## Manual-focus demo
 
@@ -84,3 +84,5 @@ The six fixed-structure examples and the approved manual-focus demo are packaged
 Each demo includes `FreeCAD.FCMacro`, `FreeCAD_Model.FCStd`, bilingual guides and `freecad_report.json`. The gallery exposes separate SolidWorks and FreeCAD downloads. See the [FreeCAD guide](docs/FreeCAD-guide.en.md). Native verification used 1.1.4; new edits require their own checks. PF-2 now uses the accepted three removable bonded cells; its old variant is archived in `examples/fixed-projection/legacy-v02/`.
 
 Large demo models and preview meshes are stored in checked chunks under `assets/`. Run `python tools/build_pages.py` to restore the exact files, verifying chunk and full-file SHA-256 hashes. Website downloads provide the complete original files.
+
+Revision v0.5: G1 front, G2 shared middle cell, G3 rear. Adds the L6 radial pilot, a substantial tapered-bore spacer and shorter sleeves. SolidWorks execution confirmed by the user. Native-feature macro generation and mobile3D loading/rendering may take time; please wait.

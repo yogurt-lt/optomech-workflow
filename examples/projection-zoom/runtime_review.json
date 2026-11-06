@@ -1,7 +1,7 @@
 {
-  "version": "0.3",
-  "date": "2026-11-05",
-  "solidworks": "User confirmed successful execution of this version.",
-  "freecad": "57 native single solids;21 coaxial motion samples;662 sampled insertion positions.",
-  "scope": "Nominal concept; optical clearance, stress, tolerance and full cam contact are not certified."
+  "version": "0.5",
+  "date": "2026-11-06",
+  "solidworks": "User confirmed this revision executes successfully.",
+  "freecad": "57 valid native single solids;21 coaxial motion samples;662 insertion samples.",
+  "scope": "Nominal assembly concept; aperture, tolerance, preload, stress and complete3D cam contact not qualified."
 }

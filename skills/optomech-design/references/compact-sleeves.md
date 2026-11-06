@@ -22,6 +22,10 @@ For teaching previews, show zoom and focus as separate inputs with correct neste
 
 ## Close pairs and synchronous optical groups
 
+In user-facing mechanical drawings, number the final moving modules once. For example, after combining original optical G2/G3, label the three mechanical cells G1/G2/G3 and give the optical-to-mechanical mapping once. Keep stable internal CAD IDs when renaming them would break references or validated caches.
+
+The reviewed projection revision used a short L6 pilot in the shared middle cell, a substantial externally located tapered-bore rear spacer with finite end contacts, shortened main sleeves, and an independently rim-clamped black stop foil. These details matter as much as simplifying barrel count. Read [assembly completeness](assembly-completeness.md) before carrying the architecture to another lens.
+
 Do not make one cell per named optical group by default. Groups with constant separation should first be tested as a single stepped cell. Check the smallest/deepest lens can enter first, followed by a substantial spacer, the larger group and an accessible end retainer. Separate cells only for a stated alignment, insertion or service need.
 
 Where peripheral separation is too small for a centered, seated spacer, compare local flat bearing rims with individually located bonded seats. A positive minimum ring thickness alone does not prove centering, insertion, contact or acceptable aperture. With permission to manufacture revised glass, a modest local rim can be simpler than a fragile spacer. Show exact before/after diameters, flat contact plane and band, edge relief and preload path. Do not add a large common glass flange. Existing optical-zone material changes must be marked for optical review even in a demo.

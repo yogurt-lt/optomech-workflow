@@ -1,2 +1,6 @@
 /assets/projection-zoom/*.part -text
 /examples/projection-zoom/Projection_Zoom_v03.bas -text
+
+examples/projection-zoom/Projection_Zoom_v05_Fast.bas -text
+
+examples/projection-zoom/Projection_Zoom_v05.bas -text

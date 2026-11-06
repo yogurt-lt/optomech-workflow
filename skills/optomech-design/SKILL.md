@@ -38,6 +38,8 @@ For multi-configuration zoom lenses and resource-aware CAD generation, read [zoo
 
 ## Deliver geometry with evidence
 
+Before delivering any assembly or revising a bore/stack, read [assembly completeness](references/assembly-completeness.md). Record each optical unit's radial pilot, axial seat and closure/preload path. Passing interference and insertion checks alone does not establish positioning; merging common-motion groups must preserve small-lens centering.
+
 Read [plan data and bundled tools](references/plan-and-tools.md) for the input schema and commands. The standalone bundle includes a small Python standard-library engine and separate SolidWorks/FreeCAD templates; it does not require this repository or any user CAD files to be installed elsewhere.
 
 Check self-intersections, mechanical/glass overlap, adjacent glass gaps, continuous seating, centering, insertion, and the preload chain. Check minimum distance between inner and outer meridional wall chains, including axial and diagonal step roots; radial wall scans alone can miss a thin bridge. Numerical geometry checks are not stress or tolerance qualification. Select dimensions by scale and process; demo dimensions are not universal manufacturing limits.

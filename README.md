@@ -6,7 +6,7 @@
 
 **[下载 Skill ZIP](https://yogurt-lt.github.io/optomech-workflow/downloads/optomech-design-skill.zip)** · [安装与使用](docs/SKILL_USAGE.md) · [在线案例与三维调焦动画](https://yogurt-lt.github.io/optomech-workflow/)
 
-新增案例 **[点 47 · 照明加投影物镜整机结构](https://yogurt-lt.github.io/optomech-workflow/?demo=illumination-047)**，包含整机三维视图、短环整组调焦和爆炸装配演示。
+新增案例 **[照明加投影整机](https://yogurt-lt.github.io/optomech-workflow/?demo=illumination-047)**，包含整机三维视图、短环整组调焦和爆炸装配演示。
 
 下载后解压，将完整 `optomech-design/` 文件夹加入支持 `SKILL.md` 的 AI 助手技能目录；也可以让助手直接读取其中的 `SKILL.md`。保留配套脚本、参考资料与模板。独立 Skill 不依赖本仓库的案例输入；运行 CAD 宏需要本机安装目标 CAD。
 

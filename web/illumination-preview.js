@@ -3,7 +3,7 @@
   const params = new URLSearchParams(location.search);
   let en = params.get('lang') === 'en';
   let angle = 0, explode = false, playing = false, dir = 1;
-  let yaw = -.32, pitch = .50, zoom = 1;
+  let yaw = -.32, pitch = .72, zoom = 1;
   const canvas = $('scene'), gl = canvas.getContext('webgl2', {antialias:true});
   const words = (zh, eng) => en ? eng : zh;
   function labels() {
@@ -90,9 +90,21 @@
       gl.enableVertexAttribArray(loc);
       gl.vertexAttribPointer(loc,3,gl.FLOAT,false,24,start);
     }
+    let lineVao=null;
+    if(m.edges?.length){
+      lineVao=gl.createVertexArray();
+      gl.bindVertexArray(lineVao);
+      gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
+      gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.edges),gl.STATIC_DRAW);
+      gl.enableVertexAttribArray(gl.getAttribLocation(program,'pos'));
+      gl.vertexAttribPointer(gl.getAttribLocation(program,'pos'),3,gl.FLOAT,false,12,0);
+      gl.vertexAttrib3f(gl.getAttribLocation(program,'normal'),0,0,1);
+    }
+    const lineCount=(m.edges?.length||0)/3;
+    delete m.edges;
     delete m.vertices;
     delete m.triangles;
-    return {...m,vao,count:at/6};
+    return {...m,vao,count:at/6,lineVao,lineCount};
   }
   function draw() {
     if (!meshes.length) return;
@@ -100,7 +112,7 @@
     if(!w||!h) return;
     if(w!==canvas.width||h!==canvas.height){canvas.width=w;canvas.height=h;}
     gl.viewport(0,0,w,h);
-    gl.clearColor(.89,.93,.95,1);
+    gl.clearColor(.982,.988,.992,1);
     gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
     gl.enable(gl.DEPTH_TEST);
     gl.enable(gl.BLEND);
@@ -111,6 +123,8 @@
     gl.uniform1f(u.mid,explode?-46:-14);
     gl.uniform1f(u.scale,(explode?87:64)*Math.max(1,1.85*h/w)/zoom);
     const translucent=m=>!explode&&$('transparent').checked&&(m.shell||m.sleeve);
+    gl.enable(gl.POLYGON_OFFSET_FILL);
+    gl.polygonOffset(1,1);
     for(const transparent of [false,true]) {
       gl.depthMask(!transparent);
       for (const m of meshes) {
@@ -118,10 +132,22 @@
         gl.uniform1f(u.turn,m.cam&&!explode?angle*Math.PI/180:0);
         gl.uniform3fv(u.offset,explode?m.explode:[0,0,m.move?angle*.02:0]);
         gl.uniform3fv(u.color,m.color);
-        gl.uniform1f(u.opacity,transparent?(m.shell ? .18 : .23):1);
+        gl.uniform1f(u.opacity,transparent?(m.shell ? .22 : .27):1);
         gl.bindVertexArray(m.vao);
         gl.drawArrays(gl.TRIANGLES,0,m.count);
       }
+    }
+    gl.disable(gl.POLYGON_OFFSET_FILL);
+    gl.depthMask(false);
+    gl.depthFunc(gl.LEQUAL);
+    for(const m of meshes){
+      if(!m.lineVao)continue;
+      gl.uniform1f(u.turn,m.cam&&!explode?angle*Math.PI/180:0);
+      gl.uniform3fv(u.offset,explode?m.explode:[0,0,m.move?angle*.02:0]);
+      gl.uniform3fv(u.color,[.14,.22,.29]);
+      gl.uniform1f(u.opacity,translucent(m) ? .63 : .46);
+      gl.bindVertexArray(m.lineVao);
+      gl.drawArrays(gl.LINES,0,m.lineCount);
     }
     gl.depthMask(true);
     $('readout').textContent=`${angle.toFixed(1)}° · ${(angle*.02).toFixed(2)} mm`;
@@ -136,7 +162,7 @@
     labels();draw();
   };
   $('transparent').onchange=draw;
-  $('reset').onclick=()=>{yaw=-.32;pitch=.50;zoom=1;draw();};
+  $('reset').onclick=()=>{yaw=-.32;pitch=.72;zoom=1;draw();};
   let drag=null;
   canvas.onpointerdown=e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);};
   canvas.onpointermove=e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];draw();};
@@ -157,4 +183,3 @@
     });
   }).catch(fail);
 })();
-

@@ -43,12 +43,12 @@ class Handler(BaseHTTPRequestHandler):
         if route=='/api/demos':return self.send(200,DEMOS)
         if route.startswith('/api/plan/'):
             key=route.removeprefix('/api/plan/')
-            if key in DEMOS:return self.send(200,(ROOT/'examples'/key/'plan.json').read_bytes())
+            if key in DEMOS and not DEMOS[key].get('showcase'):return self.send(200,(ROOT/'examples'/key/'plan.json').read_bytes())
         if route.startswith('/examples/'):
             segments=route.split('/')
             if len(segments)==4:
                 _,_,key,name=segments
-                if key in DEMOS and name in {'section.png','section.en.svg','DESIGN.md','DESIGN.en.md','plan.json','checks.json','source.STP','source.zmx','FreeCAD.FCMacro','FreeCAD_Model.FCStd','FREECAD.md','FREECAD.en.md','freecad_report.json',DEMOS[key]['full_macro'],DEMOS[key]['mechanics_macro'],*DEMOS[key].get('extra_files',[])}:
+                if key in DEMOS and not DEMOS[key].get('showcase') and name in {'section.png','section.en.svg','DESIGN.md','DESIGN.en.md','plan.json','checks.json','source.STP','source.zmx','FreeCAD.FCMacro','FreeCAD_Model.FCStd','FREECAD.md','FREECAD.en.md','freecad_report.json',DEMOS[key]['full_macro'],DEMOS[key]['mechanics_macro'],*DEMOS[key].get('extra_files',[])}:
                     path=ROOT/'examples'/key/name
                     if path.is_file():
                         mime={'.png':'image/png','.svg':'image/svg+xml; charset=utf-8','.md':'text/markdown; charset=utf-8','.bas':'text/plain; charset=us-ascii','.FCMacro':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'}.get(path.suffix,'application/octet-stream')

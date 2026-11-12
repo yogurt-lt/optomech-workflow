@@ -6,7 +6,7 @@
 
 **[Download the Skill ZIP](https://yogurt-lt.github.io/optomech-workflow/downloads/optomech-design-skill.zip)** · [Setup & usage](docs/SKILL_USAGE.en.md) · [Live demos & 3D focus animation](https://yogurt-lt.github.io/optomech-workflow/)
 
-New case **[.47 illumination and fixed-focal-length projection](https://yogurt-lt.github.io/optomech-workflow/illumination.html?lang=en)**, with the complete 3D assembly, short-ring focusing and an exploded view.
+New case **[.47 · Complete illumination and projection lens assembly](https://yogurt-lt.github.io/optomech-workflow/illumination.html?lang=en)**, with the complete 3D assembly, short-ring focusing and an exploded view.
 
 Extract the ZIP and add the complete `optomech-design/` folder to an assistant that supports `SKILL.md`, or ask the assistant to read that entry file directly. Keep its scripts, references and templates together. The standalone Skill does not require the demo inputs; executing CAD macros requires the chosen CAD application.
 

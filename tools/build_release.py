@@ -25,7 +25,8 @@ def build(output):
     archive(output/f'optomech-gallery-v{VERSION}.zip',[(p,Path('optomech-workflow')/p.relative_to(site)) for p in site.rglob('*') if p.is_file()])
     catalog=json.loads((ROOT/'examples/catalog.json').read_text(encoding='utf-8'))
     files=[]
-    for key in catalog:
+    for key,item in catalog.items():
+        if item.get('showcase'):continue
         folder=ROOT/'examples'/key
         for name in ['FreeCAD.FCMacro','FreeCAD_Model.FCStd','plan.json','FREECAD.md','FREECAD.en.md','freecad_report.json','section.png','section.en.svg']:
             src=folder/name;assert src.is_file();files.append((src,Path('FreeCAD-demos')/key/name))

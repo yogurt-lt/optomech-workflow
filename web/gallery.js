@@ -3,17 +3,21 @@
   const $=id=>document.getElementById(id);
   let demos={},plan=null,key=null;
   const english=()=>window.i18n.language==='en';
-  function meta(){const p=demos[key];return p?(english()?{...p,...p.en,section:'section.en.svg',design:'DESIGN.en.md'}:p):null}
+  function meta(){const p=demos[key];return p?(english()?{...p,...p.en,section:p.showcase?p.section:'section.en.svg',design:'DESIGN.en.md'}:p):null}
   async function json(path){const r=await fetch(path);if(!r.ok)throw new Error(`${r.status}: ${path}`);return r.json()}
 
 function focusCase(meta){
  document.getElementById('mechMacro').hidden=!!meta&&meta.full_macro===meta.mechanics_macro;
  const active=!!meta?.focus_animation,box=document.getElementById('focus-case'),f=document.getElementById('focus-embed');
  document.querySelector('.preview-card').hidden=active;box.hidden=!active;
- if(active){const url=meta.animation_case==='projection-zoom'?('projection.html?embed=1&lang='+window.i18n.language):meta.animation_case==='zoom-7x'?('zoom.html?embed=1&lang='+window.i18n.language):('focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss'));if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
+ if(active){const url=meta.showcase?(meta.showcase+'?embed=1&lang='+window.i18n.language):meta.animation_case==='projection-zoom'?('projection.html?embed=1&lang='+window.i18n.language):meta.animation_case==='zoom-7x'?('zoom.html?embed=1&lang='+window.i18n.language):('focus.html?embed=1&lang='+window.i18n.language+'&case='+encodeURIComponent(meta.animation_case||'double-gauss'));if(f.getAttribute('src')!==url)f.src=url;document.getElementById('focusStandalone').href=url.replace('embed=1&','');}
  else if(f.hasAttribute('src'))f.removeAttribute('src');
  document.getElementById('heroSkillGuide').href=window.i18n.language==='en'?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
- if(['projection-zoom','zoom-7x'].includes(meta?.animation_case)){
+ if(meta?.showcase){
+  box.querySelector('h2').textContent=english()?'3D assembly and focus motion':'整机三维与调焦演示';
+  document.getElementById('focusStandalone').textContent=english()?'Open the assembly preview ↗':'打开独立三维与爆炸图 ↗';
+  f.title=english()?'Complete 3D assembly and focus motion':'整机三维与调焦演示';
+ }else if(['projection-zoom','zoom-7x'].includes(meta?.animation_case)){
   box.querySelector('h2').textContent=english()?'Transparent 3D zoom mechanism':'完整外形 · 半透明三维变焦演示';
   document.getElementById('focusStandalone').textContent=english()?'Open interactive zoom preview ↗':'打开独立三维变焦预览 ↗';
   f.title=english()?'Full native CAD transparent zoom animation':'完整原生CAD半透明变焦动画';
@@ -30,15 +34,17 @@ window.addEventListener('message',e=>{const f=document.getElementById('focus-emb
     $('fixing').textContent=m.fixing;$('loadPath').textContent=m.load_path;$('storyNote').textContent=m.note;
     $('stageList').replaceChildren(...m.stages.map(([title,body],i)=>{const card=document.createElement('div'),h=document.createElement('h3'),p=document.createElement('p');card.className='stage';h.textContent=`${String(i+1).padStart(2,'0')} / ${title}`;p.textContent=body;card.append(h,p);return card}));
     for(const [id,file] of [['fullMacro',m.full_macro],['mechMacro',m.mechanics_macro],['designLink',m.design],['freecadMacro',m.freecad_macro],['freecadModel',m.freecad_model],['freecadGuide',english()?'FREECAD.en.md':'FREECAD.md']])$(id).href=`examples/${key}/${file}`;
-    const image=`examples/${key}/${m.section}`;$('sectionImage').src=image;$('sectionImage').alt=m.title+(english()?' reviewed section drawing':'已检查结构截面图');$('imageLink').href=image;$('imageDownload').href=image;
-    $('imageStats').textContent=english()?`${plan.lenses?.length||0} glass solids / ${m.mechanical_count||plan.parts.length} mechanical parts`:`${plan.lenses?.length||0} 个玻璃实体 / ${m.mechanical_count||plan.parts.length} 个机械件`;
+    const image=m.showcase?m.section:`examples/${key}/${m.section}`;$('sectionImage').src=image;$('sectionImage').alt=m.title+(english()?' reviewed section drawing':'已检查结构截面图');$('imageLink').href=image;$('imageDownload').href=image;
+    for(const id of ['fullMacro','solidworksLabel','freecadActions','macroNote','macroTimeNote'])$(id).hidden=!!m.showcase;
+    if(m.showcase){$('mechMacro').hidden=true;$('designLink').href=m.showcase+'?lang='+window.i18n.language;}
+    $('imageStats').textContent=english()?`${m.optic_count||plan.lenses?.length||0} glass solids / ${m.mechanical_count||plan.parts.length} mechanical parts`:`${m.optic_count||plan.lenses?.length||0} 个玻璃实体 / ${m.mechanical_count||plan.parts.length} 个机械件`;
     $('skillGuide').href=english()?'docs/SKILL_USAGE.en.md':'docs/SKILL_USAGE.md';
     if(!m.focus_animation)window.optomech3d.update(plan);window.i18n.apply();
   }
   function options(){const value=key;$('demo').replaceChildren(...Object.entries(demos).map(([k,m])=>new Option(english()?m.en.title:m.title,k)));if(value)$('demo').value=value}
   async function load(value){
     $('demo').disabled=true;$('language-toggle').disabled=true;
-    try{const data=await json(`examples/${value}/plan.json`);key=value;plan=data;$('demo').value=value;render()}
+    try{const data=demos[value].showcase?{parts:[]}:await json(`examples/${value}/plan.json`);key=value;plan=data;$('demo').value=value;render()}
     catch(e){$('banner').textContent=(english()?'Could not load this demo: ':'案例加载失败：')+e.message}
     finally{$('demo').disabled=false;$('language-toggle').disabled=false}
   }

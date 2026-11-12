@@ -33,7 +33,9 @@ def build(output):
     (output/'i18n.js').write_text(i18n,encoding='utf-8')
     catalog=json.loads((ROOT/'examples/catalog.json').read_text(encoding='utf-8'));english=json.loads((ROOT/'examples/catalog.en.json').read_text(encoding='utf-8'))
     for key,item in catalog.items():
-        item['en']=english[key];dest=output/'examples'/key;dest.mkdir(parents=True,exist_ok=True)
+        item['en']=english[key]
+        if item.get('showcase'):continue
+        dest=output/'examples'/key;dest.mkdir(parents=True,exist_ok=True)
         files={'plan.json','section.png','section.en.svg','DESIGN.md','DESIGN.en.md',item['full_macro'],item['mechanics_macro'],item['freecad_macro'],item['freecad_model'],'FREECAD.md','FREECAD.en.md','freecad_report.json'}
         files.update(item.get('extra_files',[]))
         for file in files:

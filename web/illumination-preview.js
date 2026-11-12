@@ -182,7 +182,7 @@
   canvas.onpointerup=canvas.onpointercancel=()=>{drag=null;};
   canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.4,Math.min(5,zoom*Math.exp(-e.deltaY*.001)));draw();},{passive:false});
   new ResizeObserver(draw).observe(canvas);
-  fetch('illumination-assets/meshes.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
+  fetch('illumination-assets/meshes.json?v=geared-focus').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
     meshes=data.map(upload);$('loading').hidden=true;$('controls').hidden=false;canvas.hidden=false;$('poster').hidden=true;draw();
     let last=0;
     requestAnimationFrame(function frame(now){

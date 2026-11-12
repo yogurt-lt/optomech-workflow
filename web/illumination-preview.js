@@ -4,7 +4,7 @@
   let en = params.get('lang') === 'en';
   let angle = 0, explode = false, playing = false, detail = false, dir = 1;
   let yaw = -.32, pitch = .72, zoom = 1;
-  const canvas = $('scene'), gl = canvas.getContext('webgl2', {antialias:true});
+  const canvas = $('scene'), gl = canvas.getContext('webgl2', {antialias:true,alpha:false});
   const words = (zh, eng) => en ? eng : zh;
   function labels() {
     document.documentElement.lang = en ? 'en' : 'zh-CN';
@@ -123,7 +123,7 @@
     gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
     gl.enable(gl.DEPTH_TEST);
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+    gl.blendFuncSeparate(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA,gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
     gl.uniform1f(u.yaw,yaw);
     gl.uniform1f(u.pitch,pitch);
     gl.uniform1f(u.aspect,w/h);
@@ -131,6 +131,7 @@
     gl.uniform1f(u.lift,detail&&!explode?8:0);
     gl.uniform1f(u.scale,(explode?87:detail?25:64)*Math.max(1,1.85*h/w)/zoom);
     const translucent=m=>!explode&&$('transparent').checked&&(m.shell||m.sleeve);
+    const housingTint=[.36,.47,.55], sleeveTint=[.33,.44,.53];
     gl.enable(gl.POLYGON_OFFSET_FILL);
     gl.polygonOffset(1,1);
     for(const transparent of [false,true]) {
@@ -138,8 +139,8 @@
       for (const m of meshes) {
         if(translucent(m)!==transparent)continue;
         setPose(m);
-        gl.uniform3fv(u.color,m.color);
-        gl.uniform1f(u.opacity,transparent?(m.shell ? .22 : .27):1);
+        gl.uniform3fv(u.color,transparent?(m.shell?housingTint:sleeveTint):m.color);
+        gl.uniform1f(u.opacity,transparent?(m.shell ? .31 : .36):1);
         gl.bindVertexArray(m.vao);
         gl.drawArrays(gl.TRIANGLES,0,m.count);
       }

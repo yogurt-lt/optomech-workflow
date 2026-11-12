@@ -1,6 +1,9 @@
 /* Local translations. No external translation service or network dependency. */
 (() => {
   const pairs={
+    '点 47 · 照明与定焦投影':'.47 · Illumination and fixed-focal-length projection',
+    '完整照明壳与投影镜头，短环整组调焦。可旋转三维模型，查看爆炸装配。':'Complete light engine and projection lens with whole-unit focusing. Explore the 3D model and exploded assembly.',
+    '查看整机光机案例 ↗':'Explore the complete light engine ↗',
     "SolidWorks 宏包含较多原生特征，生成时间较长，请耐心等待。手机端 3D 渲染预览也需要时间。":"SolidWorks macros build many native features and may take time; please wait. Mobile 3D previews also need time to load and render.",
     '打开独立动画与 GIF 下载 ↗':'Open animation & GIF downloads ↗',
     "下载 Skill":"Download Skill",
@@ -77,3 +80,10 @@
   document.getElementById('language-toggle').onclick=()=>setLanguage(lang==='en'?'zh':'en');
   new MutationObserver(()=>apply()).observe(document.body,{childList:true,subtree:true,characterData:true});apply();
 })();
+
+function syncLightEngineCaseLink() {
+  const link=document.getElementById('lightEngineCase');
+  if(link) link.href='./illumination.html'+(window.i18n.language==='en'?'?lang=en':'');
+}
+document.addEventListener('languagechange',syncLightEngineCaseLink);
+syncLightEngineCaseLink();

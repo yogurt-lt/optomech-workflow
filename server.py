@@ -26,7 +26,9 @@ class Handler(BaseHTTPRequestHandler):
         if route in ('/zoom.html','/projection.html','/zoom-preview.js','/projection-preview.js'):
             path=ROOT/'web'/route.lstrip('/')
             return self.send(200,path.read_bytes(),'text/html; charset=utf-8' if path.suffix=='.html' else 'text/javascript; charset=utf-8')
-        if route.startswith(('/focus-assets/','/f35-focus-assets/','/zoom-assets/','/projection-assets/')):
+        if route in ('/illumination.html','/illumination-preview.js'):
+            return self.send(200,(ROOT/'web'/route.lstrip('/')).read_bytes(),'text/html; charset=utf-8' if route.endswith('.html') else 'application/javascript; charset=utf-8')
+        if route.startswith(('/focus-assets/','/f35-focus-assets/','/zoom-assets/','/projection-assets/','/illumination-assets/')):
             folder,name=route.lstrip('/').split('/',1)
             if '/' not in name and '\\' not in name and name not in ('.','..'):
                 path=ROOT/'web'/folder/name

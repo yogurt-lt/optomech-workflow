@@ -36,6 +36,8 @@ For a focusing mechanism or lens-integrated aperture, read [focusing and apertur
 
 For multi-configuration zoom lenses and resource-aware CAD generation, read [zoom mechanisms and CAD recovery](references/zoom-and-cad-recovery.md).
 
+For folded projector illumination and compact fixed-focus projection modules, read [projector light-engine assembly](references/projector-light-engine.md). Use shared housing datums and inspect the complete insertion and preload path at every optics station.
+
 ## Deliver geometry with evidence
 
 Before delivering any assembly or revising a bore/stack, read [assembly completeness](references/assembly-completeness.md). Record each optical unit's radial pilot, axial seat and closure/preload path. Passing interference and insertion checks alone does not establish positioning; merging common-motion groups must preserve small-lens centering.

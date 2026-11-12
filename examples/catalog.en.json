@@ -39,11 +39,11 @@
   },
   "illumination-047": {
     "title": "Complete illumination and projection assembly",
-    "status": "F4 assembly reviewed",
-    "summary": "Integrated illumination guides · fixed-focal-length lens · whole-unit focus",
+    "status": "Assembly and nominal geared focus motion checked",
+    "summary": "Integrated illumination guides · fixed-focal-length lens · geared whole-unit focus",
     "intro": "Load the illumination optics into the housing guides. The upper cover retains them and the fixed guide mounts the projection cartridge.",
     "fixing": "Straight bores center the glass. Flat shoulders, spacers and retainers locate it axially.",
-    "load_path": "Retainer → glass and spacers → barrel shoulder. Followers transmit focus-ring motion to the cartridge.",
+    "load_path": "Retainer → glass and spacers → barrel shoulder. A pinion drives the focus ring. Followers transmit axial motion to the cartridge.",
     "note": "The animation uses a nominal 1.20 mm mechanical stroke. Clear apertures and production tolerances remain to be checked.",
     "stages": [
       [

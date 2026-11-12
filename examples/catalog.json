@@ -50,11 +50,11 @@
   },
   "illumination-047": {
     "title": "照明加投影整机",
-    "status": "F4 整机结构已检查",
-    "summary": "一体导槽照明壳 · 定焦投影物镜 · 短环整组调焦",
+    "status": "整机与调焦齿轮名义运动已检查",
+    "summary": "一体导槽照明壳 · 定焦投影物镜 · 齿轮驱动整组调焦",
     "intro": "照明元件装入壳体导槽，上盖限制退出。投影镜筒通过固定导向座接到照明下壳。",
     "fixing": "玻璃由直孔定心，由平肩、平环隔圈和压圈轴向固定。",
-    "load_path": "压圈 → 镜片与隔圈 → 镜筒平肩。调焦环通过随动销驱动整组镜筒。",
+    "load_path": "压圈 → 镜片与隔圈 → 镜筒平肩。小齿轮驱动调焦环，随动销带动镜筒整组平移。",
     "note": "调焦为 1.20 mm 名义机械行程，通光与量产公差待校核。",
     "stages": [
       [
@@ -75,7 +75,7 @@
     "focus_animation": true,
     "animation_case": "illumination-047",
     "optic_count": 32,
-    "mechanical_count": 20
+    "mechanical_count": 21
   },
   "fixed-projection": {
     "title": "定焦投影 · PF-2",

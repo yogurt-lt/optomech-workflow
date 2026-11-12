@@ -2,7 +2,7 @@
   const $ = id => document.getElementById(id);
   const params = new URLSearchParams(location.search);
   let en = params.get('lang') === 'en';
-  let angle = 0, explode = false, playing = false, dir = 1;
+  let angle = 0, explode = false, playing = false, detail = false, dir = 1;
   let yaw = -.32, pitch = .72, zoom = 1;
   const canvas = $('scene'), gl = canvas.getContext('webgl2', {antialias:true});
   const words = (zh, eng) => en ? eng : zh;
@@ -38,8 +38,9 @@
   gl.attachShader(program, shader(gl.VERTEX_SHADER, `#version 300 es
     in vec3 pos;
     in vec3 normal;
-    uniform float turn,yaw,pitch,scale,aspect,mid;
+    uniform float turn,yaw,pitch,scale,aspect,mid,lift;
     uniform vec3 offset;
+    uniform vec2 axis;
     out float shade;
     vec3 xy(vec3 p,float a) {
       float c=cos(a),s=sin(a);
@@ -53,10 +54,10 @@
       return vec3(p.x,c*p.y-s*p.z,s*p.y+c*p.z);
     }
     void main() {
-      vec3 pivot=vec3(0.,-6.5966456,0.);
+      vec3 pivot=vec3(axis,0.);
       vec3 p=xy(pos-pivot,turn)+pivot+offset;
       vec3 v=view(p-vec3(0.,0.,mid));
-      gl_Position=vec4(v.x/scale/aspect,v.y/scale,-v.z/350.,1.);
+      gl_Position=vec4(v.x/scale/aspect,(v.y-lift)/scale,-v.z/350.,1.);
       shade=.63+.37*abs(dot(normalize(view(xy(normal,turn))),normalize(vec3(-.25,.65,.72))));
     }`));
   gl.attachShader(program, shader(gl.FRAGMENT_SHADER, `#version 300 es
@@ -70,7 +71,7 @@
   gl.linkProgram(program);
   if (!gl.getProgramParameter(program,gl.LINK_STATUS)) {fail();return;}
   gl.useProgram(program);
-  const u=Object.fromEntries(['turn','yaw','pitch','scale','aspect','mid','offset','color','opacity'].map(k=>[k,gl.getUniformLocation(program,k)]));
+  const u=Object.fromEntries(['turn','yaw','pitch','scale','aspect','mid','lift','axis','offset','color','opacity'].map(k=>[k,gl.getUniformLocation(program,k)]));
   let meshes=[];
   function upload(m) {
     const points=new Float32Array(m.triangles.length*18);
@@ -106,6 +107,12 @@
     delete m.triangles;
     return {...m,vao,count:at/6,lineVao,lineCount};
   }
+  function setPose(m) {
+    const turn=explode ? 0 : m.pinion ? -4*angle : m.cam ? angle : 0;
+    gl.uniform1f(u.turn,turn*Math.PI/180);
+    gl.uniform2fv(u.axis,m.pivot);
+    gl.uniform3fv(u.offset,explode?m.explode:[0,0,m.move?angle*.02:0]);
+  }
   function draw() {
     if (!meshes.length) return;
     const d=Math.min(devicePixelRatio,1.5), w=Math.round(canvas.clientWidth*d), h=Math.round(canvas.clientHeight*d);
@@ -120,8 +127,9 @@
     gl.uniform1f(u.yaw,yaw);
     gl.uniform1f(u.pitch,pitch);
     gl.uniform1f(u.aspect,w/h);
-    gl.uniform1f(u.mid,explode?-46:-14);
-    gl.uniform1f(u.scale,(explode?87:64)*Math.max(1,1.85*h/w)/zoom);
+    gl.uniform1f(u.mid,explode?-46:detail?-32:-14);
+    gl.uniform1f(u.lift,detail&&!explode?8:0);
+    gl.uniform1f(u.scale,(explode?87:detail?25:64)*Math.max(1,1.85*h/w)/zoom);
     const translucent=m=>!explode&&$('transparent').checked&&(m.shell||m.sleeve);
     gl.enable(gl.POLYGON_OFFSET_FILL);
     gl.polygonOffset(1,1);
@@ -129,8 +137,7 @@
       gl.depthMask(!transparent);
       for (const m of meshes) {
         if(translucent(m)!==transparent)continue;
-        gl.uniform1f(u.turn,m.cam&&!explode?angle*Math.PI/180:0);
-        gl.uniform3fv(u.offset,explode?m.explode:[0,0,m.move?angle*.02:0]);
+        setPose(m);
         gl.uniform3fv(u.color,m.color);
         gl.uniform1f(u.opacity,transparent?(m.shell ? .22 : .27):1);
         gl.bindVertexArray(m.vao);
@@ -142,27 +149,33 @@
     gl.depthFunc(gl.LEQUAL);
     for(const m of meshes){
       if(!m.lineVao)continue;
-      gl.uniform1f(u.turn,m.cam&&!explode?angle*Math.PI/180:0);
-      gl.uniform3fv(u.offset,explode?m.explode:[0,0,m.move?angle*.02:0]);
+      setPose(m);
       gl.uniform3fv(u.color,[.14,.22,.29]);
       gl.uniform1f(u.opacity,translucent(m) ? .63 : .46);
       gl.bindVertexArray(m.lineVao);
       gl.drawArrays(gl.LINES,0,m.lineCount);
     }
     gl.depthMask(true);
-    $('readout').textContent=`${angle.toFixed(1)}° · ${(angle*.02).toFixed(2)} mm`;
+    $('readout').textContent=`${angle.toFixed(1)}° · ${(angle*.02).toFixed(2)} mm · ${words("小齿轮","Pinion")} ${(-4*angle).toFixed(1)}°`;
     $('angle').value=angle;
   }
   $('angle').oninput=()=>{playing=false;angle=+$('angle').value;labels();draw();};
   $('play').onclick=()=>{playing=!playing;labels();};
   $('explode').onclick=()=>{
     explode=!explode;playing=false;
+    $('driveDetail').disabled=explode;
     $('explode').setAttribute('aria-pressed',String(explode));
     $('angle').disabled=explode;$('play').disabled=explode;
     labels();draw();
   };
   $('transparent').onchange=draw;
-  $('reset').onclick=()=>{yaw=-.32;pitch=.72;zoom=1;draw();};
+  $('driveDetail').onclick=()=>{
+    if(explode)return;
+    detail=!detail;
+    $('driveDetail').setAttribute('aria-pressed',String(detail));
+    draw();
+  };
+  $('reset').onclick=()=>{yaw=-.32;pitch=.72;zoom=1;detail=false;$('driveDetail').setAttribute('aria-pressed','false');draw();};
   let drag=null;
   canvas.onpointerdown=e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);};
   canvas.onpointermove=e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];draw();};

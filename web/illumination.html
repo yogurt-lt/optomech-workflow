@@ -10,24 +10,25 @@
 </head>
 <body>
 <main>
-<header><div><a class="standalone" href="./" data-en="← Case gallery">← 案例列表</a><h1 data-en="Complete illumination and projection assembly">照明加投影整机</h1><p data-en="The short cam ring rotates while the straight guide moves the complete projection cartridge axially.">短凸轮环旋转，直槽导向带动投影镜头整组轴向移动。</p></div><button id="language" type="button">English</button></header>
+<header><div><a class="standalone" href="./" data-en="← Case gallery">← 案例列表</a><h1 data-en="Complete illumination and projection assembly">照明加投影整机</h1><p data-en="A motor-side pinion drives the toothed short cam ring. The straight guide constrains the entire projection cartridge to axial motion.">电动输入小齿轮驱动带齿圈的短凸轮环，直槽导向使投影物镜整组沿轴向移动。</p></div><button id="language" type="button">English</button></header>
 <div class="stage"><img id="poster" src="illumination-assets/assembly.png" alt=""><canvas id="scene" hidden aria-label="3D CAD model"></canvas></div>
 <p id="loading" role="status" data-en="Loading 3D geometry. This can take a moment on mobile.">正在载入三维几何，手机端可能需要等待片刻。</p>
 <div class="controls" id="controls" hidden>
 <button id="play" type="button" data-en="Play focus">播放调焦</button>
 <label><span data-en="Focus angle">调焦角度</span> <input id="angle" type="range" min="-30" max="30" value="0" step=".1"></label><output class="readout" id="readout"></output>
 <button id="explode" type="button" aria-pressed="false" data-en="Exploded view">爆炸视图</button>
-<button id="reset" type="button" data-en="Reset view">重置视角</button>
+<button id="driveDetail" type="button" aria-pressed="false" data-en="Drive close-up">传动特写</button><button id="reset" type="button" data-en="Reset view">重置视角</button>
 <label><input id="transparent" type="checkbox" checked><span data-en="Transparent housing">外壳半透明</span></label>
 </div>
 <small data-en="Drag to rotate and scroll to zoom. The animation uses the nominal 1.20 mm mechanical stroke.">拖动旋转、滚轮缩放。动画按 1.20 mm 名义机械行程播放。</small>
-<h2 data-en="Assembly order">装配顺序</h2>
+<p data-en="The 18-tooth pinion drives the 72-tooth ring at 4:1. The motor and shaft support are outside the scope of this model.">18 齿小齿轮驱动 72 齿调焦环，减速比 4∶1。模型展示齿轮传动，马达和轴支承为接口预留。</p><h2 data-en="Assembly order">装配顺序</h2>
 <ol>
 <li data-en="Load the illumination optics into the lower housing guides, then fit the upper cover.">照明元件先插入下壳导槽，再合上上盖。</li>
 <li data-en="Load G4 to G1 into the front barrel. Seat G5 separately and load G6 to G9 from the prism side of the rear barrel. Tighten the retainers against the flat bearing lands.">前筒装 G4 至 G1。后筒独立前装 G5，再从棱镜端装 G6 至 G9，以压圈和平环带闭合承压路径。</li>
 <li data-en="Join the lens cells, fit the guide and short ring to the illumination housing, slide in the cartridge and install the follower pins from outside.">用连接套合并前后镜筒。固定导向座和短环装到照明壳后，滑入整组镜筒，最后从外侧安装随动销。</li>
 </ol>
 <div class="static">
+<figure><a href="illumination-assets/drive.png"><img loading="lazy" src="illumination-assets/drive.png" alt=""></a><figcaption data-en="Motor-side pinion and toothed focus ring.">输入小齿轮与调焦环齿圈。</figcaption></figure>
 <figure><a href="illumination-assets/exploded.png"><img loading="lazy" src="illumination-assets/exploded.png" alt=""></a><figcaption data-en="Exploded positions show assembly relationships.">爆炸位置用于说明装配关系。</figcaption></figure>
 <figure><a href="illumination-assets/section.png"><img loading="lazy" src="illumination-assets/section.png" alt=""></a><figcaption data-en="CAD section through the projection axis.">投影光轴的实际 CAD 剖面。</figcaption></figure>
 </div>
